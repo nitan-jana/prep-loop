@@ -6,6 +6,11 @@
     "check": "bun run check:links && bun run check:leaks && bun test",
     "check:links": "bun tools/check-links.ts",
     "check:leaks": "bun tools/leak-check.ts",
-    "test": "bun test"
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^7.0.2"
   }
 }
