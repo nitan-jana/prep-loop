@@ -9,8 +9,10 @@
       "Bash(gh api:*)",
       "Bash(gh pr list:*)",
       "Bash(gh pr view:*)",
-      "Bash(./tools/check-links.sh:*)",
-      "Bash(./tools/leak-check.sh:*)"
+      "Bash(bun test:*)",
+      "Bash(bun run check:*)",
+      "Bash(bun tools/check-links.ts:*)",
+      "Bash(bun tools/leak-check.ts:*)"
     ]
   }
 }

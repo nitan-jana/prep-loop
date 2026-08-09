@@ -8,6 +8,10 @@ intake/*
 # deliberately so a fresh clone works with no setup.
 .claude/settings.local.json
 
+# Bun. There are no dependencies today; this is here so that adding one
+# later cannot accidentally commit a tree.
+node_modules/
+
 # OS noise
 .DS_Store
 Thumbs.db

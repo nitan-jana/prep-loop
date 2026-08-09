@@ -1,0 +1,11 @@
+{
+  "name": "prep-loop",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "bun run check:links && bun run check:leaks && bun test",
+    "check:links": "bun tools/check-links.ts",
+    "check:leaks": "bun tools/leak-check.ts",
+    "test": "bun test"
+  }
+}
