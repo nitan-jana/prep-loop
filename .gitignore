@@ -1,0 +1,13 @@
+# Resume, CV, exported profile data — read by /onboard, never committed.
+# This is the one directory that holds documents the user did not write here.
+# The README is tracked so a fresh clone gets the directory and knows what it's for.
+intake/*
+!intake/README.md
+
+# Per-machine tool permissions. Everything else under .claude/ is committed
+# deliberately so a fresh clone works with no setup.
+.claude/settings.local.json
+
+# OS noise
+.DS_Store
+Thumbs.db

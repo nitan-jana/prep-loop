@@ -1,0 +1,2 @@
+One file per scheduled routine, holding its complete logic. A cron job is a
+six-line bootstrap that points here.
