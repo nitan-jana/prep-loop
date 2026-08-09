@@ -1,10 +1,10 @@
 // leak-check: allow-fixtures — a test for these rules must contain what each rule detects
 import { describe, expect, test } from "bun:test";
-import { type Finding, parseDenylist, scanText } from "./leak-check.ts";
+import { type Denylist, type Finding, parseDenylist, scanText } from "./leak-check.ts";
 
-const EMPTY = { terms: [], patterns: [] };
-const scan = (body: string, deny = EMPTY): Finding[] => scanText("f.md", body, deny);
-const msgs = (f: Finding[], tier: string) => f.filter((x) => x.tier === tier).map((x) => x.message);
+const EMPTY: Denylist = { terms: [], patterns: [] };
+const scan = (body: string, deny: Denylist = EMPTY): Finding[] => scanText("f.md", body, deny);
+const msgs = (f: Finding[], tier: Finding["tier"]) => f.filter((x) => x.tier === tier).map((x) => x.message);
 
 describe("parseDenylist", () => {
   test("skips comments and blanks, keeps terms, compiles re: lines", () => {
@@ -18,12 +18,12 @@ describe("parseDenylist", () => {
 
 describe("FAIL — the tier that blocks", () => {
   test("a denylist term, case-insensitively", () => {
-    const f = scan("built at ACME last year", { terms: ["Acme"], patterns: [] });
+    const f = scan("built at ACME last year", { terms: ["Acme"], patterns: [] as RegExp[] });
     expect(msgs(f, "FAIL")).toContain("denylist term 'Acme'");
   });
 
   test("the canary, which is how a whole-file copy is caught", () => {
-    const deny = { terms: ["XX-CANARY-1234"], patterns: [] };
+    const deny: Denylist = { terms: ["XX-CANARY-1234"], patterns: [] };
     const f = scan("Who this instance belongs to.\n\nCanary: XX-CANARY-1234\n", deny);
     expect(msgs(f, "FAIL")).toContain("denylist term 'XX-CANARY-1234'");
   });
