@@ -1,0 +1,30 @@
+{
+  "_comment": [
+    "Copy to settings.local.json and replace SERVER-ID with your calendar MCP",
+    "server's id. That id is per-install, which is why these rules cannot live",
+    "in the committed settings.json. /onboard detects it and writes this file.",
+    "",
+    "To find it: run a calendar tool in a session and read the tool name, or",
+    "check your MCP client config. The id is the middle segment of a tool name",
+    "like mcp__<SERVER-ID>__list_events.",
+    "",
+    "Note which operation is where. Reads and the two writes the system needs",
+    "are pre-approved; deleting an event always prompts. A planner that writes a",
+    "week of blocks should not be able to remove one without being asked."
+  ],
+  "permissions": {
+    "allow": [
+      "mcp__SERVER-ID__list_calendars",
+      "mcp__SERVER-ID__list_events",
+      "mcp__SERVER-ID__get_event",
+      "mcp__SERVER-ID__search_events",
+      "mcp__SERVER-ID__suggest_time",
+      "mcp__SERVER-ID__create_event",
+      "mcp__SERVER-ID__update_event"
+    ],
+    "ask": [
+      "mcp__SERVER-ID__delete_event",
+      "mcp__SERVER-ID__respond_to_event"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)",
+      "Bash(gh repo list:*)",
+      "Bash(gh api:*)",
+      "Bash(gh pr list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(./tools/check-links.sh:*)",
+      "Bash(./tools/leak-check.sh:*)"
+    ]
+  }
+}
