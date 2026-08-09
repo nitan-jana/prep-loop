@@ -11,6 +11,21 @@ blocks, how long, which days carry which work, when the loop runs, what timezone
 — every one of those is read from `profile/`. **Policy describes the mechanism;
 profile supplies the parameters.**
 
+## Running the checks
+
+[Bun](https://bun.sh) is the only prerequisite, and the only one there will be.
+`tools/` holds **zero dependencies** — Bun's built-ins cover everything, so
+there is nothing to install and a clone runs immediately.
+
+```
+bun run check        # links, leaks and tests
+```
+
+That constraint is load-bearing. The unsupervised routines clone this repo and
+must never need an install step before following a runbook, and a leak check
+that fails to start is a leak check that gets skipped. If a dependency ever
+looks necessary, that is a reason to reconsider the design, not to install it.
+
 ## Resolution order
 
 1. `policy/` — how the system works. Generic. The same for every user.
