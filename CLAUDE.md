@@ -13,18 +13,23 @@ profile supplies the parameters.**
 
 ## Running the checks
 
-[Bun](https://bun.sh) is the only prerequisite, and the only one there will be.
-`tools/` holds **zero dependencies** — Bun's built-ins cover everything, so
-there is nothing to install and a clone runs immediately.
+[Bun](https://bun.sh) is the only prerequisite.
 
 ```
-bun run check        # links, leaks and tests
+bun run check        # links, leaks and tests — needs no install
+bun install          # only to edit: type definitions and the compiler
+bun run typecheck
 ```
 
-That constraint is load-bearing. The unsupervised routines clone this repo and
-must never need an install step before following a runbook, and a leak check
-that fails to start is a leak check that gets skipped. If a dependency ever
-looks necessary, that is a reason to reconsider the design, not to install it.
+**No runtime dependencies, ever.** `tools/` uses Bun's built-ins alone, so the
+checks run straight from a clone. That is load-bearing: the unsupervised
+routines clone this repo and must never need an install step before following a
+runbook, and a check that fails to start is a check that gets skipped.
+
+`devDependencies` are a different thing — types and the compiler, used by an
+editor and by `typecheck`, never on any execution path. Those are fine. A
+*runtime* dependency is not: if one ever looks necessary, that is a reason to
+reconsider the design rather than to install it.
 
 ## Resolution order
 
