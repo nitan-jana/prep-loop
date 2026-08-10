@@ -13,7 +13,7 @@ import { Glob } from "bun";
 import { existsSync, statSync } from "node:fs";
 import { dirname, join, normalize, relative, resolve } from "node:path";
 
-const SKIP = ["node_modules", ".git", "intake", ".venv"];
+const SKIP = ["node_modules", ".git", "instance", ".venv"];
 const SECTION_SYMBOL = "§";
 
 export type Problem = { file: string; line: number; message: string };

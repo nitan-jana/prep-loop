@@ -36,12 +36,16 @@ describe("FAIL — the tier that blocks", () => {
     expect(msgs(scan("the 1999 standard"), "FAIL")).toHaveLength(0);
   });
 
-  test("a personal directory reference", () => {
+  test("a reference into the local folder", () => {
+    expect(msgs(scan("read instance/profile/state.md first"), "FAIL")).toContain("personal path 'instance/'");
+  });
+
+  test("and a stale reference that dropped the prefix", () => {
     expect(msgs(scan("read profile/state.md first"), "FAIL")).toContain("personal path 'profile/'");
   });
 
   test("unless the file marks itself as naming paths by design", () => {
-    const f = scan("leak-check: allow-path\n\nread profile/state.md first");
+    const f = scan("leak-check: allow-path\n\nread instance/profile/state.md first");
     expect(msgs(f, "FAIL")).toHaveLength(0);
   });
 

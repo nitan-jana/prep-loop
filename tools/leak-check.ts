@@ -1,12 +1,13 @@
 #!/usr/bin/env bun
-// Guards the boundary between the shareable half of this repo and the personal half.
+// Guards the boundary between this repo, which is public, and the local folder
+// beside it, which is not.
 //
-// The shareable directories must carry no dates, no proper nouns and no second
-// person. That constraint is what makes publishing a copy rather than a
-// scrubbing project, so this is the thing that keeps it true.
+// Nothing tracked here carries a date, a proper noun or a second person. The
+// gitignore keeps whole files apart; this keeps their contents apart, which is
+// the half a gitignore cannot do.
 //
-//   FAIL     a term from private/denylist.txt, including the canary
-//   FAIL     a reference to a personal directory
+//   FAIL     a term from the denylist, including the canary
+//   FAIL     a reference into the local folder
 //   FAIL     a 2020s year — the sneakiest identifier. A line stating when a rule
 //            was decided reads as a personal decision log even with every name
 //            stripped, so policy states rules without saying when they were set.
@@ -18,18 +19,20 @@
 // because templates address the end user and meta-text about these very rules
 // trips them — a check that cries wolf is one that gets switched off.
 //
-//   bun tools/leak-check.ts [path ...]     default: the shareable directories
+//   bun tools/leak-check.ts [path ...]     default: everything tracked
 //
-// leak-check: allow-path — this file names personal directories by design
+// leak-check: allow-path — this file names the personal paths by design
 
 import { Glob } from "bun";
 import { existsSync, statSync } from "node:fs";
 import { join, normalize, relative, resolve } from "node:path";
 
-const DEFAULT_ROOTS = ["policy", "runbooks", ".claude", "templates", "tools", "docs", "CLAUDE.md", "README.md"];
-const PERSONAL_DIRS = ["profile", "logs", "performance", "stories", "deep-dives", "plans", "mocks", "curriculum", "intake", "private"];
+const DEFAULT_ROOTS = ["policy", ".claude", "templates", "tools", "docs", "CLAUDE.md", "README.md"];
+// `instance` is the local folder itself. The rest catch a stale reference that
+// dropped the prefix, which resolves to nothing and would otherwise pass.
+const PERSONAL_DIRS = ["instance", "profile", "logs", "performance", "stories", "deep-dives", "plans", "mocks", "curriculum", "intake", "private"];
 const SKIP = ["node_modules", ".git", ".venv"];
-const DENYLIST = "private/denylist.txt";
+const DENYLIST = "instance/private/denylist.txt";
 
 export type Tier = "FAIL" | "WARN" | "CADENCE";
 export type Finding = { tier: Tier; file: string; line: number; message: string };
