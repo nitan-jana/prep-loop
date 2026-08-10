@@ -1,6 +1,6 @@
 # Terms that must never appear in the shareable half of this repo.
 #
-# Read by tools/leak-check.sh. Personal — never one of the directories copied
+# Read by tools/leak-check.ts. Personal — never one of the directories copied
 # out when publishing.
 #
 # Every term here is derived from a fact in profile/. As a name, employer,
