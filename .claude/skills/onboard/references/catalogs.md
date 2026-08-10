@@ -61,7 +61,7 @@ This is faster than parsing an index however the site is built, and it is the
 one path that does not care whether the page renders on the server or in the
 browser.
 
-In order, stopping at the first that works:
+In order, taking the first that carries what is needed:
 
 1. **`robots.txt`.** It usually declares `Sitemap:` lines, including paths that
    are not at the obvious location. One fetch, and it tells you where to go.
@@ -85,6 +85,30 @@ That same fetch is what carries a User-Agent header for a refused page, and what
 calls a JSON endpoint directly once one is found. It cannot run scripts, so it
 is no help for rendering, but rendering is the last resort and this is most of
 the path to it.
+
+## Cross-check against the sitemap, whatever built the file
+
+The rungs are ordered by what they carry, not by which one to stop at. A page
+payload or a parsed index usually beats a sitemap, because it has titles,
+difficulty, lesson counts and access flags where the sitemap has only
+addresses. So the sitemap is rarely the thing an inventory is built *from*.
+
+**It is always the thing the inventory is checked against.** Once the entries
+exist, diff their addresses against the sitemap and account for anything on one
+side and not the other.
+
+This is the only step that catches the failure nothing else can see. A payload
+parse that caught six hundred and forty of six hundred and fifty entries looks
+finished, reads consistently, and passes every check that works from what it
+already has. The missing ten are invisible from the inside. A sitemap is the
+outside.
+
+It is one fetch, it runs after the real work rather than instead of it, and it
+is the difference between an inventory marked `complete` because it is and one
+marked `complete` because nobody counted.
+
+Where the two disagree and the gap cannot be explained, the inventory is
+`partial` and says which part.
 
 **A sitemap gives addresses, not metadata.** Titles often have to come from the
 slug, and topic and difficulty usually are not there at all. That is a

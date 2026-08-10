@@ -20,6 +20,7 @@ explanations, not the contents. See
 | Covers | <which round types> |
 | Built by | <fetcher / sitemap / feed / app data / parsed index / rendered / console / pasted / stub> |
 | Completeness | <complete / partial / stub> |
+| Cross-checked against | <sitemap, or what was used instead, or nothing> |
 | Pulled | <date> |
 | Refresh | <how often, or `static` and what would change that> |
 | Fastest-moving part | <the section that goes stale first, if any> |
