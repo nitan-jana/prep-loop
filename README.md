@@ -13,10 +13,14 @@ anyone. See [`CLAUDE.md`](CLAUDE.md) for the rules that keep that boundary.
 
 ## Status
 
-Under construction. The guardrails exist; none of the prep features do.
+Under construction. The guardrails and the written system exist; nothing
+executes them yet.
 
 **Works**
 
+- [`policy/`](policy/README.md) — the mechanism in fourteen files: the week,
+  the caps, the artifact voice, the calendar contract, the rubric, how a round
+  is conducted, where a question comes from, what readiness means
 - `tools/check-links.ts` — every relative link resolves, every heading anchor
   matches, no section numbers anywhere
 - `tools/leak-check.ts` — three tiers over the shareable half: denylist terms
@@ -24,16 +28,17 @@ Under construction. The guardrails exist; none of the prep features do.
   smell
 - 30 tests over both
 
-**Not built yet** — no skills, no policy, no runbooks, no templates. The repo
-cannot plan a week, quiz anyone, run a round, or write a log.
+**Not built yet** — no skills, no runbooks, no templates, no profile. The repo
+describes how to plan a week, quiz someone and run a round; it cannot yet do
+any of them.
 
 ## Build order
 
 - [x] **Scaffolding and guards** — skeleton, permissions, denylist format, both
       checkers with tests
-- [ ] **`policy/`** — the generic system, roughly fourteen files: repo map,
-      cadence, caps, artifact voice, calendar, grading, interviewing, check-in
-      protocol, mock sourcing, story craft, frameworks, mocks, readiness
+- [x] **`policy/`** — the generic system, fourteen files: repo map, cadence,
+      caps, artifact voice, calendar, grading, interviewing, check-in protocol,
+      mock sourcing, mocks, story craft, frameworks, readiness
 - [ ] **`onboard` skill** — grills a user into a `profile/`, verifies every
       numeric claim against its original source, mints the canary, records the
       resource selection and builds a catalog per source
