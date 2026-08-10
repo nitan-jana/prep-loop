@@ -49,10 +49,10 @@ Where to push, in order of preference:
    incomplete answer. Ask what it costs — but only after the user has had the
    chance to volunteer it, since volunteering it unprompted is the difference
    between two grades.
-2. **The weakest-evidenced claim.** Claims in `profile/` carry a provenance
-   marker. A `stated` claim has nothing behind it but the user's word, which is
-   exactly where an interviewer catches a candidate, so push there harder than
-   on a `verified` one.
+2. **The weakest-evidenced claim.** A `stated` claim has nothing behind it but
+   the user's word, which is exactly where an interviewer catches a candidate,
+   so push there harder than on a `verified` one. See
+   [`claims.md`](claims.md).
 3. **The alternative not taken.** What else was considered, and why it lost.
 4. **The boundary.** Where the approach stops working.
 

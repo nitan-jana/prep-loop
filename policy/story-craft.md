@@ -47,14 +47,9 @@ Before any claim is written, settle three things: whose work it was, who else
 was involved, and what phrasing survives someone opening the repository or the
 release notes mid-answer.
 
-Claims carry the provenance marker they carry in `profile/` — `verified` with
-the command that proved it, `stated`, or `contested`. A number in a story is
-checked before it is written down, not after it has been said in an interview.
-
-**A claim that spread before it was checked is the failure mode this prevents.**
-One unverified number, written once, gets copied into a resume line, a bank
-entry, a deep dive and an outbound message, and every copy has to be found
-again. Checking at the point of writing is cheap; retracting is not.
+Everything in [`claims.md`](claims.md) applies to a story exactly as it applies
+to `profile/` — the markers, the check-before-writing rule, and the test that a
+claim has to survive the source being opened mid-answer.
 
 ## The drill sheet
 

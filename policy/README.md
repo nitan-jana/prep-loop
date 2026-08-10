@@ -15,6 +15,7 @@ those parameters feed.
 | [`repo-map.md`](repo-map.md) | Where a thing lives, and who may write it |
 | [`cadence.md`](cadence.md) | What a week is, and what a block is |
 | [`caps.md`](caps.md) | How much a single day is allowed to carry |
+| [`claims.md`](claims.md) | What makes a statement about the user safe to write |
 | [`artifact-voice.md`](artifact-voice.md) | How anything read daily is written |
 | [`calendar.md`](calendar.md) | How the calendar and the repo stay one thing |
 | [`grading.md`](grading.md) | What a grade means, and what makes one valid |
