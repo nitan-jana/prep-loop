@@ -2,8 +2,8 @@
 
 # State
 
-Every live fact with a date attached, in one place. Anything a skill or a
-runbook needs to know about *right now* rather than in general.
+Every live fact with a date attached, in one place. Anything a session needs to
+know about *right now* rather than in general.
 
 This file exists so that a moving fact has exactly one home. A guardrail
 copied into three skills is a guardrail that will be right in two of them.
