@@ -10,7 +10,7 @@ lead with, and which to steer away from.
 
 | Project | Leads with it for | Deep dive | Holds up under |
 |---|---|---|---|
-| <name> | <the kind of role it fits> | `deep-dives/<slug>.md` | <how far the questioning can go> |
+| <name> | <the kind of role it fits> | `instance/deep-dives/<slug>.md` | <how far the questioning can go> |
 
 ## Steer away from
 

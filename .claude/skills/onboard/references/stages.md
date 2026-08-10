@@ -6,7 +6,7 @@ Four, in order. Each is a sitting of its own — resumable, and better split tha
 rushed. The rules in the skill file apply inside all of them and are not
 repeated here.
 
-Update the progress table in `profile/README.md` at the end of every stage, not
+Update the progress table in `instance/profile/README.md` at the end of every stage, not
 at the end of the last one.
 
 ---

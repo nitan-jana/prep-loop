@@ -82,6 +82,6 @@ Everything withheld during the round. The grade with its quoted answer per
 follow-up the user did not survive, and what to drill next.
 
 The review is also where an observed habit gets recorded — a pattern in how the
-user answers, appended to `profile/habits.md`. Those are found by watching
+user answers, appended to `instance/profile/habits.md`. Those are found by watching
 rounds, never by asking the user to name their own weaknesses, which returns a
 rehearsed answer that then contaminates every round after it.

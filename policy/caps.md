@@ -3,7 +3,7 @@
 # Caps
 
 Two ceilings on what a single day may be asked to carry. The numeric values are
-in `profile/schedule.md`; the mechanism is here.
+in `instance/profile/schedule.md`; the mechanism is here.
 
 ## A cap binds the plan, not the person
 
@@ -33,7 +33,7 @@ the content cap. The cap exists because intake without practice produces
 recognition rather than recall, and recognition does not survive an interview.
 
 Items are weighted rather than counted flat: a long chapter is not one unit the
-way a short article is. `profile/schedule.md` states the ceiling and the
+way a short article is. `instance/profile/schedule.md` states the ceiling and the
 weights it uses.
 
 **Overflow is not dropped.** What does not fit goes to the `## Deferred` list at

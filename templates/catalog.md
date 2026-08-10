@@ -2,7 +2,7 @@
 
 # <Source name>
 
-An inventory of one resource, at `curriculum/<source-slug>.md`. It exists so a
+An inventory of one resource, at `instance/curriculum/<source-slug>.md`. It exists so a
 round can **name** a question the user can go and look at afterwards.
 
 That is the whole purpose, and it sets the bar for what belongs here:

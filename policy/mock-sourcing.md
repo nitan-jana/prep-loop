@@ -5,7 +5,7 @@
 ## Never invent a question name
 
 A round names a question the user can go and look at afterwards. That means it
-comes from an inventory under `curriculum/`, and nowhere else.
+comes from an inventory under `instance/curriculum/`, and nowhere else.
 
 **Naming a question that does not exist is the worst failure in the system.**
 The user goes looking for it, cannot find it, and from then on cannot trust any
@@ -30,7 +30,7 @@ measures and the thing that decays silently between sessions.
 
 The window has two edges. Too recent and the answer is still in short-term
 memory, so it tests nothing. Too old and a miss is uninformative, because
-forgetting was expected. `profile/` states the window; the shape of the rule is
+forgetting was expected. `instance/profile/` states the window; the shape of the rule is
 that both edges exist.
 
 Novelty still has a place — coverage of an untouched topic, or a deliberately
@@ -44,7 +44,7 @@ the round rather than memory of the material.
 
 ## Choosing the round type
 
-**Weakest first.** Read `performance/` and pick the round type with the worst
+**Weakest first.** Read `instance/performance/` and pick the round type with the worst
 recent grades, unless the user asks for something specific — an explicit
 request always wins.
 
@@ -63,6 +63,6 @@ preparation matures. Early on, questions come from material already studied, so
 a round tests retention. Later they are drawn cold, so a round tests
 performance under an unfamiliar problem.
 
-The current phase is recorded in `profile/state.md` along with the point at
+The current phase is recorded in `instance/profile/state.md` along with the point at
 which it changes. A round reads it rather than deciding for itself, so that two
 rounds in the same week do not disagree about what they are measuring.

@@ -7,7 +7,7 @@ statement carries with it.
 
 A claim is anything asserted about the user that an interviewer could
 challenge: a number, a scope, a role, a date range, an outcome. Everything in
-`profile/` is a claim. So is every line of a story and every sentence of a deep
+`instance/profile/` is a claim. So is every line of a story and every sentence of a deep
 dive.
 
 ## Every claim carries a marker

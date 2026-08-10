@@ -48,7 +48,7 @@ was involved, and what phrasing survives someone opening the repository or the
 release notes mid-answer.
 
 Everything in [`claims.md`](claims.md) applies to a story exactly as it applies
-to `profile/` — the markers, the check-before-writing rule, and the test that a
+to `instance/profile/` — the markers, the check-before-writing rule, and the test that a
 claim has to survive the source being opened mid-answer.
 
 ## The drill sheet
@@ -71,7 +71,7 @@ A story is short enough to tell in a couple of minutes. Longer than that and
 the interviewer interrupts, which means the ending — the outcome — is the part
 that gets cut.
 
-`stories/<slug>.md` holds the story and its drill sheet. `profile/story-bank.md`
+`instance/stories/<slug>.md` holds the story and its drill sheet. `instance/profile/story-bank.md`
 indexes them, with what each one is for.
 
 **The index is updated in the same turn the story is written.** A story bank

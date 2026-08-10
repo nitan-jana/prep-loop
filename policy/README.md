@@ -5,7 +5,7 @@
 How the system works, in the abstract. One question per file.
 
 Nothing here is true of one person in particular. Cadence, claims, resources,
-thresholds and habits are read from `profile/`. Policy states the mechanism
+thresholds and habits are read from `instance/profile/`. Policy states the mechanism
 those parameters feed.
 
 ## The files
@@ -44,7 +44,7 @@ problem, and on the section symbol appearing anywhere at all.
 
 **Link only what exists in a fresh clone.** Policy files, tools and docs may be
 linked. Anything under a personal directory is named in backticks instead —
-`profile/state.md`, not a link to it. Those files do not exist until onboarding
+`instance/profile/state.md`, not a link to it. Those files do not exist until onboarding
 has run, and a link check that cannot pass on a clean clone is a check nobody
 runs.
 
@@ -68,5 +68,5 @@ particular user runs on is a profile fact.
 Every file here carries `leak-check: allow-path`, because naming the personal
 directories is the point of the directory. The marker suppresses the
 directory-name rule and nothing else — a denylist term still fails, and so does
-a year, which is what a real artifact filename contains. Naming `logs/` is
+a year, which is what a real artifact filename contains. Naming `instance/logs/` is
 policy; naming one log file is a leak, and it stays caught.

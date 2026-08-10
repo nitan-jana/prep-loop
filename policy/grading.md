@@ -38,7 +38,7 @@ the part that carried the claim and mark the elision.
 
 ## Anchors
 
-`profile/grading-anchors.md` holds three real answers, one per grade, chosen
+`instance/profile/grading-anchors.md` holds three real answers, one per grade, chosen
 once and then frozen. **Every grader reads it before grading.**
 
 The file starts empty and stays empty until there are real graded answers to

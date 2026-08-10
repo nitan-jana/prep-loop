@@ -2,8 +2,8 @@
 
 # Building the inventories
 
-The resource stage produces `profile/resources.md` and one file under
-`curriculum/` per source, from [`templates/catalog.md`](../../../../templates/catalog.md).
+The resource stage produces `instance/profile/resources.md` and one file under
+`instance/curriculum/` per source, from [`templates/catalog.md`](../../../../templates/catalog.md).
 
 An inventory exists for one reason: so a round can **name** a question the user
 can go and look at afterwards. See

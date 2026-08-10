@@ -5,7 +5,7 @@
 A framework is scaffolding for producing an answer under pressure. It is not
 content, and reciting it is not answering.
 
-Which frameworks a user works with is a profile fact, recorded in `profile/`.
+Which frameworks a user works with is a profile fact, recorded in `instance/profile/`.
 Different targets and different stacks call for different ones, and prescribing
 a named framework here would make the system wrong for most people who pick it
 up. This file says how any of them is used.

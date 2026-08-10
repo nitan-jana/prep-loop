@@ -2,7 +2,7 @@
 
 # Story bank
 
-The index. Stories themselves live one per file under `stories/`, each with its
+The index. Stories themselves live one per file under `instance/stories/`, each with its
 drill sheet, per [`policy/story-craft.md`](../../policy/story-craft.md).
 
 **Updated in the same turn a story is written.** An index that has drifted is
@@ -10,7 +10,7 @@ one nobody consults, and unreachable stories are the same as no stories.
 
 | Story | File | Answers | Decision in it | Number | Marker |
 |---|---|---|---|---|---|
-| <short name> | `stories/<slug>.md` | <the question it is for> | <what was chosen over what> | <the outcome figure> | |
+| <short name> | `instance/stories/<slug>.md` | <the question it is for> | <what was chosen over what> | <the outcome figure> | |
 
 ## Coverage
 

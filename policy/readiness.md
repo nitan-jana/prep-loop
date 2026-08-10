@@ -11,7 +11,7 @@ Confidence and readiness move independently, and confidence moves first. A
 topic recently studied feels ready and is not; a topic drilled weeks ago feels
 stale and holds.
 
-So readiness is read from `performance/` — actual grades on actual rounds —
+So readiness is read from `instance/performance/` — actual grades on actual rounds —
 and never from asking the user whether they feel prepared.
 
 ## It is per round type
@@ -39,7 +39,7 @@ A round type reaches a rung when it has held there across **two consecutive
 reviews** with no `not retained` in that type. One review is a sample of one;
 two is the cheapest thing that is not.
 
-Those defaults hold unless `profile/` overrides them, which a user targeting a
+Those defaults hold unless `instance/profile/` overrides them, which a user targeting a
 different bar reasonably might.
 
 ## Regression
