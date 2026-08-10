@@ -19,6 +19,10 @@ at the end of the last one.
 **Enumerate first.** Repository list, resume, public profile text. Read all of
 it before the first question.
 
+**Ask what is out of bounds first.** Show the list, ask which entries must not
+be read or recorded, and record the answer before writing anything. See
+[`verifying.md`](verifying.md#ask-what-is-out-of-bounds-before-writing-anything).
+
 **Open on what was found, not on the user.** Name the three or four
 repositories with real history and ask them to walk through one. Attribution
 comes out of that conversation naturally, and it has to be settled before any

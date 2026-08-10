@@ -21,10 +21,18 @@ at the tools actually available in the session. If the calendar is reachable,
 fill the server identifier into the local settings file from the committed
 example.
 
-Report like this, in one line, and move on:
+Report every accepted source and its status, not only the ones that turned up.
+A user cannot offer something they do not know is wanted:
 
-> Code host authenticated as `<handle>`. No resume in `instance/intake/` — drop one
-> there or paste it, or skip and everything lands `stated`.
+> Code host authenticated as `<handle>`. No resume in `instance/intake/`, drop
+> one there or paste it. Also useful if they exist: a public profile pasted as
+> text, for a contradiction check, and a performance review or old job
+> description, for scope and title claims the commit history cannot show. Any
+> of these can be skipped, and skipping means those claims land `stated`.
+
+Do not ask for a profile export archive. It is a manual download, arrives as a
+folder of files, and mostly restates the resume. Pasted text gets nearly all of
+it, and saying so saves the user the round trip.
 
 ## Enumerating before asking
 
@@ -38,6 +46,33 @@ the room rather than asking the user to remember what they have built.
 **Look for private repositories and forks specifically.** They are where the
 real work often is, they are invisible to anyone searching from outside, and a
 user listing their projects from memory tends to skip them.
+
+## Ask what is out of bounds, before writing anything
+
+Show the list, then ask what must not be read or recorded, and why.
+
+**Ask wider than the list.** Repositories are what is on screen, but the same
+constraint covers an employer's name, a client's name, a product that was never
+announced, and a project with no repository at all. Asking only about the rows
+in front of the user gets an answer only about those rows.
+
+One question, covering all of it, once.
+
+This is not the same question as which project to steer an interviewer away
+from, which comes later and is about what to volunteer in a room. This one is
+about what the system is allowed to put on disk at all. Employer-owned code
+under an agreement, a client repository, someone else's work sitting in a fork:
+for those, even the name in a file is a problem, and the folder being local does
+not change that.
+
+**Ask once, before the first claim is written.** Retracting a repository name
+from a profile, a story and a deep dive costs the same as retracting a bad
+number, and this one was avoidable by asking.
+
+Record the answer in `instance/profile/attribution.md` under its exclusions
+table, and honour it on every later enumeration. An excluded repository is not
+listed, not counted, and not named — including in a note explaining that
+something was excluded.
 
 ## Counting contributions
 

@@ -57,10 +57,20 @@ and commands: [`references/verifying.md`](references/verifying.md).
 | Nothing | A pure interview. Every claim lands `stated`. |
 | A resume, dropped in `instance/intake/` or pasted | The claims already being made — auditing those is most of the job |
 | An authenticated code host | The evidence to audit them against |
-| Public profile text, pasted | A contradiction check against the resume |
+| A public profile, pasted as text | A contradiction check against the resume |
+| A performance review, offer letter or old job description | Scope and title claims, which a code host cannot show |
 
 A resume plus a code host is the pairing that matters, and it is what this is
 for: checking claims already in circulation against what actually happened.
+
+**Name every row, not just the ones that turned up.** The user cannot offer a
+source they do not know is accepted, and something sitting in a drawer is worth
+more than a better answer to a question nobody asked. Say what was found, what
+was not, and what each missing one would have bought.
+
+Say what is *not* wanted, too. A profile export archive is a folder of files
+that mostly restate the resume; pasted text gets nearly all of it. Telling the
+user that saves them a download and a wait.
 
 **Never block on a missing source.** Say what is missing, say what it costs,
 offer the alternative, continue. Plenty of the strongest work is private,
