@@ -2,19 +2,35 @@
 
 # prep-loop
 
-An interview prep system that runs inside Claude Code. It plans a week ahead,
-quizzes rather than collecting a self-report, and scores mock rounds against a
-fixed rubric.
+An interview prep system that runs inside [Claude Code](https://claude.com/claude-code).
+It plans a week ahead, quizzes rather than collecting a self-report, scores mock
+rounds against a fixed rubric, and checks the claims on a resume against the
+commit history behind them.
 
-The design principle: **policy describes the mechanism, profile supplies the
-parameters.** Everything about a particular person — cadence, claims, resources,
-weak habits — is read from `profile/`, so the rest of the repo stays true for
-anyone. See [`CLAUDE.md`](CLAUDE.md) for the rules that keep that boundary.
+**Nothing personal is ever committed.** Everything about a particular person
+lives in `instance/`, a plain folder inside the clone that git ignores and that
+has no remote. The profile, the verified claims, the daily logs, the graded
+answers, the resume dropped in for onboarding: none of it can be pushed
+anywhere, because there is nowhere for it to go.
+
+That one line in `.gitignore` is the privacy model. The rest of the repo is
+generic by construction, and [`tools/leak-check.ts`](tools/leak-check.ts) fails
+the build if a name, a date, or a personal path appears in it.
+
+## The design principle
+
+**Policy describes the mechanism; profile supplies the parameters.**
+
+`policy/` says what a check-in is, what a grade means, and how a round is
+conducted. It contains no weekday, no clock time, no vendor and no framework
+name, because those belong to a user rather than to the system.
+`instance/profile/` supplies all of it, written by interviewing whoever is
+using it. See [`CLAUDE.md`](CLAUDE.md) for the rules that keep the boundary.
 
 ## Status
 
-Under construction. The guardrails and the written system exist; nothing
-executes them yet.
+Under construction. The guardrails and the written system exist; most of the
+sessions do not.
 
 **Works**
 
@@ -24,62 +40,47 @@ executes them yet.
   what readiness means
 - [`.claude/skills/onboard/`](.claude/skills/onboard/SKILL.md) — interviews a
   user into a profile, verifying every claim it can against the original source
-- [`templates/`](templates/README.md) — the blank shape of every file the
+- [`templates/`](templates/README.md) — the blank shape of everything the
   system produces
-- `tools/check-links.ts` — every relative link resolves, every heading anchor
-  matches, no section numbers anywhere
-- `tools/leak-check.ts` — three tiers over the shareable half: denylist terms
-  and dates block, second person warns, cadence tells are reported as a design
-  smell
-- 30 tests over both
+- Two checkers with tests: every link resolves, and nothing personal is in the
+  tracked tree
 
-**Not built yet** — no runbooks, and no skill for the check-in, the rounds or
-the stories. Onboarding has not been run against anyone, so there is no profile
-and nothing to read parameters from.
+**Not built yet** — the skills for planning a week, the daily check-in, mock
+rounds and stories. Onboarding has not been run against anyone.
 
 ## Build order
 
-- [x] **Scaffolding and guards** — skeleton, permissions, denylist format, both
-      checkers with tests
-- [x] **`policy/`** — the generic system, fifteen files: repo map, cadence,
-      caps, claims, artifact voice, calendar, grading, interviewing, check-in
-      protocol, mock sourcing, mocks, story craft, frameworks, readiness
-- [x] **`onboard` skill and `templates/`** — grills a user into a `profile/`,
-      verifies every numeric claim against its original source, mints the
-      canary, records the resource selection and builds a catalog per source
-- [ ] **The remaining skills** — check-in, mock, mock loop, story, routines
-- [ ] **`runbooks/`** — one file per scheduled routine holding its complete
-      logic, so a cron job is a short bootstrap that points at the repo
-- [ ] **Cut over and run a full week untouched**
-- [ ] **Compare against the system this replaces, and decide** — if it is worse,
-      that is a result, not something to patch around
-- [ ] **Publish** — copy the shareable directories into a fresh public repo
-- [ ] **Voice interviewer** — separate repo, conducts rounds over speech and
-      writes a transcript this one grades from
+- [x] Scaffolding, permissions, both checkers with tests
+- [x] `policy/`
+- [x] The `onboard` skill and `templates/`
+- [ ] The remaining skills: `plan`, `checkin`, `mock`, `mock-loop`, `story`
+- [ ] Run a full week untouched, then compare against what it replaces
+- [ ] Voice interviewer, in a separate project, conducting rounds over speech
+      and writing a transcript this one grades from
+
+Automation is deliberately deferred. Every session here is a pure function of
+files on disk, which is exactly what a scheduler wraps later. Building it the
+other way around is harder, and it would have forced the personal half onto a
+remote.
 
 ## Layout
 
-| Shareable | |
+| In the repo | |
 |---|---|
 | `policy/` | How the system works. No dates, no proper nouns, no second person. |
-| `runbooks/` | One file per scheduled routine, holding its complete logic. |
 | `.claude/skills/` | How a session is invoked. Nothing else. |
-| `templates/` | Blank profile files, blank artifacts, the catalog format and its fetchers. |
+| `templates/` | The blank shape of everything the system produces. |
 | `tools/` | The two checkers. |
-| `docs/` | Architecture, writing a runbook, the calendar contract. |
+| `docs/` | Architecture and the calendar contract. |
 
-| Personal | |
+| In `instance/`, ignored | |
 |---|---|
 | `profile/` | Facts, claims, habits, cadence. Written by onboarding. |
 | `curriculum/` | One inventory per resource in use. |
 | `plans/` `logs/` `performance/` `mocks/` | What gets planned and what happened. |
 | `stories/` `deep-dives/` | Interview material. |
 | `private/` | The denylist. |
-| `intake/` | Resume drop. Gitignored. |
-
-Publishing is a copy of the first table into a fresh repo — no history to
-rewrite, nothing to scrub, because those directories never held anything
-personal. `tools/leak-check.ts` is what keeps that true.
+| `intake/` | Resume drop. |
 
 ## Running the checks
 
@@ -91,6 +92,4 @@ bun install          # only needed to edit: type definitions and the compiler
 bun run typecheck
 ```
 
-There are no runtime dependencies and there will not be any. The scheduled
-routines clone this repo and must never need an install step before following a
-runbook.
+There are no runtime dependencies and there will not be any.
