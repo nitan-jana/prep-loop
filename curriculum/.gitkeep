@@ -1,6 +1,0 @@
-One inventory per resource in use, so a session can name a real question instead
-of a remembered approximation and a guessed slug cannot 404.
-
-The selection lives in profile/resources.md; this directory is its expansion.
-templates/ holds the format and the fetchers, never the contents of a paid
-product.

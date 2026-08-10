@@ -1,6 +1,0 @@
-Who this instance belongs to: facts, dates, claims, habits, cadence.
-
-One of these files carries a random canary token, also listed in
-private/denylist.txt. It is what catches a whole personal file being copied into
-the shareable half, which term matching alone would miss, so it has to be unique
-per instance.
