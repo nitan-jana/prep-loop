@@ -72,6 +72,20 @@ leak-check can mechanically catch. The test is **would this be true for a user
 who isn't this one.** A six-block day, a weekend loop, a named framework and an
 early-morning session all pass the first test and fail the second.
 
+## At the start of every session
+
+Run the catch-up in [`policy/catch-up.md`](policy/catch-up.md) before doing what
+was asked. Three file existence checks: does this week have a plan, does every
+day up to yesterday have a log, is there a brief for the next review.
+
+Backfill a missing log and say so in one line. Report anything else and stop.
+**Then get on with the actual request** — catch-up is not what the session is
+for, and a catch-up that takes over is one the user learns to dread.
+
+It lives here rather than in each skill's required reading because the first
+session of a day is often not the check-in, and a check that only fires for one
+skill is a check that gets skipped.
+
 ## Forbidden
 
 - **Never write outside `instance/` during a session.** Skills produce

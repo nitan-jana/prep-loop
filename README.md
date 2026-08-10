@@ -34,7 +34,7 @@ sessions do not.
 
 **Works**
 
-- [`policy/`](policy/README.md) — the mechanism in fifteen files: the week, the
+- [`policy/`](policy/README.md) — the mechanism in sixteen files: the week, the
   caps, what makes a claim safe to write, the artifact voice, the calendar
   contract, the rubric, how a round is conducted, where a question comes from,
   what readiness means
