@@ -18,9 +18,14 @@ executes them yet.
 
 **Works**
 
-- [`policy/`](policy/README.md) — the mechanism in fourteen files: the week,
-  the caps, the artifact voice, the calendar contract, the rubric, how a round
-  is conducted, where a question comes from, what readiness means
+- [`policy/`](policy/README.md) — the mechanism in fifteen files: the week, the
+  caps, what makes a claim safe to write, the artifact voice, the calendar
+  contract, the rubric, how a round is conducted, where a question comes from,
+  what readiness means
+- [`.claude/skills/onboard/`](.claude/skills/onboard/SKILL.md) — interviews a
+  user into a profile, verifying every claim it can against the original source
+- [`templates/`](templates/README.md) — the blank shape of every file the
+  system produces
 - `tools/check-links.ts` — every relative link resolves, every heading anchor
   matches, no section numbers anywhere
 - `tools/leak-check.ts` — three tiers over the shareable half: denylist terms
@@ -28,20 +33,20 @@ executes them yet.
   smell
 - 30 tests over both
 
-**Not built yet** — no skills, no runbooks, no templates, no profile. The repo
-describes how to plan a week, quiz someone and run a round; it cannot yet do
-any of them.
+**Not built yet** — no runbooks, and no skill for the check-in, the rounds or
+the stories. Onboarding has not been run against anyone, so there is no profile
+and nothing to read parameters from.
 
 ## Build order
 
 - [x] **Scaffolding and guards** — skeleton, permissions, denylist format, both
       checkers with tests
-- [x] **`policy/`** — the generic system, fourteen files: repo map, cadence,
-      caps, artifact voice, calendar, grading, interviewing, check-in protocol,
-      mock sourcing, mocks, story craft, frameworks, readiness
-- [ ] **`onboard` skill** — grills a user into a `profile/`, verifies every
-      numeric claim against its original source, mints the canary, records the
-      resource selection and builds a catalog per source
+- [x] **`policy/`** — the generic system, fifteen files: repo map, cadence,
+      caps, claims, artifact voice, calendar, grading, interviewing, check-in
+      protocol, mock sourcing, mocks, story craft, frameworks, readiness
+- [x] **`onboard` skill and `templates/`** — grills a user into a `profile/`,
+      verifies every numeric claim against its original source, mints the
+      canary, records the resource selection and builds a catalog per source
 - [ ] **The remaining skills** — check-in, mock, mock loop, story, routines
 - [ ] **`runbooks/`** — one file per scheduled routine holding its complete
       logic, so a cron job is a short bootstrap that points at the repo
