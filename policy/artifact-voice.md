@@ -8,6 +8,14 @@ daily logs, calendar event descriptions, round briefs, review write-ups.
 They apply because these are read every day. A rule that would be pedantic in a
 document read once is load-bearing in one read three hundred times.
 
+**The third rule reaches further than the other two**, to everything under
+`instance/`, including the profile and the resource inventories. Those are not
+read every day, so minimalism does not bind them and a reference file is allowed
+to explain itself at length. But a file rewritten every few months accumulates
+an account of its own earlier versions just as readily as a week plan does, and
+it is read at exactly the moments something is being planned or drilled. See
+[the rule](#no-history), and the test below for what survives it.
+
 ## Minimal
 
 **What to do, the links, and anything deferred. Nothing else.**
@@ -56,6 +64,35 @@ reminded of it at the top of the thing they are about to work on.
 
 **The log is the one place the past belongs**, and even there it is recorded as
 what happened, not as a comparison against what was intended.
+
+### Does it instruct, or does it narrate
+
+Some knowledge about the past is load-bearing, and the rule has to keep it. The
+test is what the sentence is for:
+
+| Instructs, so it stays | Narrates, so it goes |
+|---|---|
+| A source cannot be read from its repository; use the published index | A previous pull read the repository, and here is what that missed |
+| A slug on this source differs from the one it is known by elsewhere | The last version invented that slug and it was wrong |
+| This inventory covers material a paid tier gates | This source used to be free and the old entry said so |
+
+Left column tells the next session what to do. Right column tells a reader what
+happened, and the reader it is telling is the person who will act on it, who
+gains nothing from the account and reads a small failure notice instead.
+
+Correcting a file is not an event worth recording. **Write the file as though it
+were the first version of itself.** The knowledge that prevents the mistake
+recurring belongs in the file as an instruction; the fact that it once occurred
+belongs nowhere.
+
+### A file answers its own question
+
+Related, and it fails the same way: material that belongs in another file does
+not get parked here with a note admitting as much.
+
+If a sentence begins by saying it belongs somewhere else, it does. Move it or
+drop it — writing it down anyway makes the other file wrong by omission while
+looking scrupulous about it.
 
 ## What this rules out, concretely
 

@@ -53,6 +53,10 @@ source is known by elsewhere, so a guessed address resolves to nothing; entries
 filed under a different grouping than the canonical list uses; gating that
 changes more often than the entry list does.
 
+Each one written as an instruction to the next pull, never as an account of a
+previous one. See
+[`policy/artifact-voice.md`](../policy/artifact-voice.md#does-it-instruct-or-does-it-narrate).
+
 ## Entries
 
 Headings carry no numbers. Once nothing is numbered, renumbering is impossible
