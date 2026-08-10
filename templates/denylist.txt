@@ -1,0 +1,28 @@
+# Terms that must never appear in the tracked half of this repo.
+#
+# leak-check: allow-path — names the folder it belongs to
+#
+# Lives at instance/private/denylist.txt, which is ignored by git along with
+# everything else in that folder. Read by tools/leak-check.ts.
+#
+# Every term here is derived from a fact in instance/profile/. As a name,
+# employer, domain, school, city or figure is confirmed there, the term is added
+# here in the same step. Terms and profile that drift apart are a denylist that
+# passes a leak.
+#
+# Format
+#   one term per line, matched case-insensitively as a substring
+#   a line starting with `re:` is a regular expression instead
+#   blank lines and `#` comments are skipped
+#
+# Keep terms specific enough not to cry wolf. A term that fires on ordinary
+# prose gets the check switched off, which is worse than not having it. Short
+# figures should be word-bounded — `re:\b147\b`, not `147`.
+#
+# One entry is a random canary token, written into a single file under
+# instance/profile/. It catches a whole file being copied out of the folder into
+# the tracked tree, which term matching alone would miss. Generated per install:
+# a token shipped with the toolkit would be identical for everyone and would
+# prove nothing.
+
+# --- terms begin below this line -------------------------------------------

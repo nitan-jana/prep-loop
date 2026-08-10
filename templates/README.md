@@ -2,18 +2,30 @@
 
 # templates
 
-The blank shape of every file the system produces. Shareable, so a fresh clone
-shows what a filled repo looks like before anything has been filled.
+The blank shape of everything the system produces. Tracked, so a fresh clone
+shows what a filled install looks like before anything has been filled.
 
 | Template | Becomes |
 |---|---|
-| [`profile/`](profile/README.md) | `profile/`, written by onboarding |
-| [`catalog.md`](catalog.md) | `curriculum/<source-slug>.md`, one per resource |
+| [`instance-README.md`](instance-README.md) | `instance/README.md` |
+| [`profile/`](profile/README.md) | `instance/profile/`, written by onboarding |
+| [`catalog.md`](catalog.md) | `instance/curriculum/<source-slug>.md`, one per resource |
+| [`denylist.txt`](denylist.txt) | `instance/private/denylist.txt` |
 
 Two of the profile templates are deliberately unfillable at onboarding:
 [`profile/habits.md`](profile/habits.md) needs rounds to observe, and
 [`profile/grading-anchors.md`](profile/grading-anchors.md) needs real graded
 answers. Each says so in place of a shape.
+
+## The scaffold
+
+Onboarding creates `instance/` and the directories under it, then copies
+`profile/` and `denylist.txt` into place. The folder is not a git repository and
+does not become one.
+
+`profile/` sits one level down rather than under an `instance/` mirror so that
+its relative links resolve from both places. A template linking `../../policy/`
+is correct at `templates/profile/` and still correct at `instance/profile/`.
 
 ## Conventions
 
