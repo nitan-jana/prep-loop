@@ -7,7 +7,7 @@ description: Interview a user into a complete profile for this repo, verifying e
 
 # onboard
 
-Produces `profile/`. It is the entry point — the first thing anyone touches,
+Produces `instance/profile/`. It is the entry point — the first thing anyone touches,
 and the only thing that writes a personal fact into this repo.
 
 Two principles. Everything else follows from them.
@@ -29,15 +29,33 @@ contradict one, the linked file wins and this file is the bug.
 - [`policy/cadence.md`](../../../policy/cadence.md) and [`policy/caps.md`](../../../policy/caps.md) — what the schedule stage is capturing
 - [`policy/repo-map.md`](../../../policy/repo-map.md) — where files go, and that this skill writes and stops
 
-## Before the first question
+## First, the folder
 
-Detect what is available, report it in one line, and never ask again in this
-session. Details and commands: [`references/verifying.md`](references/verifying.md).
+If `instance/` does not exist, create it before anything else, from
+[`templates/`](../../../templates/README.md):
+
+- the directories listed in
+  [`templates/instance-README.md`](../../../templates/instance-README.md),
+  and that file as `instance/README.md`
+- `templates/profile/` copied to `instance/profile/`
+- `templates/denylist.txt` copied to `instance/private/denylist.txt`
+
+**Do not run `git init` in it, and do not add a remote.** It is a plain folder,
+ignored by the repo around it, and that is the whole privacy model. Say so once,
+in a line, so the user knows where their data is and that it stays there.
+
+If `instance/` already exists, read `instance/profile/README.md` and resume from
+the first stage that is not `done`.
+
+## Then, what is available
+
+Detect it, report it in one line, and never ask again in this session. Details
+and commands: [`references/verifying.md`](references/verifying.md).
 
 | Source | Buys |
 |---|---|
 | Nothing | A pure interview. Every claim lands `stated`. |
-| A resume, dropped in `intake/` or pasted | The claims already being made — auditing those is most of the job |
+| A resume, dropped in `instance/intake/` or pasted | The claims already being made — auditing those is most of the job |
 | An authenticated code host | The evidence to audit them against |
 | Public profile text, pasted | A contradiction check against the resume |
 
@@ -49,13 +67,14 @@ offer the alternative, continue. Plenty of the strongest work is private,
 employer-owned, or was never in a repository. `/onboard verify` re-runs
 verification later and upgrades claims in place.
 
-**Never commit anything under `intake/`.** It is gitignored; do not work around
-that, and do not move a resume out of it.
+**Never write outside `instance/`.** Not policy, not templates, not this file.
+The one exception is the local settings file, which takes the calendar server
+identifier and nothing else.
 
 ## Stages
 
 Resumable. Each writes its files and updates the progress table in
-`profile/README.md`. `/onboard <stage>` re-runs one. Full question flow:
+`instance/profile/README.md`. `/onboard <stage>` re-runs one. Full question flow:
 [`references/stages.md`](references/stages.md).
 
 | Stage | Writes | After it, the system can |
@@ -108,7 +127,7 @@ why in place. Do not ask the user to fill either, and do not offer.
 
 ## Done when
 
-- Every stage in `profile/README.md` reads `done`
+- Every stage in `instance/profile/README.md` reads `done`
 - Every claim carries a marker, and every `verified` one carries its command
 - Every source detected at the start is either used or recorded as unavailable
 - `bun run check` is clean, and the denylist has the terms and the canary

@@ -12,7 +12,7 @@ never ask about any of them again in the session.
 
 ```bash
 gh auth status                    # an authenticated code host
-ls intake/                        # a resume or exported profile dropped in
+ls instance/intake/               # a resume or exported profile dropped in
 ```
 
 Also check whether a calendar server is connected. **Configuration files are
@@ -23,7 +23,7 @@ example.
 
 Report like this, in one line, and move on:
 
-> Code host authenticated as `<handle>`. No resume in `intake/` — drop one
+> Code host authenticated as `<handle>`. No resume in `instance/intake/` — drop one
 > there or paste it, or skip and everything lands `stated`.
 
 ## Enumerating before asking
@@ -83,14 +83,14 @@ with both tabs open will surface it too.
 
 ## The denylist and the canary
 
-`private/denylist.txt` ships with its format and no terms. Fill it as the
-profile is written, in the same step:
+`instance/private/denylist.txt` starts with its format and no terms. Fill it as
+the profile is written, in the same step:
 
 - Every name, employer, domain, school, city and distinctive figure that lands
-  in `profile/` gets a term.
+  in `instance/profile/` gets a term.
 - Short numbers are word-bounded — `re:\b<number>\b`, never a bare figure that
   will fire on ordinary prose.
-- Mint **one random token** and write it into a single file under `profile/`,
+- Mint **one random token** and write it into a single file under `instance/profile/`,
   and add it as a term. It catches a whole file being copied into the shareable
   half, which term matching alone would miss.
 
