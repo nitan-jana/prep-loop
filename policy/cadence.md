@@ -6,8 +6,8 @@ The week is the unit of planning. The day is the unit of record. The block is
 the unit of work.
 
 Which days, how many blocks, how long each runs, and which subjects sit in
-which block are all read from `profile/schedule.md`. This file says what those
-things are for.
+which block are all read from `instance/profile/schedule.md`. This file says
+what those things are for.
 
 ## The block
 
@@ -27,21 +27,22 @@ them was not really planned.
 The planner reads that from the logs and moves it, rather than the user being
 asked to try harder next week.
 
-## The three recurring sessions
+## The three sessions
 
-Named by role, not by day. Which day each falls on is a profile fact.
+Named by role, not by day. Which day each falls on is a profile fact, and each
+is a skill the user invokes rather than something that happens to them.
 
-**The planning session** opens the week. It writes the week plan and mirrors it
-to the calendar in the same turn. It schedules carried-forward items before it
-schedules anything new. See [`caps.md`](caps.md) for what it may not exceed.
+**Planning** opens the week. It writes the week plan and mirrors it to the
+calendar in the same turn. It schedules carried-forward items before anything
+new. See [`caps.md`](caps.md) for what it may not exceed.
 
 **The check-in** closes a working day. It gathers evidence, quizzes what the
 day covered, records misses in the user's own words, and reschedules what
 slipped. See [`checkin-protocol.md`](checkin-protocol.md).
 
-**The review session** runs the mock loop and scores it. See
-[`mocks.md`](mocks.md) and [`grading.md`](grading.md). It ends by handing off to
-a check-in, because a review day is still a working day.
+**The review** runs the mock loop and scores it. See [`mocks.md`](mocks.md) and
+[`grading.md`](grading.md). It ends by handing off to a check-in, because a
+review day is still a working day.
 
 ## Every working day gets a log
 
@@ -51,11 +52,19 @@ A missing log is indistinguishable from a day that was not worked, which
 destroys the only signal the planner has. So the log always exists, and it is
 always honest about how much of it is known:
 
-- `status: evidence-only` — written unsupervised. What can be proven from
-  commits and file changes is filled in; the quiz section is present and
-  explicitly empty. This means **unknown**, never *missed*.
-- `status: complete` — a check-in has filled in the quiz, the miss reasons and
-  the reschedule.
+- `status: complete` — a check-in ran. Evidence, quiz, miss reasons, reschedule.
+- `status: evidence-only` — no check-in ran that day, and the log was filled in
+  afterwards from what could still be recovered. This means **unknown**, never
+  *missed*.
+
+**Evidence is retroactive; recall is not.** Commits carry timestamps, so a day
+nobody closed out can be reconstructed later from history. What cannot be
+recovered is the quiz — testing recall three days late measures something else
+— and the miss reason, which only the user knows and has by then forgotten.
+
+So a check-in backfills any earlier day that has no log, marks it
+`evidence-only`, and does not invent the missing half. See
+[`checkin-protocol.md`](checkin-protocol.md#backfilling-a-missed-day).
 
 Nothing infers a miss from an absence of evidence. A block with no commits may
 have been a reading block.

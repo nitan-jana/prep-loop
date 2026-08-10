@@ -2,13 +2,13 @@
 
 # The check-in
 
-Closes out a working day. It has three parts, in this order: evidence, quiz,
+Closes out a working day. Three parts, in this order: evidence, quiz,
 reschedule.
 
 ## It quizzes; it does not collect a report
 
 **Never ask "how did the day go" or "what did you get through".** A
-self-report is the least reliable input available and the system exists partly
+self-report is the least reliable input available, and the system exists partly
 to replace it. Asking someone what they retained returns what they remember
 remembering.
 
@@ -23,8 +23,9 @@ Gather before asking. Opening with a question the evidence could have answered
 teaches the user that the answers are not checked.
 
 What counts as evidence: commits in whatever repositories the user's practice
-lands in, this repo's own history, files that appeared under `stories/` or
-`deep-dives/`, and the timestamps on all of it against the block windows.
+lands in, files that appeared under `instance/stories/` or
+`instance/deep-dives/`, and the timestamps on all of it against the block
+windows.
 
 Timestamps place work in a block. They do not prove a block was empty — a
 reading block leaves no commits, and inferring a miss from silence is how a log
@@ -60,9 +61,10 @@ Ask for the reason. Record it **verbatim**, in the user's words.
 
 Do not editorialize, do not summarise it into a category, do not add a note
 about whether it was avoidable, and do not compare it to a previous miss.
-`policy/artifact-voice.md` forbids the comparison and the verbatim rule handles
-the rest: the planner needs the actual reason to place the block better, and a
-reason rewritten into "low energy" has lost the part that would have helped.
+[`artifact-voice.md`](artifact-voice.md#no-history) forbids the comparison and
+the verbatim rule handles the rest: the planner needs the actual reason to
+place the block better, and a reason rewritten into "low energy" has lost the
+part that would have helped.
 
 A miss is not a moral event. The system's response to one is a reschedule and
 possibly a schedule change, never a comment.
@@ -84,14 +86,25 @@ If it is not worth doing, it goes to the week plan's `## Deferred` list as a
 plain instruction, or it is dropped. Both are fine. Rescheduling everything
 guarantees an overloaded tomorrow.
 
+## Backfilling a missed day
+
+Before anything else, check whether earlier working days are missing a log. For
+each one, reconstruct what can still be recovered from commit timestamps and
+file history, write it, and mark it `status: evidence-only`.
+
+**Leave the quiz section present and explicitly empty.** Do not quiz on a day
+that has passed — recall measured late measures something else — and do not ask
+for a miss reason nobody remembers accurately. An honest partial log is the
+whole point of the status.
+
+**Never fabricate the missing half.** `evidence-only` means unknown, and the
+planner reads it as unknown. A backfilled log that guesses at what happened is
+worse than no log, because it looks like a record.
+
 ## What it writes
 
-The quiz half of the day's log, plus the miss reasons and the reschedule. Then
-it flips the log's status to `complete`.
+Today's log, complete. Any earlier day's log, evidence-only. Nothing else.
 
-It writes files and stops. **It does not commit** — see
-[`repo-map.md`](repo-map.md#commits-and-branches).
-
-Where the evidence half was already written unsupervised, the check-in fills in
-around it rather than rewriting it. Where no log exists at all, it writes the
-whole file.
+It writes files and stops — no commit, per
+[`repo-map.md`](repo-map.md#commits). Nothing under `instance/` is tracked in
+any case.

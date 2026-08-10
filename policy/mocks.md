@@ -7,11 +7,15 @@ that scores all of them.
 
 ## The brief
 
-Written ahead of the loop by a scheduled routine, from the week's logs and
-plan. It fixes the questions, the round types and the order, so the loop does
-not open with the user and the agent negotiating what to do.
+Written ahead of the loop, from the week's logs and plan. It fixes the
+questions, the round types and the order, so the loop does not open with the
+user and the agent negotiating what to do.
 
-**The brief is self-contained.** No links out — not into `profile/`, not into
+Preparing it is a separate sitting from running it. A brief written minutes
+before the first round has been shaped by whoever is about to be interviewed,
+which is the one influence it exists to exclude.
+
+**The brief is self-contained.** No links out — not into `instance/profile/`, not into
 `policy/`, not into the logs, not into the week plan. Everything a round needs
 is written into the brief itself, including the claims a deep dive will push on
 and the material a question came from.
@@ -20,6 +24,11 @@ That is not a style rule. An interviewer that is not this repo — a voice
 session, a separate tool, a person given the file — reads only the brief. Every
 link out is a thing that interviewer cannot see, and the round quietly loses
 whatever was on the other side of it.
+
+It is also the privacy boundary. **The brief is the only thing that ever leaves
+the machine**, and only when the user sends it. An external interviewer never
+sees the profile, the resume, the logs or the scores, because the brief already
+contains everything a round needs and nothing else does.
 
 **A missing brief does not cancel the loop.** The loop falls back to sourcing
 questions live per [`mock-sourcing.md`](mock-sourcing.md), and records that it
@@ -46,10 +55,10 @@ Separate phase, after all rounds. Everything withheld until now:
 - Each round's grade per [`grading.md`](grading.md), each with its quoted answer
 - What a stronger answer would have contained
 - The follow-up that was not survived
-- Observed habits, appended to `profile/habits.md`
+- Observed habits, appended to `instance/profile/habits.md`
 - What to drill, specific enough to schedule
 
-Written to `performance/YYYY-Www.md`. The review is interactive and **commits
+Written to `instance/performance/YYYY-Www.md`. The review is interactive and **commits
 nothing**.
 
 A review day is still a working day, so the loop ends by handing off to a
@@ -59,7 +68,7 @@ than restating the grades.
 ## The transcript contract
 
 An external interviewer — voice or otherwise — writes
-`mocks/YYYY-MM-DD-transcript.md`, which this repo grades from. Required:
+`instance/mocks/YYYY-MM-DD-transcript.md`, which this repo grades from. Required:
 
 | Field | Why |
 |---|---|
