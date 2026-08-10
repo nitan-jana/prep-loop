@@ -18,21 +18,53 @@ explanations, not the contents. See
 | Where | <url or description> |
 | Access | <free / paid / owned> |
 | Covers | <which round types> |
-| Built by | <fetcher / parsed index / pasted / stub> |
+| Built by | <fetcher / sitemap / feed / app data / parsed index / rendered / console / pasted / stub> |
 | Completeness | <complete / partial / stub> |
+| Pulled | <date> |
+| Refresh | <how often, or `static` and what would change that> |
+| Fastest-moving part | <the section that goes stale first, if any> |
 
 **Completeness is load-bearing.** A partial inventory is safe to use and a stub
 is safe to use — but only a name confirmed to be *in* the file may be spoken in
 a round. A thin catalog is a smaller vocabulary, never a licence to guess.
+
+**Freshness is the same rule arriving later.** An inventory that has rotted
+names questions that no longer exist, which is the failure the whole file is
+built to prevent, except harder to spot because the file looks fine. So the
+pull date is recorded and the refresh expectation is stated up front rather
+than inferred.
+
+Some sources genuinely do not move. Say `static` and say what would change it,
+because "no refresh needed" and "nobody has checked" look identical a month
+later.
+
+## Known quirks
+
+Per-source facts that stop a wrong name being used. Written down the first time
+one is hit, because every one of them is discovered by getting something wrong.
+
+| Quirk | Consequence |
+|---|---|
+| <what the source does that is not obvious> | <what goes wrong if it is not known> |
+
+The kind of thing that belongs here: identifiers that differ from the ones the
+source is known by elsewhere, so a guessed address resolves to nothing; entries
+filed under a different grouping than the canonical list uses; gating that
+changes more often than the entry list does.
 
 ## Entries
 
 Headings carry no numbers. Once nothing is numbered, renumbering is impossible
 and every anchor keeps working.
 
-| Identifier | Title | Topic | Difficulty | Last worked | Grade |
-|---|---|---|---|---|---|
-| <id or slug> | <title> | <topic> | <as the source labels it> | <date> | |
+| Identifier | Title | Link | Topic | Difficulty | Last worked | Grade |
+|---|---|---|---|---|---|---|
+| <id or slug> | <title> | <url> | <topic> | <as the source labels it> | <date> | |
+
+**Capture the link per entry, not just for the source.** A block description
+carries the task and the link to the material, so an inventory of names without
+addresses forces whoever writes that block to go looking, every time. Where the
+source has no stable per-entry URL, leave it empty rather than constructing one.
 
 The last two columns are written by the system, not by the fetcher. They are
 what makes retention sourcing possible — see
