@@ -72,7 +72,7 @@ test is what the sentence is for:
 
 | Instructs, so it stays | Narrates, so it goes |
 |---|---|
-| A source cannot be read from its repository; use the published index | A previous pull read the repository, and here is what that missed |
+| The index pages omit a whole section; it appears only in the sitemap | The earlier pull read the index pages and missed that section |
 | A slug on this source differs from the one it is known by elsewhere | The last version invented that slug and it was wrong |
 | This inventory covers material a paid tier gates | This source used to be free and the old entry said so |
 
