@@ -11,6 +11,11 @@ shows what a filled install looks like before anything has been filled.
 | [`profile/`](profile/README.md) | `instance/profile/`, written by onboarding |
 | [`catalog.md`](catalog.md) | `instance/curriculum/<source-slug>.md`, one per resource |
 | [`week-plan.md`](week-plan.md) | `instance/plans/<week>.md`, one per week |
+| [`daily-log.md`](daily-log.md) | `instance/logs/<date>.md`, one per working day |
+| [`round-brief.md`](round-brief.md) | `instance/mocks/<date>-brief.md`, one per loop |
+| [`review.md`](review.md) | `instance/performance/<week>.md`, one per review |
+| [`story.md`](story.md) | `instance/stories/<slug>.md`, one per story |
+| [`deep-dive.md`](deep-dive.md) | `instance/deep-dives/<project-slug>.md`, one per project |
 | [`denylist.txt`](denylist.txt) | `instance/private/denylist.txt` |
 
 Two of the profile templates are deliberately unfillable at onboarding:
