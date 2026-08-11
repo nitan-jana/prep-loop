@@ -75,10 +75,14 @@ of those is a profile fact and none of them is the same for two installs.
    [`references/the-week-grid.md`](references/the-week-grid.md).
 7. **Check both caps, per day**, and move the overflow to `## Deferred` rather
    than dropping it.
-8. **Write the file** from [`templates/week-plan.md`](../../../templates/week-plan.md).
-9. **Mirror the whole week to the calendar**, one event per block, in this same
-   turn.
-10. **Stop.** The user reads the folder. No commit — `instance/` is not tracked.
+8. **Name the week's one thing**, in one imperative line, from what the rest of
+   the week depends on. The item that is still done if everything else slips.
+   Without it a five-day plan is five equally weighted days with no signal about
+   which one matters when the week goes badly.
+9. **Write the file** from [`templates/week-plan.md`](../../../templates/week-plan.md).
+10. **Mirror the whole week to the calendar**, one event per block, in this same
+    turn.
+11. **Stop.** The user reads the folder. No commit — `instance/` is not tracked.
 
 ## A partial week is a plan
 

@@ -9,10 +9,21 @@ It is read every working day, so
 [`policy/artifact-voice.md`](../policy/artifact-voice.md) governs every line of
 it — minimal, instructions never completion state, and no history.
 
+**The one thing** is a single imperative line naming what has to survive a bad
+week. Not a summary and not a goal — the item that, if everything else slips, is
+still done. It passes the artifact rules because it instructs rather than
+explains, and it is the only thing standing between a five-day plan and five
+days of equally weighted blocks with no signal about which one matters.
+
+Pick it from what the rest of the week depends on. A framework the design blocks
+all sit on top of, a story the behavioural round cannot run without.
+
 **Delete this preamble when filling the template.** What follows the rule is the
 whole file.
 
 ---
+
+**This week:** <the one thing, as an instruction>
 
 ## <date>
 
