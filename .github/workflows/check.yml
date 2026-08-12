@@ -1,0 +1,22 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+
+      # No install: the checkers use Bun's built-ins alone, and that staying
+      # true is the point of running them before anything is fetched.
+      - name: Links, leaks and tests
+        run: bun run check
+
+      - name: Types
+        run: |
+          bun install --frozen-lockfile
+          bun run typecheck
