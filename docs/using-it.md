@@ -17,7 +17,11 @@ install stands and names the one thing to run next. On a fresh clone that is
 `/onboard`.
 
 `/prep` is safe at any moment. It reads state and prints it, and it is the only
-skill here that writes nothing and starts nothing.
+session here that writes nothing and starts nothing.
+
+**A session that has modes prints them when run bare, and waits.** `/onboard`
+and `/mock-loop` both do this rather than guessing which mode was meant. So
+nothing here has to be memorised: type the command, read what comes back, pick.
 
 There is nothing to install. [Bun](https://bun.sh) is needed only to run the
 checks, and the checks are for people editing the toolkit rather than using it.
@@ -26,7 +30,10 @@ checks, and the checks are for people editing the toolkit rather than using it.
 
 `/onboard` creates `instance/`, the folder holding everything about the person
 using it, and interviews them into a profile. Four stages, each a sitting of its
-own, resumable across sessions. `/onboard <stage>` re-runs one.
+own, resumable across sessions.
+
+Run it bare to see the four with their status and which is next. `/onboard
+<stage>` runs or re-runs one.
 
 | Stage | Produces | After it, the system can |
 |---|---|---|
@@ -40,6 +47,10 @@ system cannot check against a source is marked `stated` rather than assumed, so
 starting with nothing works and loses nothing permanently.
 
 The spine stage is enough to begin. The rest can follow across the first week.
+
+`/onboard verify` re-runs verification later, when a source that was missing
+turns up. It upgrades `stated` claims to `verified` in place and attaches the
+command that proved each one, so starting with nothing is not a dead end.
 
 ## A week
 
@@ -64,12 +75,20 @@ measured late.
 Nothing runs on a timer. Every session checks for missing work at its start and
 recovers what it can, so a skipped day costs a quiz rather than a hole.
 
+Coming back after time away, open with `/prep`. It says what is missing and
+names one thing, rather than leaving you to work out where you stopped.
+
 ## A review
 
 `/mock-loop` runs several rounds back to back from a brief prepared ahead, then
 scores them all in one review afterwards. The rounds and the scoring never
 overlap: nothing is graded, hinted at or coached during a round, because that is
 the only uncontaminated sample of what can be produced alone.
+
+Two sittings, and it will not merge them. `/mock-loop prepare` writes the brief
+ahead of the day; `/mock-loop run` conducts the rounds and scores them. A brief
+written minutes before the first round has been shaped by the person about to be
+interviewed, which is the one influence it exists to exclude.
 
 `/mock` runs a single deep-dive round on its own, opening on whichever claim has
 the least evidence behind it.
