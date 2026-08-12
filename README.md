@@ -93,3 +93,18 @@ bun run typecheck
 ```
 
 There are no runtime dependencies and there will not be any.
+
+To run the checks before every commit:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Hooks are not tracked by git, which is why that takes a config line rather than
+arriving with the clone. The workflow in `.github/workflows/` is the actual
+gate; the hook is the fast local copy of it.
+
+## Using it
+
+[`docs/using-it.md`](docs/using-it.md) walks through a clone from empty to
+running: onboarding, a week, a day, a review, and where everything lives.
