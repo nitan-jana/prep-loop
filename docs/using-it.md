@@ -12,7 +12,12 @@ cd prep-loop
 git config core.hooksPath .githooks    # optional, runs the checks before a commit
 ```
 
-Then open Claude Code in the directory and run `/onboard`.
+Then open Claude Code in the directory and run `/prep`, which reports where the
+install stands and names the one thing to run next. On a fresh clone that is
+`/onboard`.
+
+`/prep` is safe at any moment. It reads state and prints it, and it is the only
+skill here that writes nothing and starts nothing.
 
 There is nothing to install. [Bun](https://bun.sh) is needed only to run the
 checks, and the checks are for people editing the toolkit rather than using it.

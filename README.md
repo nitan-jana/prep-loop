@@ -38,8 +38,8 @@ sessions do not.
   caps, what makes a claim safe to write, the artifact voice, the calendar
   contract, the rubric, how a round is conducted, where a question comes from,
   what readiness means
-- [`.claude/skills/onboard/`](.claude/skills/onboard/SKILL.md) — interviews a
-  user into a profile, verifying every claim it can against the original source
+- [`.claude/skills/`](docs/using-it.md) — seven sessions: `/prep` to see where
+  you are, then onboarding, planning, the daily check-in, rounds and stories
 - [`templates/`](templates/README.md) — the blank shape of everything the
   system produces
 - Two checkers with tests: every link resolves, and nothing personal is in the
