@@ -1,0 +1,20 @@
+#!/bin/sh
+# Runs the full check before a commit lands.
+#
+# Install once per clone:
+#
+#   git config core.hooksPath .githooks
+#
+# Hooks live outside the tracked tree by default, which is why this needs a
+# config line rather than arriving with the clone. The workflow in
+# .github/workflows/ is the real gate; this is the fast local copy of it, so a
+# leak is caught before it becomes a commit rather than after it becomes a push.
+#
+# It runs in well under a second. A slow hook is a hook that gets bypassed.
+
+if ! command -v bun >/dev/null 2>&1; then
+  echo "pre-commit: bun not found, skipping checks" >&2
+  exit 0
+fi
+
+exec bun run check

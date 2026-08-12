@@ -16,7 +16,9 @@ Two kinds of thing, kept apart by one line in `.gitignore`.
 | `.claude/skills/` | How a session is invoked. Nothing else. |
 | `templates/` | The blank shape of everything the system produces. |
 | `tools/` | The checkers. |
-| `docs/` | Architecture and the calendar contract. |
+| `docs/` | How to use it, and anything the policy files assume rather than explain. |
+| `.githooks/` | The pre-commit hook, opted into per clone. |
+| `.github/` | The workflow that runs the checkers on every push. |
 
 **`instance/`** is a plain folder inside the clone, ignored by git. It is not a
 repository, has no remote, and nothing in it is ever pushed anywhere.
@@ -78,6 +80,12 @@ bug, not a judgement call.
 | Calendar, a whole week | `plan` | every other skill except `checkin` |
 | Calendar, one reschedule | `checkin` | `mock`, `mock-loop`, `story` |
 | `policy/`, `templates/`, skills | the user, deliberately | every skill |
+| Nothing at all | `prep` | — |
+
+**`prep` writes nothing, and that is its whole contract.** It reports where the
+install stands and names one thing to run. A place to look when the thread has
+been lost has to be safe to open without thinking, which it stops being the
+moment it can also change something.
 
 **No skill writes its own instructions.** A session that can edit `policy/` or
 a skill file is a session whose behaviour cannot be reviewed against anything.
