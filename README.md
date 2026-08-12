@@ -29,10 +29,11 @@ using it. See [`CLAUDE.md`](CLAUDE.md) for the rules that keep the boundary.
 
 ## Status
 
-Under construction. The guardrails and the written system exist; most of the
-sessions do not.
+Everything is written and nothing is proven. All seven sessions exist, the
+guardrails run on every push, and the system has produced a profile and a week
+plan. It has not yet closed out a single day or scored a single round.
 
-**Works**
+**Built**
 
 - [`policy/`](policy/README.md) — the mechanism in sixteen files: the week, the
   caps, what makes a claim safe to write, the artifact voice, the calendar
@@ -43,18 +44,21 @@ sessions do not.
 - [`templates/`](templates/README.md) — the blank shape of everything the
   system produces
 - Two checkers with tests: every link resolves, and nothing personal is in the
-  tracked tree
+  tracked tree. They run on every push, and optionally before every commit.
 
-**Not built yet** — the skills for planning a week, the daily check-in, mock
-rounds and stories. Onboarding has not been run against anyone.
+**Untested** — the check-in, both round sessions and the story session have
+never executed. No log has been written, no grade produced. The rubric, the
+anchors, the re-grade audit and the readiness ladder are all written and none
+of them has run against a real answer.
 
 ## Build order
 
 - [x] Scaffolding, permissions, both checkers with tests
 - [x] `policy/`
-- [x] The `onboard` skill and `templates/`
-- [ ] The remaining skills: `plan`, `checkin`, `mock`, `mock-loop`, `story`
+- [x] `templates/` and all seven sessions
 - [ ] Run a full week untouched, then compare against what it replaces
+- [ ] Collapse the sessions behind one command, if the week says the shape is
+      right
 - [ ] Voice interviewer, in a separate project, conducting rounds over speech
       and writing a transcript this one grades from
 
@@ -71,7 +75,7 @@ remote.
 | `.claude/skills/` | How a session is invoked. Nothing else. |
 | `templates/` | The blank shape of everything the system produces. |
 | `tools/` | The two checkers. |
-| `docs/` | Architecture and the calendar contract. |
+| `docs/` | How to use it, and anything the policy files assume rather than explain. |
 
 | In `instance/`, ignored | |
 |---|---|
