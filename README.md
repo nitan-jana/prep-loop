@@ -17,6 +17,20 @@ That one line in `.gitignore` is the privacy model. The rest of the repo is
 generic by construction, and [`tools/leak-check.ts`](tools/leak-check.ts) fails
 the build if a name, a date, or a personal path appears in it.
 
+## Start here
+
+```bash
+git clone <this repo>
+cd prep-loop
+```
+
+Open Claude Code in the directory and run `/prep`. It reports where the install
+stands and names the one thing to run next, which on a fresh clone is
+`/onboard`. There is nothing to install.
+
+[**`docs/getting-started.md`**](docs/getting-started.md) is the walkthrough:
+onboarding, a week, a day, a review, and where everything lives.
+
 ## The design principle
 
 **Policy describes the mechanism; profile supplies the parameters.**
@@ -39,7 +53,7 @@ plan. It has not yet closed out a single day or scored a single round.
   caps, what makes a claim safe to write, the artifact voice, the calendar
   contract, the rubric, how a round is conducted, where a question comes from,
   what readiness means
-- [`.claude/skills/`](docs/using-it.md) — seven sessions: `/prep` to see where
+- [`.claude/skills/`](docs/getting-started.md) — seven sessions: `/prep` to see where
   you are, then onboarding, planning, the daily check-in, rounds and stories
 - [`templates/`](templates/README.md) — the blank shape of everything the
   system produces
@@ -107,8 +121,3 @@ git config core.hooksPath .githooks
 Hooks are not tracked by git, which is why that takes a config line rather than
 arriving with the clone. The workflow in `.github/workflows/` is the actual
 gate; the hook is the fast local copy of it.
-
-## Using it
-
-[`docs/using-it.md`](docs/using-it.md) walks through a clone from empty to
-running: onboarding, a week, a day, a review, and where everything lives.
