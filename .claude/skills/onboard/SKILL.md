@@ -1,6 +1,7 @@
 ---
 name: onboard
 description: Interview a user into a complete profile for this repo, verifying every claim it can against the original source. Use when the repo has no profile yet, when one section needs re-running, or when new evidence has arrived that could upgrade stated claims to verified.
+argument-hint: "[spine | resources | material | search | verify]"
 ---
 
 <!-- leak-check: allow-path — this skill's entire output is the personal half -->

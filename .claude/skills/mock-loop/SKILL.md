@@ -1,6 +1,7 @@
 ---
 name: mock-loop
 description: Run several interview rounds back to back from a prepared brief, then score them in one review. Use for the weekly review session, or to prepare the brief ahead of it.
+argument-hint: "[prepare | run]"
 ---
 
 <!-- leak-check: allow-path — it writes briefs and scores into the personal half -->
