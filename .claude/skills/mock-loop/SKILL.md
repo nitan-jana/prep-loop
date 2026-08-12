@@ -19,6 +19,31 @@ One principle.
 interviewer and nothing else — no grading, no coaching, no reassurance. A single
 hint destroys the only uncontaminated sample the system gets.
 
+## With no argument, show the menu and wait
+
+Check whether a brief exists for the next review, then print this and stop.
+
+```
+mock-loop — rounds back to back, scored afterwards.
+
+  /mock-loop prepare  write the brief ahead of the loop      <status>
+  /mock-loop run      conduct the rounds, then score them
+
+Preparing and running are separate sittings on purpose. A brief written minutes
+before the first round has been shaped by the person about to be interviewed.
+```
+
+`<status>` is `no brief yet` or `brief ready`, from `instance/mocks/`.
+
+Then one line: `Prepare first — there is no brief for this one`, or `The brief
+is ready, /mock-loop run when you are.`
+
+**Never start a round from the bare invocation.** Rounds are the one thing here
+that cannot be undone by stopping — a question seen is a question spent, and it
+cannot be asked cold again.
+
+An unrecognised argument gets the same menu and no guess.
+
 ## Required reading
 
 Source of truth. Nothing below restates them. If this file appears to

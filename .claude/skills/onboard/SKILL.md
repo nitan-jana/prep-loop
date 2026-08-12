@@ -45,8 +45,40 @@ If `instance/` does not exist, create it before anything else, from
 ignored by the repo around it, and that is the whole privacy model. Say so once,
 in a line, so the user knows where their data is and that it stays there.
 
-If `instance/` already exists, read `instance/profile/README.md` and resume from
-the first stage that is not `done`.
+## With no argument, show the menu and wait
+
+Read the progress table in `instance/profile/README.md`, then print this and
+stop. Do not start a stage until the user picks one.
+
+```
+onboard — build the profile this system runs on.
+
+  /onboard spine      identity, attribution, state, schedule   <status>
+  /onboard resources  what to study from, one inventory each   <status>
+  /onboard material   story bank, tenure script, questions     <status>
+  /onboard search     projects and outbound                    <status>
+
+  /onboard verify     re-check stated claims against a source that has arrived
+
+Each is a sitting of its own and can be run in any order, though spine first
+means the rest has something to attach to.
+```
+
+`<status>` is that stage's word from the progress table: `not started`,
+`in progress` or `done`.
+
+Then one line, chosen by what the table says:
+
+- Nothing started: `Start with /onboard spine — after it the system can run a day.`
+- Something unfinished: `Next up: /onboard <stage>.`
+- All four done: `The profile is complete. /onboard verify upgrades stated claims when new evidence arrives.`
+
+**Printing the menu is not doing the work.** Wait for the answer. A stage takes
+half an hour or more, and starting one because nothing said otherwise is a bad
+way to spend somebody's evening.
+
+An unrecognised argument gets the same menu, with a line saying what was not
+recognised. Never guess at which stage was meant.
 
 ## Then, what is available
 
