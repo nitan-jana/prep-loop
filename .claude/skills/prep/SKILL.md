@@ -1,7 +1,6 @@
 ---
 name: prep
 description: Show where this install stands and what to run next. Use when unsure what to do, after time away, or on a fresh clone with nothing set up yet.
-argument-hint: ""
 disable-model-invocation: true
 ---
 
@@ -73,6 +72,23 @@ Then **one line** naming the single next thing, chosen by that state:
 **One line, not a list of everything outstanding.** A status screen that names
 five things to do is a status screen that gets closed. The point is to answer
 "what now" with something that can be typed immediately.
+
+## It takes no arguments
+
+There are no subcommands. The menu lists commands to type, not modes to pass.
+
+Someone who has just read that menu will try `/prep plan` anyway, because a
+menu that lists things looks like a menu that accepts them. When an argument
+arrives and it names one of the six, say what to type instead and stop:
+
+> `plan` is its own command. Run `/plan`.
+
+Do not run it on their behalf. The distinction being protected is that this
+skill starts nothing, and quietly making an exception for a convenient case is
+how that stops being true.
+
+Anything else gets the status block and a line saying the argument was not
+recognised.
 
 ## Forbidden
 
