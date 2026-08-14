@@ -17,9 +17,14 @@ query that proved it recorded alongside. The record is the point: a marker
 without the check attached is a claim asserting that someone once checked,
 which is not evidence.
 
-**`stated`** — the user said it and nothing has checked it. Not a lesser claim
-and not a problem. Plenty of the strongest work is private, employer-owned, or
-was never in a repository at all.
+**`stated`** — nothing has checked it, and the source names why. Not a lesser
+claim and not a problem: plenty of the strongest work is private,
+employer-owned, or was never in a repository at all.
+
+The reason is not decoration. A quote from the session that produced a claim is
+the claim restating itself, and a source column holding only that has recorded
+provenance for the wording while recording nothing about the truth of it. See
+[unverifiable is not unverified](#unverifiable-is-not-unverified).
 
 **`contested`** — two sources disagree. Both readings are recorded, and neither
 is quietly picked.
@@ -42,6 +47,31 @@ and an interview.
 **Any claim containing a number is checked before it lands.** Counts,
 durations, percentages, team sizes, load figures. The rule is mechanical on
 purpose — it catches the error class rather than one remembered correction.
+
+## Unverifiable is not unverified
+
+Both land on `stated`, and collapsing them is how a checkable claim sits
+unchecked for months behind a marker that read as settled.
+
+**Unverifiable** — no access, and no amount of effort changes that.
+Employer-owned code, a private repository, a conversation nobody logged. The
+marker is the final answer, the source says which obstacle it hit, and nothing
+further is owed.
+
+**Unverified** — checkable by anyone willing to go and look, and nobody has.
+Every claim about a public dependency belongs here: what a library supported at
+the time, what shipped in which release, which options it offered. So does
+anything sitting in a repository that can still be opened.
+
+The second kind is the dangerous one, and the marker is not why. A claim about a
+private system can only be doubted. A claim about a public library can be
+**contradicted**, mid-answer, by someone who has read its changelog — and a
+candidate wrong about a dependency they chose is in a worse position than one
+vague about a number nobody can check. It is also the cheap kind to settle,
+which is what makes leaving it the bad trade.
+
+So: **a `stated` claim whose source names no obstacle is unfinished work.**
+Either the obstacle gets written down, or the check gets run.
 
 ## `contested` is the valuable one
 

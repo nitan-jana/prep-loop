@@ -75,10 +75,12 @@ early-morning session all pass the first test and fail the second.
 ## At the start of every session
 
 Run the catch-up in [`policy/catch-up.md`](policy/catch-up.md) before doing what
-was asked. Three file existence checks: does this week have a plan, does every
+was asked. One listing of `instance/plans/`, `instance/logs/` and
+`instance/mocks/`, opening none of them: does this week have a plan, does every
 day up to yesterday have a log, is there a brief for the next review.
 
 Backfill a missing log and say so in one line. Report anything else and stop.
+**Say nothing at all when nothing is missing**, which is most sessions.
 **Then get on with the actual request** — catch-up is not what the session is
 for, and a catch-up that takes over is one the user learns to dread.
 

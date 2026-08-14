@@ -108,6 +108,10 @@ that someone once checked, which is the thing being claimed in the first place.
 **Anything that cannot be checked is marked `stated` and moves on.** That is a
 normal outcome, not a gap to apologise for.
 
+Cannot, though, not merely has not — the obstacle goes in the source column, and
+"cannot" is not the right word for a public changelog nobody opened. See
+[unverifiable is not unverified](../../../../policy/claims.md#unverifiable-is-not-unverified).
+
 ## Contradictions
 
 When the resume and a public profile disagree, or either disagrees with the

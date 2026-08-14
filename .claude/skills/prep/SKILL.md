@@ -26,8 +26,8 @@ contradict one, the linked file wins and this file is the bug.
 
 ## What it reads
 
-The same three existence checks as the catch-up, plus onboarding progress. Stat
-only, no parsing, no git.
+The same listing as the catch-up, plus onboarding progress, which is the one
+file this opens. No git, nothing else read.
 
 | Question | Where |
 |---|---|
@@ -38,7 +38,8 @@ only, no parsing, no git.
 
 **The catch-up already ran** at the start of this session, as it does at the
 start of every session. This is not a second pass and does not repeat its work.
-The catch-up acts on what is missing; this reports it.
+The catch-up acts on what is missing and otherwise stays quiet; this is the
+place that says the state out loud, because being asked is the difference.
 
 ## What it prints
 
