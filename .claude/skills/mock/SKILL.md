@@ -52,6 +52,25 @@ In order of preference, per
 
 One push is the floor. Keep going while the answer is still moving.
 
+## Verify after the round, before the file
+
+The round ends, role drops, and **then** every claim it surfaced gets checked —
+before any of it lands in the deep dive, per
+[`claims.md`](../../../policy/claims.md#verify-before-writing-not-after).
+
+This is the one moment where both halves are available: the answer is still
+live, and nothing is at stake any more. Checking inside the round instead would
+be coaching, and would spend the only sample the round exists to produce.
+
+Checked here: anything about a public dependency, and anything in a repository
+that can still be opened. Not checked: work behind an access boundary, which
+lands `stated` with the boundary itself named as the reason.
+
+**A quote from the round is not a source.** Recording what was said is worth
+doing and belongs in the file, because frozen wording is what a later round
+catches drift against. It is not evidence of the claim being true —
+[unverifiable is not unverified](../../../policy/claims.md#unverifiable-is-not-unverified).
+
 ## The written answer comes before the spoken one
 
 The deep dive is answered in writing, from
@@ -94,6 +113,7 @@ file.
 
 - `instance/deep-dives/<project-slug>.md` exists, ordered weakest evidence first
 - Every claim carries a marker, and every number carries its command
+- No claim is `stated` unless its source names why the check was impossible
 - Every decision in it names what it cost and what was rejected
 - The drill chain is written, not only the narrative
 - `bun run check` is clean
