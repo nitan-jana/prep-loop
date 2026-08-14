@@ -126,10 +126,16 @@ Then push once more, on the part that matters: **what happens if it comes up
 anyway.** Everything on that list eventually does, and the difference between a
 bad moment and a fine one is whether the answer was decided in advance.
 
-`outbound.md` records targets, routes and the artifact to lead with for each.
-The artifact column is the one that pays: a cap makes each daily action scarce,
-which is only worth it if the thing attached was chosen for the recipient
-rather than reused from the last one.
+`outbound.md` records targets, routes and the artifact to lead with for each,
+per [`policy/outbound.md`](../../../../policy/outbound.md). The artifact column
+is the one that pays: a cap makes each daily action scarce, which is only worth
+it if the thing attached was chosen for the recipient rather than reused from
+the last one.
+
+**Fill the claim column as the targets go in.** Each artifact leads with a
+claim, and it goes out `verified` or `stated` with its obstacle named. Doing it
+later means doing it under time pressure, on the one artifact nobody reads back
+before an audience does.
 
 Confirm the outbound cap value here, in the light of what the targets actually
 look like — it was set in the spine stage before any of them were named.
