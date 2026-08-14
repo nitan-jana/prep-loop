@@ -74,10 +74,10 @@ plan. It has not yet closed out a single day or scored a single round.
 
 **Built**
 
-- [`policy/`](policy/README.md) — the mechanism in sixteen files: the week, the
+- [`policy/`](policy/README.md) — the mechanism in seventeen files: the week, the
   caps, what makes a claim safe to write, the artifact voice, the calendar
   contract, the rubric, how a round is conducted, where a question comes from,
-  what readiness means
+  what has to be true before an application goes out, what readiness means
 - [`.claude/skills/`](docs/getting-started.md) — seven sessions: `/prep` to see where
   you are, then onboarding, planning, the daily check-in, rounds and stories
 - [`templates/`](templates/README.md) — the blank shape of everything the
@@ -93,7 +93,7 @@ of them has run against a real answer.
 ## Roadmap
 
 - [x] **Guardrails** — two checkers, thirty-one tests, CI on every push
-- [x] **The generic system** — sixteen policy files, no personal data by
+- [x] **The generic system** — seventeen policy files, no personal data by
       construction
 - [x] **Templates and all seven sessions**
 - [ ] **A full week run untouched**, then compared against the system it replaces

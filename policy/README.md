@@ -24,6 +24,7 @@ those parameters feed.
 | [`checkin-protocol.md`](checkin-protocol.md) | How a day is closed out |
 | [`mock-sourcing.md`](mock-sourcing.md) | Where a question comes from |
 | [`mocks.md`](mocks.md) | How a loop runs, and what a transcript must contain |
+| [`outbound.md`](outbound.md) | What a job-search action is, and what has to be true before it goes |
 | [`story-craft.md`](story-craft.md) | What makes an interview story usable |
 | [`frameworks.md`](frameworks.md) | How a framework is used, and what it is not for |
 | [`readiness.md`](readiness.md) | How the system knows whether it is working |

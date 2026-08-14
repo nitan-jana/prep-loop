@@ -55,6 +55,6 @@ each.
 company, updating a resume, or replying to an inbound message. None of them is
 the act the cap is protecting against.
 
-**Lead with the artifact that matches the role.** The cap makes each action
-scarce, which only pays off if the thing attached to it was chosen for the
-recipient rather than reused from the last one.
+That is the ceiling and all of it. What an action is, what it leaves behind, and
+what has to be true before it goes are in [`outbound.md`](outbound.md), which is
+also where the reason the scarcity pays off is written.
