@@ -102,24 +102,18 @@ of them has run against a real answer.
 - [ ] **Optional local scheduling**, for the plan waiting before you sit down
 - [ ] **One command instead of seven**, if a full week says the shape is right
 - [ ] **A hosted tier** for the things a laptop cannot do:
-      - works without Claude Code, or any coding CLI at all
-      - setup is a signup, with resume, code host and calendar connected once
-      - a real interface instead of a terminal
-      - your prep on every device, not just the machine you cloned onto
-      - runs with the laptop closed: scheduling, reminders, calendar sync, and a
-        brief prepared before the session rather than during it
-      - catalogs maintained centrally, instead of every install re-scraping the
-        same sites and rediscovering the same breakages
-      - peer rounds, with a human on the other side
-      - a rubric calibrated across many people's scored answers, rather than one
-        person re-grading themselves
-      - the deterministic work done in code rather than by a model: faster,
-        cheaper, and the same result every time
-      - lower cost per session, because each task gets a model sized for it
-        instead of a frontier model parsing HTML
-      - it notices when you stop
-      - which questions actually get asked, and which sources are worth adding,
-        pooled across everyone instead of learned alone
+    - works without Claude Code, or any coding CLI at all
+    - setup is a signup, with resume, code host and calendar connected once
+    - a real interface instead of a terminal
+    - your prep on every device, not just the machine you cloned onto
+    - runs with the laptop closed: scheduling, reminders, calendar sync, and a brief prepared before the session rather than during it
+    - catalogs maintained centrally, instead of every install re-scraping the same sites and rediscovering the same breakages
+    - peer rounds, with a human on the other side
+    - a rubric calibrated across many people's scored answers, rather than one person re-grading themselves
+    - the deterministic work done in code rather than by a model: faster, cheaper, and the same result every time
+    - lower cost per session, because each task gets a model sized for it instead of a frontier model parsing HTML
+    - it notices when you stop
+    - which questions actually get asked, and which sources are worth adding, pooled across everyone instead of learned alone
 
 **The local version stays complete on its own.** Anything hosted is added
 capability, never a piece carved out of what is here. If that ever stops being
