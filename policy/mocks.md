@@ -52,14 +52,43 @@ optimising the user's mood at the cost of the sample.
 
 Separate phase, after all rounds. Everything withheld until now:
 
-- Each round's grade per [`grading.md`](grading.md), each with its quoted answer
+- Each round's grade per [`grading.md`](grading.md), each with its quoted
+  answer, and [the test that grade
+  failed](grading.md#a-grade-below-solid-names-the-test-it-failed)
 - What a stronger answer would have contained
 - The follow-up that was not survived
 - Observed habits, appended to `instance/profile/habits.md`
-- What to drill, specific enough to schedule
+- What to drill, ordered, specific enough to schedule
 
 Written to `instance/performance/YYYY-Www.md`. The review is interactive and **commits
 nothing**.
+
+### An answer can be wrong by being too small
+
+A claim made in a round gets checked against its source the same way a written
+one does, and **the check can correct in either direction.** Overclaiming is the
+familiar failure. Understating is the one that goes unrecorded, because nothing
+about it feels like an error: the answer was true, and the round moves on.
+
+It costs what any other weak answer costs. Work described as less deliberate
+than it was reads as work that happened by accident, and the source is available
+to say otherwise.
+
+So where an answer is thinner than what the deep dive, the repository or the
+inventory entry actually supports, that gap is a finding and goes in under what
+a stronger answer would have contained. **It is not a grade change** — the
+answer given is the answer graded, and an interviewer heard the small version.
+
+### The drill list is ordered
+
+It is read by the planner, which schedules from the top. An unordered list hands
+the ranking decision to whoever reads it next, and that decision belongs here,
+where the evidence is.
+
+A regression outranks an uncovered topic, per
+[`readiness.md`](readiness.md#regression). Beyond that, the ordering is the
+review's judgement and the first item is the one that would change the most
+rounds.
 
 A review day is still a working day, so the loop ends by handing off to a
 check-in, which writes that day's log. The log links the review file rather

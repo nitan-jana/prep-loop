@@ -37,9 +37,9 @@ the quoted answer that produced it**, in the user's own words.
 On an `evidence-only` log this section is present and explicitly empty. Recall
 measured late measures something else.
 
-| Question | Answer, quoted | Grade |
-|---|---|---|
-| <the named thing that was asked> | "<what the user said>" | <solid / shaky / not retained> |
+| Question | Answer, quoted | Grade | Failed |
+|---|---|---|---|
+| <the named thing that was asked> | "<what the user said>" | <solid / shaky / not retained> | <unprompted / the cost / the follow-up — omitted on `solid`> |
 
 ## Misses
 

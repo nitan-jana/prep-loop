@@ -22,6 +22,26 @@ The three tests are conjunctive for `solid`. Unprompted, plus the cost named,
 plus one follow-up survived. A grader cannot drift soft against a definition
 that lists its conditions.
 
+## A grade below `solid` names the test it failed
+
+`solid` is conjunctive, so anything short of it collapses three distinct
+failures into one value. An answer that arrived whole and named no cost, and an
+answer assembled entirely out of follow-ups, are the same grade and different
+problems.
+
+So every grade below `solid` records **which of the three it failed** —
+unprompted, the cost, or the follow-up. More than one where more than one
+applies.
+
+This costs a word and buys the resolution the scale does not have. It also makes
+movement legible while the grade holds still: a repeated `shaky` that fails
+fewer tests than it used to has improved, and without the leg recorded there is
+nothing on the page to say so.
+
+**It does not add a fourth grade.** The scale stays at three, because the
+pressure on a grading scale is always toward more room at the top, and a scale
+with somewhere flattering to put a disappointing answer will find one.
+
 ## A grade without the answer is not a grade
 
 **Every grade carries the quoted answer that produced it**, in the user's own

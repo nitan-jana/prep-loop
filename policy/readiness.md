@@ -30,14 +30,36 @@ and progress is not assumed to be monotonic.
 
 1. **Can reconstruct** — produces the mechanism when asked, given time.
 2. **Can reconstruct under time** — inside the window a real round allows.
-3. **Can defend** — survives follow-ups, including the cost and the rejected
-   alternative.
+3. **Can defend** — the substance arrives in the answer itself, and then
+   survives follow-ups on the cost and the rejected alternative.
 4. **Can do it cold** — on material not recently studied, drawn from the wider
    pool rather than from the week's work.
 
 A round type reaches a rung when it has held there across **two consecutive
 reviews** with no `not retained` in that type. One review is a sample of one;
 two is the cheapest thing that is not.
+
+**A single review records an observation, not a rung.** The first review of a
+round type has nothing to hold against, so what it writes down is where the
+evidence points, explicitly provisional. Reading it as a rung means the second
+review computes two consecutive against a number that was never earned.
+
+## Extraction is not defence
+
+An answer that contained everything, once each piece had been asked for, has not
+reached the third rung. The follow-ups produced the content rather than testing
+it, and an interviewer who does not push hears only the opening.
+
+This is where the ladder and the rubric have to agree. `solid` requires the
+answer unprompted, per [`grading.md`](grading.md#the-grades). A rung that
+counted extracted content as defence would advance on evidence the rubric had
+already refused, and the two instruments would then disagree about the same
+round while both looked authoritative.
+
+It is easy to miss because a round of good answers to good follow-ups looks
+like a strong round from either side of it. What that round measured is partly
+how well the questions were written, and the interviewer who asks fewer of them
+gets a different answer to the same question.
 
 Those defaults hold unless `instance/profile/` overrides them, which a user targeting a
 different bar reasonably might.
