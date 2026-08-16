@@ -66,37 +66,13 @@ name, because those belong to a user rather than to the system.
 `instance/profile/` supplies all of it, written by interviewing whoever is
 using it. See [`CLAUDE.md`](CLAUDE.md) for the rules that keep the boundary.
 
-## Status
-
-Everything is written and nothing is proven. All seven sessions exist, the
-guardrails run on every push, and the system has produced a profile and a week
-plan. It has not yet closed out a single day or scored a single round.
-
-**Built**
-
-- [`policy/`](policy/README.md) — the mechanism in seventeen files: the week, the
-  caps, what makes a claim safe to write, the artifact voice, the calendar
-  contract, the rubric, how a round is conducted, where a question comes from,
-  what has to be true before an application goes out, what readiness means
-- [`.claude/skills/`](docs/getting-started.md) — seven sessions: `/prep` to see where
-  you are, then onboarding, planning, the daily check-in, rounds and stories
-- [`templates/`](templates/README.md) — the blank shape of everything the
-  system produces
-- Two checkers with tests: every link resolves, and nothing personal is in the
-  tracked tree. They run on every push, and optionally before every commit.
-
-**Untested** — the check-in, both round sessions and the story session have
-never executed. No log has been written, no grade produced. The rubric, the
-anchors, the re-grade audit and the readiness ladder are all written and none
-of them has run against a real answer.
-
 ## Roadmap
 
 - [x] **Guardrails** — two checkers, thirty-five tests, CI on every push
 - [x] **The generic system** — seventeen policy files, no personal data by
       construction
 - [x] **Templates and all seven sessions**
-- [ ] **A full week run untouched**, then compared against the system it replaces
+- [x] **A full week run untouched**, plan through review
 - [ ] **Voice rounds**, over speech in a separate project, with only the round
       brief leaving your machine and the grading staying on it
 - [ ] **Optional local scheduling**, for the plan waiting before you sit down
