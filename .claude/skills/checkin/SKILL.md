@@ -88,9 +88,9 @@ remembers accurately.
 Find a free window with `suggest_time`, then **call `create_event` or
 `update_event`**, then confirm in one line.
 
-Naming a slot is not a reschedule. This is the step most often left half-done,
-and a log saying a block moved while the calendar still shows the old one is
-worse than not moving it.
+**Naming a slot is not a reschedule** —
+[`checkin-protocol.md`](../../../policy/checkin-protocol.md#the-reschedule-is-a-calendar-call)
+has the failure this prevents.
 
 **One block, at most.** A check-in that rebuilds the week is a planning session
 wearing the wrong name — that is
