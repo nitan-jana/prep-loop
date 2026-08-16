@@ -11,13 +11,16 @@
 //   FAIL     a 2020s year — the sneakiest identifier. A line stating when a rule
 //            was decided reads as a personal decision log even with every name
 //            stripped, so policy states rules without saying when they were set.
-//   WARN     second person attached to a claim
+//   WARN     second person, under `policy/` only. Policy is written in the third
+//            person about a user who is not in the room. Everywhere else the
+//            second person is correct, because templates and the readme address
+//            whoever is reading them.
 //   CADENCE  a weekday, clock time, cron expression or timezone. Not a leak — a
 //            design smell: one user's routine baked into the mechanism.
 //
-// Only FAIL exits non-zero. Second person and cadence are reported for review,
-// because templates address the end user and meta-text about these very rules
-// trips them — a check that cries wolf is one that gets switched off.
+// Only FAIL exits non-zero. Cadence and second person are reported for review,
+// because meta-text about these very rules trips them — a check that cries wolf
+// is one that gets switched off.
 //
 //   bun tools/leak-check.ts [path ...]     default: everything tracked
 //
@@ -35,12 +38,21 @@ const DEFAULT_ROOTS = ["policy", ".claude", ".github", ".githooks", "templates",
 const PERSONAL_DIRS = ["instance", "profile", "logs", "performance", "stories", "deep-dives", "plans", "mocks", "curriculum", "intake", "private"];
 const SKIP = ["node_modules", ".git", ".venv"];
 const DENYLIST = "instance/private/denylist.txt";
+// A fresh clone has no denylist and nothing to leak, so term matching being off
+// is correct there. Once a profile exists the two facts together are a hole: the
+// half of the check that knows the user's real names is silent, and the run
+// still reports success.
+const PROFILE = "instance/profile";
 
 export type Tier = "FAIL" | "WARN" | "CADENCE";
 export type Finding = { tier: Tier; file: string; line: number; message: string };
 
 const DATE = /\b20(2\d)\b/;
 const SECOND_PERSON = /\byour\b/i;
+// The third-person rule belongs to policy and nowhere else, so the check runs
+// nowhere else. Applied repo-wide it fires on every template and most of the
+// readme, all of them correct, which is a warning nobody reads by the third one.
+const SECOND_PERSON_SCOPE = /^policy[/\\]/;
 const PERSONAL_PATH = new RegExp(`(?<![\\w/])(${PERSONAL_DIRS.join("|")})/`, "i");
 const ALLOW_PATH = /leak-check:\s*allow-path/;
 const ALLOW_CADENCE = /leak-check:\s*allow-cadence/;
@@ -93,7 +105,7 @@ export function scanText(path: string, source: string, deny: Denylist): Finding[
       const pp = PERSONAL_PATH.exec(line);
       if (pp) add("FAIL", `personal path '${pp[0]}'`);
     }
-    if (!fixtures && SECOND_PERSON.test(line)) add("WARN", "second person");
+    if (!fixtures && SECOND_PERSON_SCOPE.test(path) && SECOND_PERSON.test(line)) add("WARN", "second person");
 
     if (!cadenceAllowed && !ALLOW_CADENCE.test(line)) {
       for (const [rx, label] of CADENCE) {
@@ -141,6 +153,12 @@ export async function leakCheck(roots: string[], denylistPath = DENYLIST) {
   return { findings, scanned: files.length, hasDenylist: existsSync(denylistPath) };
 }
 
+/** A profile with no denylist beside it: term matching is off for an install
+ *  that has real names in it. Reported as a failure, not a note. */
+export function denylistGap(hasDenylist: boolean, hasProfile: boolean): boolean {
+  return !hasDenylist && hasProfile;
+}
+
 if (import.meta.main) {
   const repoRoot = resolve(import.meta.dir, "..");
   process.chdir(repoRoot);
@@ -150,7 +168,13 @@ if (import.meta.main) {
     : DEFAULT_ROOTS;
 
   const { findings, scanned, hasDenylist } = await leakCheck(roots);
-  if (!hasDenylist) console.error(`leak-check: no ${DENYLIST} — term matching disabled`);
+  const gap = denylistGap(hasDenylist, existsSync(PROFILE));
+  if (gap) {
+    console.error(`FAIL     ${DENYLIST} is missing while ${PROFILE} exists — term matching is off`);
+    console.error(`         restore it from templates/denylist.txt and refill it from the profile`);
+  } else if (!hasDenylist) {
+    console.error(`leak-check: no ${DENYLIST} — term matching disabled until onboarding runs`);
+  }
 
   const by = (t: Tier) => findings.filter((f) => f.tier === t);
   for (const t of ["CADENCE", "WARN", "FAIL"] as Tier[]) {
@@ -159,8 +183,9 @@ if (import.meta.main) {
 
   const present = roots.filter((r) => existsSync(r));
   const label = present.length ? present.join(", ") : "(nothing)";
-  const tally = `${by("FAIL").length} failure(s), ${by("WARN").length} warning(s), ${by("CADENCE").length} cadence tell(s)`;
-  if (by("FAIL").length) {
+  const failures = by("FAIL").length + (gap ? 1 : 0);
+  const tally = `${failures} failure(s), ${by("WARN").length} warning(s), ${by("CADENCE").length} cadence tell(s)`;
+  if (failures) {
     console.error(`\nleak-check: ${tally} across ${scanned} file(s) in ${label}`);
     process.exit(1);
   }

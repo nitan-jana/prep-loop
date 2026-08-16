@@ -1,6 +1,6 @@
 // leak-check: allow-fixtures — a test for these rules must contain what each rule detects
 import { describe, expect, test } from "bun:test";
-import { type Denylist, type Finding, parseDenylist, scanText } from "./leak-check.ts";
+import { type Denylist, type Finding, denylistGap, parseDenylist, scanText } from "./leak-check.ts";
 
 const EMPTY: Denylist = { terms: [], patterns: [] };
 const scan = (body: string, deny: Denylist = EMPTY): Finding[] => scanText("f.md", body, deny);
@@ -55,10 +55,30 @@ describe("FAIL — the tier that blocks", () => {
 });
 
 describe("WARN — reported, does not block", () => {
-  test("second person", () => {
-    const f = scan("drop your resume here");
+  test("second person, under policy/", () => {
+    const f = scanText("policy/thing.md", "drop your resume here", EMPTY);
     expect(msgs(f, "WARN")).toEqual(["second person"]);
     expect(msgs(f, "FAIL")).toHaveLength(0);
+  });
+
+  test("not outside policy/, where addressing the reader is correct", () => {
+    for (const p of ["templates/story.md", "README.md", "docs/getting-started.md"]) {
+      expect(msgs(scanText(p, "drop your resume here", EMPTY), "WARN")).toHaveLength(0);
+    }
+  });
+});
+
+describe("a profile with no denylist beside it", () => {
+  test("fails, because term matching is off for an install that has real names", () => {
+    expect(denylistGap(false, true)).toBe(true);
+  });
+
+  test("a fresh clone is fine — no denylist, but nothing to leak either", () => {
+    expect(denylistGap(false, false)).toBe(false);
+  });
+
+  test("both present is the normal case", () => {
+    expect(denylistGap(true, true)).toBe(false);
   });
 });
 

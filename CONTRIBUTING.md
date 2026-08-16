@@ -45,6 +45,11 @@ bun run check
 Links, leaks and tests. CI runs the same command, so a green local run is a
 green pull request.
 
+To have that run automatically before each commit, either `bun install` or
+`bun run hooks` — both set `core.hooksPath` to the tracked `.githooks/`
+directory. There is no hook manager to install; setting that path is the whole
+of what one would do.
+
 Two rules the checks enforce that are easy to trip:
 
 - **Nothing personal in the tracked tree.** No names, no dates, no paths into

@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prepare": "git config core.hooksPath .githooks || true",
+    "hooks": "git config core.hooksPath .githooks",
     "check": "bun run check:links && bun run check:leaks && bun test",
     "check:links": "bun tools/check-links.ts",
     "check:leaks": "bun tools/leak-check.ts",
