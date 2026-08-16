@@ -92,7 +92,7 @@ of them has run against a real answer.
 
 ## Roadmap
 
-- [x] **Guardrails** — two checkers, thirty-one tests, CI on every push
+- [x] **Guardrails** — two checkers, thirty-five tests, CI on every push
 - [x] **The generic system** — seventeen policy files, no personal data by
       construction
 - [x] **Templates and all seven sessions**
@@ -163,8 +163,13 @@ bun run hooks
 
 Hooks are not tracked by git, which is why this takes a config line rather than
 arriving with the clone. That line is all a hook manager does, which is why
-there is not one here. The workflow in `.github/workflows/` is the actual gate;
-the hook is the fast local copy of it.
+there is not one here.
+
+**Worth wiring up, because CI cannot do all of it.** The workflow in
+`.github/workflows/` runs the same command and catches paths, dates, cadence,
+links and the tests. It cannot check denylist terms: the denylist is ignored by
+git, so it never reaches a runner, and term matching is off there by
+construction. For that one tier the hook is the only check there is.
 
 ## Licence
 

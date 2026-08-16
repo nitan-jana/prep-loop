@@ -1,14 +1,18 @@
 #!/bin/sh
 # Runs the full check before a commit lands.
 #
-# Install once per clone:
+# Install once per clone, or let `bun install` do it:
 #
-#   git config core.hooksPath .githooks
+#   bun run hooks
 #
 # Hooks live outside the tracked tree by default, which is why this needs a
-# config line rather than arriving with the clone. The workflow in
-# .github/workflows/ is the real gate; this is the fast local copy of it, so a
-# leak is caught before it becomes a commit rather than after it becomes a push.
+# config line rather than arriving with the clone.
+#
+# CI runs the same command and is the gate for most of it. Denylist terms are
+# the exception, and the reason this hook is not merely a convenience: the
+# denylist is ignored by git, so it never reaches a runner, and term and canary
+# matching are off in CI by construction. For that tier this hook is the only
+# check that exists.
 #
 # It runs in well under a second. A slow hook is a hook that gets bypassed.
 
