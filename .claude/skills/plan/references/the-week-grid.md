@@ -81,7 +81,7 @@ Where the fix is to the schedule itself rather than to one week, that is a
 profile change and belongs to onboarding. Say so and leave it; this skill does
 not write `instance/profile/`.
 
-## The three sessions
+## The three recurring sessions
 
 Planning, the check-in and the review are on the calendar like any block, at the
 windows `instance/profile/schedule.md` gives them. They are part of the week the

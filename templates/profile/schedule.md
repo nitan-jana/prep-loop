@@ -21,6 +21,14 @@ The label is stable; the subject inside it moves week to week.
 |---|---|---|
 | <letter> | <start>–<end> | <subject> |
 
+## Calendar description ceiling
+
+<how many short lines fit an event without scrolling, on the device this
+calendar actually gets read on>
+
+The rule behind it is in
+[`policy/artifact-voice.md`](../../policy/artifact-voice.md#a-description-has-a-ceiling).
+
 ## Recurring sessions
 
 | Session | Day | Window |

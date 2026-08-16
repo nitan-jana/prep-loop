@@ -18,8 +18,8 @@ without the check attached is a claim asserting that someone once checked,
 which is not evidence.
 
 **`stated`** — nothing has checked it, and the source names why. Not a lesser
-claim and not a problem: plenty of the strongest work is private,
-employer-owned, or was never in a repository at all.
+claim and not a problem: plenty of the strongest work is private, owned by
+someone else, or was never in a repository at all.
 
 The reason is not decoration. A quote from the session that produced a claim is
 the claim restating itself, and a source column holding only that has recorded
@@ -53,10 +53,11 @@ purpose — it catches the error class rather than one remembered correction.
 Both land on `stated`, and collapsing them is how a checkable claim sits
 unchecked for months behind a marker that read as settled.
 
-**Unverifiable** — no access, and no amount of effort changes that.
-Employer-owned code, a private repository, a conversation nobody logged. The
-marker is the final answer, the source says which obstacle it hit, and nothing
-further is owed.
+**Unverifiable** — no access, and no amount of effort changes that. Work owned
+by someone else, a system since shut down, output that was never under version
+control, a decision made in a conversation nobody logged, anything under an
+agreement that forbids showing it. The marker is the final answer, the source
+says which obstacle it hit, and nothing further is owed.
 
 **Unverified** — checkable by anyone willing to go and look, and nobody has.
 Every claim about a public dependency belongs here: what a library supported at

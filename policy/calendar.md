@@ -26,12 +26,14 @@ One block, one event, for the whole window. Never several events inside a
 block, never one event covering two blocks.
 
 The title is the block label and the subject, separated by a middle dot:
-`A · DSA`, `C · System design`. Stable label first so the week reads as a
-rotation at a glance.
+`<label> · <subject>`. Both come from `instance/profile/schedule.md`, the label
+stable across the week and the subject moving inside it. Stable label first, so
+the week reads as a rotation at a glance rather than as unrelated sessions.
 
 The description follows [`artifact-voice.md`](artifact-voice.md) in full — all
-three rules, and the eight-line ceiling in particular. Nothing on an event ever
-records that the block happened.
+three rules, and the
+[length ceiling](artifact-voice.md#a-description-has-a-ceiling) in particular.
+Nothing on an event ever records that the block happened.
 
 ## Tool per operation
 

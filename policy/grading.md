@@ -62,7 +62,8 @@ the part that carried the claim and mark the elision.
 once and then frozen. **Every grader reads it before grading.**
 
 The file starts empty and stays empty until there are real graded answers to
-put in it — roughly a month of rounds. Onboarding does not invent them. An
+put in it, which takes enough rounds to have produced a clear one of each grade
+rather than the first three that appeared. Onboarding does not invent them. An
 invented anchor is a grader calibrated against a fiction, which is worse than
 an uncalibrated one because it feels grounded.
 
