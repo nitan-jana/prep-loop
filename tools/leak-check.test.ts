@@ -55,10 +55,16 @@ describe("FAIL — the tier that blocks", () => {
 });
 
 describe("WARN — reported, does not block", () => {
-  test("second person", () => {
-    const f = scan("drop your resume here");
+  test("second person, under policy/", () => {
+    const f = scanText("policy/thing.md", "drop your resume here", EMPTY);
     expect(msgs(f, "WARN")).toEqual(["second person"]);
     expect(msgs(f, "FAIL")).toHaveLength(0);
+  });
+
+  test("not outside policy/, where addressing the reader is correct", () => {
+    for (const p of ["templates/story.md", "README.md", "docs/getting-started.md"]) {
+      expect(msgs(scanText(p, "drop your resume here", EMPTY), "WARN")).toHaveLength(0);
+    }
   });
 });
 

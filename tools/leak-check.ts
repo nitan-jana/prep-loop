@@ -11,13 +11,16 @@
 //   FAIL     a 2020s year — the sneakiest identifier. A line stating when a rule
 //            was decided reads as a personal decision log even with every name
 //            stripped, so policy states rules without saying when they were set.
-//   WARN     second person attached to a claim
+//   WARN     second person, under `policy/` only. Policy is written in the third
+//            person about a user who is not in the room. Everywhere else the
+//            second person is correct, because templates and the readme address
+//            whoever is reading them.
 //   CADENCE  a weekday, clock time, cron expression or timezone. Not a leak — a
 //            design smell: one user's routine baked into the mechanism.
 //
-// Only FAIL exits non-zero. Second person and cadence are reported for review,
-// because templates address the end user and meta-text about these very rules
-// trips them — a check that cries wolf is one that gets switched off.
+// Only FAIL exits non-zero. Cadence and second person are reported for review,
+// because meta-text about these very rules trips them — a check that cries wolf
+// is one that gets switched off.
 //
 //   bun tools/leak-check.ts [path ...]     default: everything tracked
 //
@@ -41,6 +44,10 @@ export type Finding = { tier: Tier; file: string; line: number; message: string 
 
 const DATE = /\b20(2\d)\b/;
 const SECOND_PERSON = /\byour\b/i;
+// The third-person rule belongs to policy and nowhere else, so the check runs
+// nowhere else. Applied repo-wide it fires on every template and most of the
+// readme, all of them correct, which is a warning nobody reads by the third one.
+const SECOND_PERSON_SCOPE = /^policy[/\\]/;
 const PERSONAL_PATH = new RegExp(`(?<![\\w/])(${PERSONAL_DIRS.join("|")})/`, "i");
 const ALLOW_PATH = /leak-check:\s*allow-path/;
 const ALLOW_CADENCE = /leak-check:\s*allow-cadence/;
@@ -93,7 +100,7 @@ export function scanText(path: string, source: string, deny: Denylist): Finding[
       const pp = PERSONAL_PATH.exec(line);
       if (pp) add("FAIL", `personal path '${pp[0]}'`);
     }
-    if (!fixtures && SECOND_PERSON.test(line)) add("WARN", "second person");
+    if (!fixtures && SECOND_PERSON_SCOPE.test(path) && SECOND_PERSON.test(line)) add("WARN", "second person");
 
     if (!cadenceAllowed && !ALLOW_CADENCE.test(line)) {
       for (const [rx, label] of CADENCE) {
