@@ -1,6 +1,6 @@
 <!-- leak-check: allow-path — names the personal file it is a template for -->
 
-# <week identifier>
+# Week plan
 
 A week plan, at `instance/plans/<week identifier>.md`. Written by the planning
 session and by nothing else.
@@ -18,10 +18,13 @@ days of equally weighted blocks with no signal about which one matters.
 Pick it from what the rest of the week depends on. A framework the design blocks
 all sit on top of, a story the behavioural round cannot run without.
 
-**Delete this preamble when filling the template.** What follows the rule is the
+**Everything below the line is the template. Delete this preamble, and
+keep the heading that follows it.** What follows the rule is the
 whole file.
 
 ---
+
+# <week identifier>
 
 **This week:** <the one thing, as an instruction>
 

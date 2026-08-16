@@ -1,6 +1,6 @@
 <!-- leak-check: allow-path — names the personal file it is a template for -->
 
-# <date>
+# Daily log
 
 A day's log, at `instance/logs/<date>.md`. Written by the check-in and by
 nothing else.
@@ -11,9 +11,12 @@ reconstructed afterwards. See
 what each one means to the planner — `evidence-only` means **unknown**, never
 missed.
 
-**Delete this preamble when filling the template.**
+**Everything below the line is the template. Delete this preamble, and keep the
+heading that follows it.**
 
 ---
+
+# <date>
 
 status: <complete / evidence-only>
 

@@ -1,6 +1,6 @@
 <!-- leak-check: allow-path — names the personal file it is a template for -->
 
-# <project name>
+# Deep dive
 
 One project's deep-dive answers, at `instance/deep-dives/<project-slug>.md`.
 
@@ -12,9 +12,12 @@ so this file is ordered with the thinnest evidence first.
 Every claim carries a marker. The attribution boundary is settled before any of
 them is written.
 
-**Delete this preamble when filling the template.**
+**Everything below the line is the template. Delete this preamble, and
+keep the heading that follows it.**
 
 ---
+
+# <project name>
 
 | Field | Value |
 |---|---|

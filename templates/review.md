@@ -1,6 +1,6 @@
 <!-- leak-check: allow-path — names the personal file it is a template for -->
 
-# <week identifier>
+# Review
 
 One week's scored rounds, at `instance/performance/<week identifier>.md`.
 Written by the review phase of the loop, per
@@ -8,9 +8,12 @@ Written by the review phase of the loop, per
 
 Everything withheld during the rounds lands here and nowhere earlier.
 
-**Delete this preamble when filling the template.**
+**Everything below the line is the template. Delete this preamble, and keep the
+heading that follows it.**
 
 ---
+
+# <week identifier>
 
 ## Rounds
 
