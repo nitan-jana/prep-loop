@@ -8,7 +8,9 @@ Where everything lives, who writes it, and what is versioned.
 
 Two kinds of thing, kept apart by one line in `.gitignore`.
 
-**The repo** is public and holds no fact about anyone.
+**The repo** is public and holds no fact about anyone, with one deliberate
+exception: `LICENSE` carries a copyright line, which is a name and a year by
+definition. It is the only tracked file the leak checker does not read.
 
 | | Holds |
 |---|---|
@@ -19,6 +21,7 @@ Two kinds of thing, kept apart by one line in `.gitignore`.
 | `docs/` | How to use it, and anything the policy files assume rather than explain. |
 | `.githooks/` | The pre-commit hook, opted into per clone. |
 | `.github/` | The workflow that runs the checkers on every push. |
+| `LICENSE` `CONTRIBUTING.md` | The terms, and what is asked of a contributor. |
 
 **`instance/`** is a plain folder inside the clone, ignored by git. It is not a
 repository, has no remote, and nothing in it is ever pushed anywhere.

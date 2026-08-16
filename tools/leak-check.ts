@@ -27,7 +27,9 @@ import { Glob } from "bun";
 import { existsSync, statSync } from "node:fs";
 import { join, normalize, relative, resolve } from "node:path";
 
-const DEFAULT_ROOTS = ["policy", ".claude", ".github", ".githooks", "templates", "tools", "docs", "CLAUDE.md", "README.md"];
+// `LICENSE` is deliberately absent: a copyright line is a name and a year by
+// definition, which is the thing this checker rejects everywhere else.
+const DEFAULT_ROOTS = ["policy", ".claude", ".github", ".githooks", "templates", "tools", "docs", "CLAUDE.md", "README.md", "CONTRIBUTING.md"];
 // `instance` is the local folder itself. The rest catch a stale reference that
 // dropped the prefix, which resolves to nothing and would otherwise pass.
 const PERSONAL_DIRS = ["instance", "profile", "logs", "performance", "stories", "deep-dives", "plans", "mocks", "curriculum", "intake", "private"];

@@ -163,3 +163,15 @@ git config core.hooksPath .githooks
 Hooks are not tracked by git, which is why that takes a config line rather than
 arriving with the clone. The workflow in `.github/workflows/` is the actual
 gate; the hook is the fast local copy of it.
+
+## Licence
+
+[AGPL-3.0](LICENSE). Clone it, change it, run it on your own machine and keep
+your changes to yourself — the licence asks nothing of a user. It applies when a
+modified version is run as a network service, which then has to offer its source
+to the people using it.
+
+Your prep data is not software and no licence reaches it. It lives in
+`instance/` and never leaves the machine.
+
+[`CONTRIBUTING.md`](CONTRIBUTING.md) covers pull requests and the CLA.
