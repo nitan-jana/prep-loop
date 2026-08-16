@@ -154,15 +154,17 @@ bun run typecheck
 
 There are no runtime dependencies and there will not be any.
 
-To run the checks before every commit:
+`bun install` also wires up the pre-commit hook, through a `prepare` script that
+runs one line of `git config`. To wire it without installing anything:
 
 ```bash
-git config core.hooksPath .githooks
+bun run hooks
 ```
 
-Hooks are not tracked by git, which is why that takes a config line rather than
-arriving with the clone. The workflow in `.github/workflows/` is the actual
-gate; the hook is the fast local copy of it.
+Hooks are not tracked by git, which is why this takes a config line rather than
+arriving with the clone. That line is all a hook manager does, which is why
+there is not one here. The workflow in `.github/workflows/` is the actual gate;
+the hook is the fast local copy of it.
 
 ## Licence
 
