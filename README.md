@@ -173,10 +173,13 @@ construction. For that one tier the hook is the only check there is.
 
 ## Licence
 
-[AGPL-3.0](LICENSE). Clone it, change it, run it on your own machine and keep
-your changes to yourself — the licence asks nothing of a user. It applies when a
-modified version is run as a network service, which then has to offer its source
-to the people using it.
+[AGPL-3.0](LICENSE), version 3 or later. Clone it, change it, run it on your own
+machine and keep your changes to yourself — the licence asks nothing of a user.
+It applies when a modified version is run as a network service, which then has
+to offer its source to the people using it.
+
+The copyright notice lives in [`COPYRIGHT`](COPYRIGHT), which leaves `LICENSE` a
+byte-for-byte copy of the published text.
 
 Your prep data is not software and no licence reaches it. It lives in
 `instance/` and never leaves the machine.
