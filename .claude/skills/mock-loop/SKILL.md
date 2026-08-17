@@ -70,6 +70,31 @@ Pick the round types per
 robin when there is no history yet. Source every question from an inventory
 under `instance/curriculum/`, never from memory.
 
+**The type is chosen first, then the entry inside it** comes from the retention
+pool, in the order at
+[`policy/mock-sourcing.md`](../../../policy/mock-sourcing.md#the-retention-pick).
+The pool never chooses the type.
+
+### The rapid-fire retention round
+
+One round is built from entries with `Last worked` filled and `Last asked`
+empty — studied and never tested. **The loop is the only place they surface**,
+so a brief without this round leaves them where they were.
+
+Take several, since these are the small entries. Copy each one into the brief
+with its link, like every other question — the brief carries no links out and
+must read without this repo.
+
+**Place it last, and size it to what the window has left.** Add up the other
+rounds and what the review needs, then take as many entries as fit — fewer, or
+none, on a week where that is nothing. The review is never shortened to make
+room.
+
+Two further constraints, all four in
+[`policy/mocks.md`](../../../policy/mocks.md#the-rapid-fire-retention-round):
+ask them one at a time like any round, and grade the entries without moving a
+readiness rung.
+
 **The brief carries no links out.** Write the question, the claims to push on
 and the follow-ups into the file itself. An interviewer that is not this repo
 reads only the brief, and it is the only file that ever leaves the machine.
@@ -108,6 +133,11 @@ round after it.
 [`policy/grading.md`](../../../policy/grading.md#the-re-grade-audit), and record
 the result under a `## Calibration` heading. It grades the grader, not the user.
 
+**Then record coverage.** Every entry a round used gets `Last asked` and
+`Grade`, where the grade names this review file as the one holding the quoted
+answer. Only those three columns — the entries belong to `onboard`, per
+[`policy/repo-map.md`](../../../policy/repo-map.md#who-writes-what).
+
 ## Handing off
 
 A review day is still a working day. The loop ends by handing off to
@@ -135,12 +165,21 @@ file.
 - **Never grade while conducting.** An external interviewer conducts and
   records; grading is a separate pass —
   [`mocks.md`](../../../policy/mocks.md#the-transcript-contract).
+- **Never hand the rapid-fire round over as a list.** One question, then wait —
+  [`interviewing.md`](../../../policy/interviewing.md#one-question-then-wait).
+- **Never move a rung on the rapid-fire round.** Rungs are per round type —
+  [`readiness.md`](../../../policy/readiness.md#it-is-per-round-type).
+- **Never shorten the review to fit the rapid-fire round.** Drop entries
+  instead — [`mocks.md`](../../../policy/mocks.md#the-rapid-fire-retention-round).
+- **Never write an inventory row beyond its three coverage columns** —
+  [`repo-map.md`](../../../policy/repo-map.md#who-writes-what).
 
 ## Done when
 
 - Every round in the brief ran, in order, and was graded
 - Every grade carries its quoted answer, and every rung change is justified by two consecutive reviews
 - Habits observed are appended rather than asked for
+- Every entry a round used carries `Last asked` and a `Grade` naming this review
 - The day's log exists, via the check-in
 - `bun run check` is clean
 

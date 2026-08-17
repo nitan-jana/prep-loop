@@ -35,6 +35,51 @@ questions live per [`mock-sourcing.md`](mock-sourcing.md), and records that it
 ran without one. A cancelled loop costs a week; a slightly worse loop costs
 very little.
 
+### Where the questions come from
+
+The round type is chosen first, weakest first, per
+[`mock-sourcing.md`](mock-sourcing.md#choosing-the-round-type). The retention
+pool then chooses the entry *inside* that type — it never chooses the type.
+
+**The loop is the pool's only reader.** The planner schedules work and the
+check-in records what it tested; neither asks a retention question, and the
+reasons are in [`mock-sourcing.md`](mock-sourcing.md#who-draws-from-it).
+
+### The rapid-fire retention round
+
+One round of the loop is drawn from entries with `Last worked` filled and
+`Last asked` empty — studied, never tested. This is the only place they surface.
+
+Several of them in the time one deep question would take, because these are the
+small entries: a quiz item, a type challenge, the approach to one problem. That
+is what makes the round a drain rather than a gesture. A block names more
+entries every day than any evening can test, so the untested set grows on its
+own and needs somewhere to go.
+
+**Sequential, like any other round.** One question, then silence, per
+[`interviewing.md`](interviewing.md#one-question-then-wait). Handing over a list
+in one turn lets the user answer the ones they know and drop the rest, which is
+the failure this round is most exposed to.
+
+**It creates no readiness rung.** Rungs are per round type and earned across
+consecutive reviews — [`readiness.md`](readiness.md#it-is-per-round-type). This
+round spans whatever the pool held, so it grades entries and nothing more.
+
+**It runs last and it yields.** Its length is whatever the window has left once
+the other rounds and the review have what they need, and **the review is never
+compressed to make room for it**. Take fewer entries, or none at all that week.
+
+A loop that ends with a full rapid-fire round and a thin review has traded its
+most valuable output for its cheapest. The review is where the grades, the
+ordered drill list and the rungs come from; the retention round is coverage of
+material already studied, and coverage is the thing this system has least
+trouble producing.
+
+This is not the ordering rule bending. [Rounds run in the brief's
+order](#running-the-rounds) forbids saving a strong round for last to flatter
+the sample. This says what gets cut when the window is short, and the answer is
+never the review.
+
 ## Running the rounds
 
 Every round follows [`interviewing.md`](interviewing.md) exactly — in role
@@ -59,6 +104,9 @@ Separate phase, after all rounds. Everything withheld until now:
 - The follow-up that was not survived
 - Observed habits, appended to `instance/profile/habits.md`
 - What to drill, ordered, specific enough to schedule
+- Coverage written back to the inventories — `Last asked` and `Grade` on every
+  entry a round used, per
+  [`mock-sourcing.md`](mock-sourcing.md#what-the-inventory-records)
 
 Written to `instance/performance/YYYY-Www.md`. The review is interactive and **commits
 nothing**.

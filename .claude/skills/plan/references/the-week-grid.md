@@ -39,11 +39,22 @@ gives way and the plan does not explain itself for doing so.
 
 A question already worked beats a new one, per
 [`policy/mock-sourcing.md`](../../../../policy/mock-sourcing.md#retention-before-novelty).
-The `Last worked` column in each inventory is what makes this possible, and it is
-why those columns exist.
+The `Last worked`, `Last asked` and `Grade` columns in each inventory are what
+make this possible, and they are why those columns exist.
 
 Both edges of the window are profile facts. Too recent tests nothing; too old
 tests nothing either.
+
+**The planner reads two of the three rows** in
+[the retention pick](../../../../policy/mock-sourcing.md#the-retention-pick):
+an entry graded below `solid`, and one graded `solid` long enough ago to be
+worth re-working. The middle row — worked but never asked — is not a planning
+input. That entry does not need studying again; it needs a question put to it,
+and the loop is what does that.
+
+Scheduling it into a block instead re-reads a topic from the start, which
+[`policy/readiness.md`](../../../../policy/readiness.md#regression) names as the
+wrong response to a gap.
 
 **A block full of new material every day is a planning bug**, not an ambitious
 week. It produces recognition, and recognition does not survive a round.

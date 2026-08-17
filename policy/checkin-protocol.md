@@ -55,6 +55,36 @@ the term, no revealing the rubric.
 Keep it to a few items. A check-in that becomes a full round eats the evening
 and then gets skipped, and a skipped check-in costs more than a shallow one.
 
+### Today only
+
+**Never source a quiz item from the retention pool.** The check-in tests the day
+it is closing, hours after the block ran, which is well inside the lower edge of
+the window in
+[`mock-sourcing.md`](mock-sourcing.md#do-not-repeat-inside-the-window). It is not
+a retention instrument and is not meant to be one — it measures whether today
+survived the day.
+
+An older entry in the same table would put two different measurements under one
+grade scale in one artifact, and a grade is of one answer to one question at one
+moment per [`grading.md`](grading.md#what-a-grade-is-not). The retention question
+belongs to the review, which asks it at a distance where the answer means
+something.
+
+### Record what was asked
+
+At grading time, write the day's coverage into the inventory entries under
+`instance/curriculum/` — `Last worked` for what the evidence shows ran,
+`Last asked` and `Grade` for what was actually questioned. Nothing else in the
+entry is touched.
+
+**This is the whole reason the columns exist.** A few items are asked out of the
+many an evening's blocks named, and without the write there is no record of
+which. The unasked ones then look identical to the ones that were asked and
+answered, which is the gap the pool closes —
+[`mock-sourcing.md`](mock-sourcing.md#what-the-inventory-records).
+
+The check-in writes these columns and never reads them.
+
 ## Misses
 
 Ask for the reason. Record it **verbatim**, in the user's words.
@@ -103,7 +133,13 @@ worse than no log, because it looks like a record.
 
 ## What it writes
 
-Today's log, complete. Any earlier day's log, evidence-only. Nothing else.
+Today's log, complete. Any earlier day's log, evidence-only. The coverage
+columns on the entries the day touched. Nothing else.
+
+A backfilled log records `Last worked` from the evidence and leaves `Last asked`
+and `Grade` empty, for the same reason its quiz section is empty: nothing was
+asked, and a column that says otherwise is the fabrication that status exists to
+prevent.
 
 It writes files and stops — no commit, per
 [`repo-map.md`](repo-map.md#commits). Nothing under `instance/` is tracked in
