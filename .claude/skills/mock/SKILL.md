@@ -43,12 +43,13 @@ the preparation.
 In order of preference, per
 [`policy/interviewing.md`](../../../policy/interviewing.md#push-once-at-minimum):
 
-1. **The cost.** A mechanism described without its tradeoff is the most common
-   incomplete answer — but only after the user has had the chance to volunteer
-   it, since volunteering it unprompted is the difference between two grades.
+1. **The cost**, and only after it could have been volunteered.
 2. **The weakest-evidenced claim.**
 3. **The alternative not taken.**
 4. **The boundary**, where the approach stops working.
+
+The reason each one earns its place, and why the order matters, is in the linked
+file. This list is here to be glanced at mid-round, not to restate it.
 
 One push is the floor. Keep going while the answer is still moving.
 
@@ -83,12 +84,10 @@ drilled cold weeks later, and the file is what a loop's brief draws from.
 
 ## Attribution, before any claim
 
-Settle three things: whose work it was, who else was involved, and what phrasing
-survives someone opening the repository mid-answer.
-
-That last test is the operative one. Shared work is described as shared, and the
-user's part described precisely — which is nearly always more impressive than
-the vague version it replaces.
+Settle whose work it was, who else was involved, and what phrasing survives the
+source being opened mid-answer, per
+[`claims.md`](../../../policy/claims.md#the-attribution-boundary). The third is
+the operative test and the reason for it is in that file.
 
 ## Forbidden
 

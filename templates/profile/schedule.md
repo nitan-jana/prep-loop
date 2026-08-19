@@ -21,6 +21,14 @@ The label is stable; the subject inside it moves week to week.
 |---|---|---|
 | <letter> | <start>–<end> | <subject> |
 
+## Calendar description ceiling
+
+<how many short lines fit an event without scrolling, on the device this
+calendar actually gets read on>
+
+The rule behind it is in
+[`policy/artifact-voice.md`](../../policy/artifact-voice.md#a-description-has-a-ceiling).
+
 ## Recurring sessions
 
 | Session | Day | Window |
@@ -45,6 +53,20 @@ A ceiling counted in flat items treats a chapter and a short article the same.
 | Large | <what> |
 | Medium | <what> |
 | Not counted | Problems, drills, redoing covered material, writing, rounds |
+
+## Retention window
+
+Both edges of the window in
+[`policy/mock-sourcing.md`](../../policy/mock-sourcing.md#do-not-repeat-inside-the-window).
+
+| Edge | Value | What it decides |
+|---|---|---|
+| Lower | <count> days | Sooner than this, a re-ask grades memory of the last round |
+| Upper | <count> days | Past this, a miss is uninformative and the entry is due |
+
+The values belong here rather than in policy because they depend on how much
+material is in rotation and how long the run is. A user with a small inventory
+and a short horizon wants both edges tighter than one with a large one.
 
 ## Timezone
 

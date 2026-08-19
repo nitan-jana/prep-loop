@@ -38,7 +38,9 @@ contradict one, the linked file wins and this file is the bug.
 4. **Ask for miss reasons**, and record them verbatim.
 5. **Reschedule** what slipped — and actually call the calendar.
 6. **Write the log** from [`templates/daily-log.md`](../../../templates/daily-log.md).
-7. **Stop.** No commit.
+7. **Record coverage** on the entries the day touched, under
+   `instance/curriculum/`. See below.
+8. **Stop.** No commit.
 
 ## Evidence before questions
 
@@ -70,6 +72,22 @@ empty until there are real graded answers to put in it, and an empty anchor file
 is not a reason to skip grading — it is a reason to be careful, and the quoted
 answers written now are what fills it later.
 
+## Recording coverage
+
+Every entry the day's blocks named gets `Last worked`. Every entry the quiz
+actually asked also gets `Last asked` and `Grade`, where the grade names this
+day's log as the file holding the quoted answer. Nothing else in the row is
+touched — the entries themselves belong to `onboard`, per
+[`policy/repo-map.md`](../../../policy/repo-map.md#who-writes-what).
+
+The gap between those two columns is the point. A block names more entries than
+a short quiz can reach, and the ones it did not reach are what the review's
+retention round draws from —
+[`policy/mock-sourcing.md`](../../../policy/mock-sourcing.md#the-retention-pick).
+
+On a backfilled log, `Last worked` only. Nothing was asked, so nothing is
+graded.
+
 ## Backfilling
 
 **Check for missing logs before doing anything else**, and reconstruct what can
@@ -88,9 +106,9 @@ remembers accurately.
 Find a free window with `suggest_time`, then **call `create_event` or
 `update_event`**, then confirm in one line.
 
-Naming a slot is not a reschedule. This is the step most often left half-done,
-and a log saying a block moved while the calendar still shows the old one is
-worse than not moving it.
+**Naming a slot is not a reschedule** —
+[`checkin-protocol.md`](../../../policy/checkin-protocol.md#the-reschedule-is-a-calendar-call)
+has the failure this prevents.
 
 **One block, at most.** A check-in that rebuilds the week is a planning session
 wearing the wrong name — that is
@@ -115,6 +133,11 @@ each is in the linked file.
   [`checkin-protocol.md`](../../../policy/checkin-protocol.md#backfilling-a-missed-day).
 - **Never infer a miss from silence** —
   [`checkin-protocol.md`](../../../policy/checkin-protocol.md#evidence-first-before-any-question).
+- **Never source a quiz item from the retention pool.** The check-in tests
+  today, hours after the block ran —
+  [`checkin-protocol.md`](../../../policy/checkin-protocol.md#today-only).
+- **Never write an inventory row beyond its three coverage columns** —
+  [`repo-map.md`](../../../policy/repo-map.md#who-writes-what).
 
 ## Done when
 
@@ -122,6 +145,8 @@ each is in the linked file.
 - Every grade in it carries the answer that produced it, quoted
 - Every miss reason is in the user's own words
 - Anything rescheduled is on the calendar, not just named
+- Every entry the day named carries `Last worked`, and only the asked ones carry
+  `Last asked` and `Grade`
 - `bun run check` is clean
 
 **Write the files and stop** — the user reads the folder.

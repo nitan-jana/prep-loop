@@ -1,6 +1,6 @@
 <!-- leak-check: allow-path — names the personal file it is a template for -->
 
-# <week identifier>
+# Review
 
 One week's scored rounds, at `instance/performance/<week identifier>.md`.
 Written by the review phase of the loop, per
@@ -8,9 +8,12 @@ Written by the review phase of the loop, per
 
 Everything withheld during the rounds lands here and nowhere earlier.
 
-**Delete this preamble when filling the template.**
+**Everything below the line is the template. Delete this preamble, and keep the
+heading that follows it.**
 
 ---
+
+# <week identifier>
 
 ## Rounds
 
@@ -25,27 +28,36 @@ not a grade.**
 | Question | <the question asked> |
 | From | <source and entry identifier> |
 | Grade | <solid / shaky / not retained> |
+| Failed | <unprompted / the cost / the follow-up — as many as apply, omitted on `solid`> |
 | Answer | "<the user's words — quote the part that carried the claim, mark any elision>" |
 
-**What a stronger answer would have contained.** <the specific missing piece>
+**What a stronger answer would have contained.** <the specific missing piece,
+including anything the answer understated against its own source>
 
 **The follow-up that was not survived.** <which one, and where the answer stopped>
 
 ## Readiness
 
 One row per round type touched. Rungs per
-[`policy/readiness.md`](../policy/readiness.md#the-ladder). A rung is reached
-only after holding across two consecutive reviews.
+[`policy/readiness.md`](../policy/readiness.md#the-ladder).
+
+A rung is reached only after holding across two consecutive reviews, so the
+first review of a round type writes `provisional` and does not count toward that
+pair.
 
 | Round type | Rung | Moved |
 |---|---|---|
-| <type> | <rung> | <up / down / held> |
+| <type> | <rung> | <up / down / held / provisional> |
 
 ## To drill
 
+**Ordered.** The planner schedules from the top, so the ranking is decided here,
+where the evidence is. A regression outranks an uncovered topic; beyond that,
+first is whatever would change the most rounds.
+
 Specific enough to schedule. A named entry, not a topic.
 
-- <what to drill, and where it lives>
+1. <what to drill, and where it lives>
 
 ## Calibration
 

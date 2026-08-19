@@ -1,6 +1,6 @@
 <!-- leak-check: allow-path — names the personal file it is a template for -->
 
-# <short name>
+# Story
 
 One story, at `instance/stories/<slug>.md`, indexed in
 `instance/profile/story-bank.md` in the same turn it is written.
@@ -12,9 +12,12 @@ stories.
 Every claim carries a marker per [`policy/claims.md`](../policy/claims.md), and
 a story with an unverified number in it does not enter the bank.
 
-**Delete this preamble when filling the template.**
+**Everything below the line is the template. Delete this preamble, and
+keep the heading that follows it.**
 
 ---
+
+# <short name>
 
 | Field | Value |
 |---|---|

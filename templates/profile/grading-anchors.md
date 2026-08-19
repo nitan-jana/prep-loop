@@ -6,7 +6,8 @@ Three real answers, one per grade, frozen. Every grader reads them before
 grading, per [`policy/grading.md`](../../policy/grading.md#anchors).
 
 **This file starts empty and stays empty until there are real graded answers to
-put in it** — roughly a month of rounds.
+put in it** — enough rounds to have produced a clear example of each grade,
+rather than the first three that turned up.
 
 Onboarding does not invent them. An invented anchor calibrates the grader
 against a fiction, which is worse than no calibration at all, because it feels

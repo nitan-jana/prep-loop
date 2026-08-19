@@ -27,7 +27,10 @@ them was not really planned.
 The planner reads that from the logs and moves it, rather than the user being
 asked to try harder next week.
 
-## The three sessions
+## The three recurring sessions
+
+The ones that run on a cycle. Other sessions exist and are invoked as needed;
+these are the three the week is built around.
 
 Named by role, not by day. Which day each falls on is a profile fact, and each
 is a skill the user invokes rather than something that happens to them.

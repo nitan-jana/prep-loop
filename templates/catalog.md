@@ -62,18 +62,34 @@ previous one. See
 Headings carry no numbers. Once nothing is numbered, renumbering is impossible
 and every anchor keeps working.
 
-| Identifier | Title | Link | Topic | Difficulty | Last worked | Grade |
-|---|---|---|---|---|---|---|
-| <id or slug> | <title> | <url> | <topic> | <as the source labels it> | <date> | |
+| Identifier | Title | Link | Topic | Difficulty | Last worked | Last asked | Grade |
+|---|---|---|---|---|---|---|---|
+| <id or slug> | <title> | <url> | <topic> | <as the source labels it> | <date> | <date> | <grade · the file holding the answer> |
 
 **Capture the link per entry, not just for the source.** A block description
 carries the task and the link to the material, so an inventory of names without
 addresses forces whoever writes that block to go looking, every time. Where the
 source has no stable per-entry URL, leave it empty rather than constructing one.
 
-The last two columns are written by the system, not by the fetcher. They are
+The last three columns are written by the system, not by the fetcher. They are
 what makes retention sourcing possible — see
-[`policy/mock-sourcing.md`](../policy/mock-sourcing.md#retention-before-novelty).
+[`policy/mock-sourcing.md`](../policy/mock-sourcing.md#what-the-inventory-records)
+for what each one means and which session writes it.
+
+**`Last worked` and `Last asked` are different facts.** The material was in
+front of the user; it was questioned and graded. A block names more entries than
+one session can test, so the pair with a date and an empty ask is the normal
+state of most of the file, and it is the state a retention question is drawn
+from. Collapsing them into one column makes a studied entry look like a passed
+one.
+
+`Grade` names the log or review file that holds the quoted answer. It is an
+index into that file, never a substitute for it —
+[`policy/grading.md`](../policy/grading.md#a-grade-without-the-answer-is-not-a-grade).
+
+**A refresh merges these columns forward.** Re-pulling a source rebuilds the
+entries; it does not reset what this install did with them. See
+[`policy/repo-map.md`](../policy/repo-map.md#who-writes-what).
 
 ## Groups
 
