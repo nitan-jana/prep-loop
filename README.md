@@ -55,6 +55,7 @@ stands and names the one thing to run next, which on a fresh clone is
 
 [**`docs/getting-started.md`**](docs/getting-started.md) is the walkthrough:
 onboarding, a week, a day, a review, and where everything lives.
+[`docs/decisions/`](docs/decisions/README.md) is why it is shaped this way.
 
 ## The design principle
 
