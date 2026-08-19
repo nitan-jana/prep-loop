@@ -35,6 +35,47 @@ three rules, and the
 [length ceiling](artifact-voice.md#a-description-has-a-ceiling) in particular.
 Nothing on an event ever records that the block happened.
 
+### A link is a label, not an address
+
+A link in a description is short text with the address behind it.
+
+```text
+<a href="<url>"><entry title></a>   a link, reading as the title alone
+[<entry title>](<url>)             those characters, brackets and address alike
+```
+
+A pasted address spends most of the ceiling on characters nobody reads. A block
+naming five entries becomes five lines of URL and one line of instruction, which
+is the ceiling broken by the links alone.
+
+**The description is HTML, not markdown, and not plain text.** `<a href>` is a
+link, `<ul>` and `<li>` carry a set of them, `<br>` ends a line otherwise, and
+nothing else is worth using. Markdown renders nowhere on a calendar, so the
+second line above reaches the reader exactly as written — the long form, with
+punctuation added.
+
+**One entry sits inside the instruction; two or more become a list.** A block
+naming one thing reads as a sentence with the title linked in it. A block naming
+several puts each on its own `<li>`, so the count is legible before any of them
+is read and no line wraps into the next. Where an entry needs a note of its own
+— which part of it, what to skip — the note sits in that `<li>` rather than in a
+sentence above that has to name the entry a second time to attach it.
+
+Two things follow from it being HTML:
+
+- **A newline is not a line break.** Outside a list, lines are separated with
+  `<br>`.
+- **`&` and `<` inside a label are escaped**, as `&amp;` and `&lt;`. Backticks
+  and asterisks in an inventory title are markdown and are dropped, not carried
+  across.
+
+The label is the entry's own title, copied from `instance/curriculum/` alongside
+the address it sits beside. Shortening it into something more readable renames
+an entry the inventory has already named, which is
+[`mock-sourcing.md`](mock-sourcing.md#never-invent-a-question-name) broken by a
+paraphrase rather than by an invention. Where a block names no entry, it has no
+link either and the description is plain text.
+
 ## Tool per operation
 
 | Operation | Tool |

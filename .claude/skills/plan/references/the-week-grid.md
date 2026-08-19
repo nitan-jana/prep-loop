@@ -111,6 +111,11 @@ The title is the block label and the subject with a middle dot between them, per
 [`policy/calendar.md`](../../../../policy/calendar.md#one-event-per-block). The
 stable label leads so a week reads as a rotation at a glance.
 
+Every link is written as a labelled anchor, per
+[`policy/calendar.md`](../../../../policy/calendar.md#a-link-is-a-label-not-an-address).
+That is what keeps a block naming several entries inside the ceiling, so a
+description over it is a scoping problem rather than a link one.
+
 **A description that needs more than the ceiling is a mis-scoped block**, not a
 description problem. Split the work or narrow it.
 
