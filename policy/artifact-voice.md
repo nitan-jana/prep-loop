@@ -24,12 +24,16 @@ No rationale. No "why this matters". No restating policy — a plan that explain
 the caps is a plan competing with `policy/caps.md` and eventually contradicting
 it. The reasoning is in this repo and the user can ask for it in a session.
 
-Roughly eight short lines is the ceiling for a calendar description. A wall of
-text in a calendar entry does not get read, which makes a thorough description
-strictly worse than a terse one.
+### A description has a ceiling
 
-Concretely, a block description is: the task, the link to the material, and
-what to skip. If it needs more than that, the block was mis-scoped.
+Short enough to take in without scrolling, on whatever the user actually reads a
+calendar on. The figure is in `instance/profile/schedule.md`, since it depends
+on the device and on the reader.
+
+A wall of text in a calendar entry does not get read, which makes a thorough
+description strictly worse than a terse one. Concretely, a block description is
+the task, the link to the material, and what to skip. If it needs more than
+that, the block was mis-scoped.
 
 ## Instructions, never completion state
 

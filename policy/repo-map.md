@@ -78,12 +78,25 @@ bug, not a judgement call.
 | Stories and the bank index | `story` | — |
 | Deep dives | `mock`, or by hand | — |
 | Everything under `instance/profile/` | `onboard` | every other skill |
-| Resource inventories | `onboard` | every other skill |
+| Resource inventory entries | `onboard` | every other skill |
+| The coverage columns on an entry | `checkin`, `mock-loop` | `plan`, which reads them |
 | The denylist | `onboard` | every other skill |
 | Calendar, a whole week | `plan` | every other skill except `checkin` |
 | Calendar, one reschedule | `checkin` | `mock`, `mock-loop`, `story` |
 | `policy/`, `templates/`, skills | the user, deliberately | every skill |
 | Nothing at all | `prep` | — |
+
+**An inventory has two owners, split by column.** `onboard` owns the entries —
+identifiers, titles, links, everything that describes the source. `checkin` and
+`mock-loop` own `Last worked`, `Last asked` and `Grade`, and touch nothing else
+in the row. The columns record what this install did with an entry, which is not
+something a fetcher can know and not something a session may invent. See
+[`mock-sourcing.md`](mock-sourcing.md#what-the-inventory-records).
+
+The split has one consequence worth stating: **a refresh merges, it never
+replaces.** An inventory re-pulled from its source carries the coverage columns
+forward for every identifier that still exists, or the pull silently erases the
+history that makes retention sourcing possible.
 
 **`prep` writes nothing, and that is its whole contract.** It reports where the
 install stands and names one thing to run. A place to look when the thread has

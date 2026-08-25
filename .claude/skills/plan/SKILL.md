@@ -50,7 +50,7 @@ Nothing personal is decided here. All of it is read.
 
 | Source | Supplies |
 |---|---|
-| `instance/profile/schedule.md` | Working days, block labels and windows, the rotation, the three sessions, the timezone, both cap values |
+| `instance/profile/schedule.md` | Working days, block labels and windows, the rotation, the recurring sessions, the timezone, both cap values |
 | `instance/profile/state.md` | Readiness rungs, the sourcing phase, what is paused and what unpauses it |
 | `instance/curriculum/` | The entries a block may name — see the sourcing rule below |
 | The previous week's plan | Its `## Deferred` list, which is scheduled before anything new |

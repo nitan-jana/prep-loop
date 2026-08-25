@@ -36,11 +36,71 @@ that both edges exist.
 Novelty still has a place — coverage of an untouched topic, or a deliberately
 cold round. It is the exception and the round says which it is.
 
+### What the inventory records
+
+Three columns on every entry, written by the system rather than by whatever
+built the file. Together they are the pool a retention question is drawn from.
+
+| Column | What it means |
+|---|---|
+| `Last worked` | The material was in front of the user — a plan named it, or a day's evidence shows the block ran |
+| `Last asked` | It was quizzed or asked in a round, and graded |
+| `Grade` | The result, and the dated file holding the quoted answer |
+
+**Worked is not asked.** A block names more entries than any one session can
+test, so an entry can sit in front of the user for a full window and never be
+questioned. With only the first column, that entry is indistinguishable from one
+that was asked and answered well, and silence reads as a pass.
+
+The `Grade` cell is an index, not the record. It carries the grade and names the
+log or review file holding the quoted answer, which stays authoritative.
+[`grading.md`](grading.md#a-grade-without-the-answer-is-not-a-grade) requires
+the answer to sit with the grade, and an inventory of grades without answers is
+exactly the calibration failure that rule exists to prevent.
+
+### The retention pick
+
+In order. Stop at the first that yields an eligible entry.
+
+1. **Graded below `solid`, past the lower edge.** A regression outranks an
+   uncovered topic — [`readiness.md`](readiness.md#regression).
+2. **`Last worked` filled, `Last asked` empty.** Studied and never tested.
+   Nothing else in the system surfaces it.
+3. **Graded `solid`, past the upper edge.** The decay test.
+
+**Difficulty does not rank.** The entries that go untested are the ones that
+looked too small to spend a question on, so ranking by difficulty rebuilds the
+bias the second row exists to correct.
+
+### Who draws from it
+
+The **review** is the reader. It picks a round type first, per
+[below](#choosing-the-round-type), and the pool picks the entry inside that
+type.
+
+The **planner** reads the first and third rows when filling a block, so that a
+week is not built entirely out of new material.
+
+The **check-in** writes the columns and never reads them. It closes a day it is
+still inside, at a distance well within the lower edge, which makes it the wrong
+instrument for a retention question —
+[`checkin-protocol.md`](checkin-protocol.md#the-quiz).
+
+The second row belongs to the review alone. An entry that was studied and never
+tested needs an ask, not another block: scheduling it again re-reads a topic
+from the start, which [`readiness.md`](readiness.md#regression) names as the
+wrong response to a gap.
+
 ## Do not repeat inside the window
 
 A question used in a round is not used again until enough time has passed for
 recall to be a real test. Repeating it sooner produces a grade for memory of
 the round rather than memory of the material.
+
+**`not retained` is exempt from the lower edge.** The edge exists because a
+recent answer is still in short-term memory, so a re-ask grades the round. An
+answer that could not be reconstructed left nothing in memory to contaminate,
+and an early re-ask still tests the material.
 
 ## Choosing the round type
 

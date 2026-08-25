@@ -39,11 +39,22 @@ gives way and the plan does not explain itself for doing so.
 
 A question already worked beats a new one, per
 [`policy/mock-sourcing.md`](../../../../policy/mock-sourcing.md#retention-before-novelty).
-The `Last worked` column in each inventory is what makes this possible, and it is
-why those columns exist.
+The `Last worked`, `Last asked` and `Grade` columns in each inventory are what
+make this possible, and they are why those columns exist.
 
 Both edges of the window are profile facts. Too recent tests nothing; too old
 tests nothing either.
+
+**The planner reads two of the three rows** in
+[the retention pick](../../../../policy/mock-sourcing.md#the-retention-pick):
+an entry graded below `solid`, and one graded `solid` long enough ago to be
+worth re-working. The middle row — worked but never asked — is not a planning
+input. That entry does not need studying again; it needs a question put to it,
+and the loop is what does that.
+
+Scheduling it into a block instead re-reads a topic from the start, which
+[`policy/readiness.md`](../../../../policy/readiness.md#regression) names as the
+wrong response to a gap.
 
 **A block full of new material every day is a planning bug**, not an ambitious
 week. It produces recognition, and recognition does not survive a round.
@@ -81,7 +92,7 @@ Where the fix is to the schedule itself rather than to one week, that is a
 profile change and belongs to onboarding. Say so and leave it; this skill does
 not write `instance/profile/`.
 
-## The three sessions
+## The three recurring sessions
 
 Planning, the check-in and the review are on the calendar like any block, at the
 windows `instance/profile/schedule.md` gives them. They are part of the week the
@@ -99,6 +110,11 @@ what a block description is — the task, the link, and what to skip.
 The title is the block label and the subject with a middle dot between them, per
 [`policy/calendar.md`](../../../../policy/calendar.md#one-event-per-block). The
 stable label leads so a week reads as a rotation at a glance.
+
+Every link is written as a labelled anchor, per
+[`policy/calendar.md`](../../../../policy/calendar.md#a-link-is-a-label-not-an-address).
+That is what keeps a block naming several entries inside the ceiling, so a
+description over it is a scoping problem rather than a link one.
 
 **A description that needs more than the ceiling is a mis-scoped block**, not a
 description problem. Split the work or narrow it.

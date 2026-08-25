@@ -267,5 +267,25 @@ working. Where the source groups its entries into sections, tracks or patterns,
 mirror that structure with plain headings — a round often wants to draw from
 one group rather than the whole list.
 
-Leave the last-worked and grade columns empty. Those are written by the system
-as rounds happen, and they are what makes retention sourcing possible later.
+Leave the three coverage columns — `Last worked`, `Last asked`, `Grade` — empty
+on a first build. Those are written by the check-in and the loop as work and
+rounds happen, and they are what makes retention sourcing possible later.
+
+## A refresh merges, it never replaces
+
+Re-pulling a source rebuilds the entries. **It must carry the three coverage
+columns forward** for every identifier that still exists, and only then write
+the new list.
+
+Overwriting the file wholesale is the obvious way to do a refresh and it silently
+destroys the entire history of what this install has worked and been asked. The
+damage is invisible: the inventory looks correct afterwards, every name resolves,
+and the only symptom is that retention sourcing quietly starts treating long-
+covered material as untouched.
+
+So: read the existing file first, key its coverage by identifier, and reattach
+after the pull. An identifier the source has dropped takes its coverage with it.
+A new identifier arrives empty, which is true.
+
+**Say how many rows carried over**, in the same line that reports the pull. A
+refresh that reports only the new count is one nobody can tell went wrong.
