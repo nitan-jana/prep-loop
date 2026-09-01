@@ -45,6 +45,16 @@ the cost of the sample.
 
 **Follow-ups to reach for.** <as above>
 
+## The week round — <subject>
+
+Many short questions over the week just worked, asked one at a time. Take as
+many as the window has left after the rounds above; none is a valid number.
+
+| | Question | Where it came from |
+|---|---|---|
+| 1 | <the question, written out in full> | <source name and entry identifier> |
+| 2 | <as above> | <as above> |
+
 ## For the interviewer
 
 One question, then silence. At least one follow-up on every answer, including a

@@ -14,7 +14,6 @@ those parameters feed.
 |---|---|
 | [`repo-map.md`](repo-map.md) | Where a thing lives, and who may write it |
 | [`cadence.md`](cadence.md) | What a week is, and what a block is |
-| [`catch-up.md`](catch-up.md) | What every session checks before doing anything |
 | [`caps.md`](caps.md) | How much a single day is allowed to carry |
 | [`claims.md`](claims.md) | What makes a statement about the user safe to write |
 | [`artifact-voice.md`](artifact-voice.md) | How anything read daily is written |
@@ -22,6 +21,7 @@ those parameters feed.
 | [`grading.md`](grading.md) | What a grade means, and what makes one valid |
 | [`interviewing.md`](interviewing.md) | How a round is conducted |
 | [`checkin-protocol.md`](checkin-protocol.md) | How a day is closed out |
+| [`recall.md`](recall.md) | How the untested backlog is drained |
 | [`mock-sourcing.md`](mock-sourcing.md) | Where a question comes from |
 | [`mocks.md`](mocks.md) | How a loop runs, and what a transcript must contain |
 | [`outbound.md`](outbound.md) | What a job-search action is, and what has to be true before it goes |

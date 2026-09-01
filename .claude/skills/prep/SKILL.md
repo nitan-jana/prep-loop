@@ -21,13 +21,13 @@ answers a question and gets out of the way.
 Source of truth. Nothing below restates them; if this file appears to
 contradict one, the linked file wins and this file is the bug.
 
-- [`policy/catch-up.md`](../../../policy/catch-up.md) — the same checks, run for a different reason
+- [`policy/checkin-protocol.md`](../../../policy/checkin-protocol.md#backfilling-a-missed-day) — the one place a gap is acted on, which is not here
 - [`policy/repo-map.md`](../../../policy/repo-map.md) — where each artifact lives
 
 ## What it reads
 
-The same listing as the catch-up, plus onboarding progress, which is the one
-file this opens. No git, nothing else read.
+Three directory listings, plus onboarding progress, which is the one file this
+opens. No git, nothing else read.
 
 | Question | Where |
 |---|---|
@@ -35,11 +35,21 @@ file this opens. No git, nothing else read.
 | Does this week have a plan | `instance/plans/` |
 | Does every working day up to yesterday have a log | `instance/logs/` |
 | Is there a brief for the next review | `instance/mocks/` |
+| Is a recall day due this cycle | `instance/profile/schedule.md`, against the week |
 
-**The catch-up already ran** at the start of this session, as it does at the
-start of every session. This is not a second pass and does not repeat its work.
-The catch-up acts on what is missing and otherwise stays quiet; this is the
-place that says the state out loud, because being asked is the difference.
+**Nothing runs this check on its own.** No session scans for gaps before doing
+what it was opened to do — a scan on that path would fire on every session, in
+the shape the user has been trained to skim past, to report something with no
+deadline attached. Evidence is retroactive: a missing log costs nothing by
+waiting, and the check-in reconstructs it whenever it next runs.
+
+So the state gets said out loud in exactly two places, both of them asked for.
+Here, because being asked is the difference. And in
+[`checkin`](../checkin/SKILL.md), which is the only thing that acts on a gap
+rather than printing it.
+
+**This prints and stops.** A missing log seen here is not backfilled here — it
+is named, and `/checkin` is the line under it.
 
 ## What it prints
 
@@ -50,12 +60,14 @@ prep-loop — where you are.
   this week   <planned, or not planned>
   logs        <through which day, or none>
   next review <brief ready, or no brief>
+  next recall <which day, or not this cycle>
 
   /onboard    build or extend the profile
   /plan       write the week and mirror it to the calendar
   /checkin    close out a day
   /mock       a single project deep-dive round
   /mock-loop  rounds back to back, then scored
+  /recall     drain the untested backlog, interleaved
   /story      turn one experience into an interview story
 ```
 

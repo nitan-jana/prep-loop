@@ -1,4 +1,4 @@
-<!-- leak-check: allow-path — names the artifact directories the catch-up lists -->
+<!-- leak-check: allow-path — names the artifact directories the deleted checks listed -->
 
 # Nothing runs on a timer
 
@@ -36,39 +36,54 @@ The quiz cannot — recall measured three days late measures something else — 
 neither can a miss reason, which only the user knows and has by then forgotten.
 A nightly routine would only ever have written the half that keeps.
 
-## Where the check lives, and why not in the skills
+## The replacement was itself removed
 
-In `CLAUDE.md`, run at the start of every session whichever skill was invoked.
-The first session of a day is often not the check-in — it may be a round, a
-story, or a question about something else — so a check living inside the planner
-and the check-in is a check that gets skipped whenever the day opens with
-anything else.
+For a time the scheduler's stand-in was a **catch-up**: three existence checks
+run in `CLAUDE.md` at the start of every session, whichever skill was invoked.
+It was cut down twice — from reading the profile for the list of working days to
+one directory listing opening nothing, then given two rules about speech rather
+than work, silence on the happy path and no marker file.
 
-## What it was cut down to
+It was deleted anyway. Three things were wrong with it, and none of them were
+fixable by cutting it down further.
 
-The first version was three existence checks reading the profile for the list of
-working days. It became **one directory listing, opening nothing**: a week
-plan's own day headings are the list of working days, so the plan the first
-check looks for answers the second for free. Reading a profile file to find out
-whether anything is missing puts a read on the path that runs every session, to
-answer a question an artifact already answers.
+**The listing could not answer its own question.** Filenames say which days have
+logs; only a week plan's day headings say which days were working days. So the
+check that was documented as opening nothing had to open a plan every time it
+ran, and the reduction that justified putting it on every session's path had
+never actually happened.
 
-Two rules were added at the same time, both about speech rather than work:
+**Its one autonomous action had no deadline.** Backfilling was allowed to act
+alone because leaving it undone was said to lose evidence as history moved
+further away. That is the opposite of what this record already established:
+evidence is retroactive, commit timestamps do not decay, and a day reconstructed
+next week is exactly as complete as one reconstructed the next morning. The half
+that cannot be recovered was gone by the following day either way. Nothing was
+racing anything.
 
-**Silence when nothing is missing.** Most sessions find nothing and most days
-open more than one session, so a line confirming the happy path appears
-constantly and carries no information. What it costs is the one occasion
-something is actually wrong, reported in the shape the user has been trained to
-skim past.
+The action did not survive the move, either. **Nothing backfills unasked now.**
+A reconstructed day is a file that looks like a record, written into a folder
+with no version control behind it, from commits that may have been made for
+something else — and only the user knows whether a quiet day was a working day
+at all. It is reported in a line and written on a yes.
 
-**No marker file.** A marker would be state to keep honest — a stale one skips a
-real backfill, one written early skips it permanently — to avoid a cost that is
-already a single listing. The waste worth removing is speech, not work.
+**Its other two checks reported things nobody could act on yet.** A missing week
+plan is caught by the planning session; a missing brief does not cancel a loop,
+which sources live instead. Both fired days before either mattered, in the shape
+the user had been trained to skim past.
+
+What replaced it is nothing at all on the session path. Backfilling lives in the
+check-in, which is where it already was, and where a gap is acted on rather than
+announced. `prep` prints the same state on request, which is the one context
+where it was ever worth saying.
+
+The title of this record still holds. Nothing runs on a timer — and now nothing
+runs ahead of what was asked, either.
 
 ## Where it lives
 
-- [`policy/catch-up.md`](../../policy/catch-up.md) — the checks, the bound on backfilling, and why it must not take over
-- [`CLAUDE.md`](../../CLAUDE.md) — where it is invoked from
+- [`policy/checkin-protocol.md`](../../policy/checkin-protocol.md#backfilling-a-missed-day) — the only place a gap is acted on, and the bound on how much
+- [`.claude/skills/prep/SKILL.md`](../../.claude/skills/prep/SKILL.md) — the same state, printed when asked
 - [`README.md`](../../README.md) — optional local scheduling, kept on the roadmap and kept last
 
 *In the history:* `0d81003` `e72e519` `203e757` `9cc18cb` `f2dbdce` `152a49b`

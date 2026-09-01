@@ -41,44 +41,56 @@ The round type is chosen first, weakest first, per
 [`mock-sourcing.md`](mock-sourcing.md#choosing-the-round-type). The retention
 pool then chooses the entry *inside* that type — it never chooses the type.
 
-**The loop is the pool's only reader.** The planner schedules work and the
-check-in records what it tested; neither asks a retention question, and the
-reasons are in [`mock-sourcing.md`](mock-sourcing.md#who-draws-from-it).
+**A typed round takes one entry and stops.** It goes down the retention order
+until something inside its chosen type is eligible, and asks that. Working the
+whole list is the recall session's job — it has a day, and it is not scoped to a
+round type — [`recall.md`](recall.md).
 
-### The rapid-fire retention round
+[The week round](#the-week-round) is the exception and does not read that order
+at all. Its pool is the week just worked.
 
-One round of the loop is drawn from entries with `Last worked` filled and
-`Last asked` empty — studied, never tested. This is the only place they surface.
+### The week round
 
-Several of them in the time one deep question would take, because these are the
-small entries: a quiz item, a type challenge, the approach to one problem. That
-is what makes the round a drain rather than a gesture. A block names more
-entries every day than any evening can test, so the untested set grows on its
-own and needs somewhere to go.
+One round of the loop covers **the week just worked**, and only it. Many short
+questions rather than one deep one, over the material the loop's own round types
+do not reach — a subject with a daily block and no readiness rung is the case
+this exists for.
+
+It does not read [the retention order](mock-sourcing.md#the-retention-pick). Its
+pool is `Last worked` inside this week, which makes it the one round in the
+system scoped by calendar rather than by what has fallen due.
+
+**It is the middle of three distances, and that is its whole justification.**
+The check-in asks about a block hours after it ran. A recall day asks at a
+remove long enough for forgetting to mean something. Between them sat nothing,
+and a week's material with no pass over it goes to a recall day never having
+been tested at all.
+
+**The repeat edge does the selecting.** An entry the check-in already asked is
+inside the edge by the time the loop runs, so it is not eligible — per
+[`mock-sourcing.md`](mock-sourcing.md#do-not-repeat-inside-the-window). What is
+left is exactly the part of the week nothing has questioned yet, which a block
+produces far more of than an evening's check-in can reach.
 
 **Sequential, like any other round.** One question, then silence, per
 [`interviewing.md`](interviewing.md#one-question-then-wait). Handing over a list
-in one turn lets the user answer the ones they know and drop the rest, which is
-the failure this round is most exposed to.
+in one turn lets the user answer the ones they know and drop the rest.
 
-**It creates no readiness rung.** Rungs are per round type and earned across
-consecutive reviews — [`readiness.md`](readiness.md#it-is-per-round-type). This
-round spans whatever the pool held, so it grades entries and nothing more.
+**It creates no readiness rung.** The material it covers has no tracked round
+type — [`readiness.md`](readiness.md#it-is-per-round-type). It grades entries,
+writes the coverage columns, and stops there. Those grades are what later place
+the entry in the retention order, so a week round is also how material outside
+the tracked types ever becomes eligible for a decay test.
 
 **It runs last and it yields.** Its length is whatever the window has left once
 the other rounds and the review have what they need, and **the review is never
 compressed to make room for it**. Take fewer entries, or none at all that week.
 
-A loop that ends with a full rapid-fire round and a thin review has traded its
-most valuable output for its cheapest. The review is where the grades, the
-ordered drill list and the rungs come from; the retention round is coverage of
-material already studied, and coverage is the thing this system has least
-trouble producing.
-
-This is not the ordering rule bending. [Rounds run in the brief's
-order](#running-the-rounds) forbids saving a strong round for last to flatter
-the sample. This says what gets cut when the window is short, and the answer is
-never the review.
+Yielding is affordable here in a way it was not for the round this replaced.
+That one was the only drain for the entire untested backlog, so a week it lost
+was a week the backlog grew unopposed. This one is a middle pass over material
+that a recall day will reach regardless — losing it costs a repetition, not the
+only measurement.
 
 ## Running the rounds
 

@@ -57,6 +57,7 @@ week-numbered.
 | Week plan | `instance/plans/YYYY-Www.md` |
 | Daily log | `instance/logs/YYYY-MM-DD.md` |
 | Review scores | `instance/performance/YYYY-Www.md` |
+| Recall session record | `instance/performance/YYYY-MM-DD-recall.md` |
 | Round brief | `instance/mocks/YYYY-MM-DD-brief.md` |
 | Round transcript | `instance/mocks/YYYY-MM-DD-transcript.md` |
 | Story | `instance/stories/<slug>.md`, indexed in `instance/profile/story-bank.md` |
@@ -71,15 +72,16 @@ bug, not a judgement call.
 | Artifact | Written by | Never written by |
 |---|---|---|
 | Week plan | `plan` | any other skill |
-| Daily log | `checkin` | `mock-loop` |
+| Daily log | `checkin` | `mock-loop`, `recall` |
 | Round brief | `mock-loop`, at prep time | `checkin` |
 | Round transcript | an external interviewer | everything here |
 | Review scores | `mock-loop` | `checkin` |
+| Recall session record | `recall` | `checkin`, which reads it in a log's place |
 | Stories and the bank index | `story` | — |
 | Deep dives | `mock`, or by hand | — |
 | Everything under `instance/profile/` | `onboard` | every other skill |
 | Resource inventory entries | `onboard` | every other skill |
-| The coverage columns on an entry | `checkin`, `mock-loop` | `plan`, which reads them |
+| The coverage columns on an entry | `checkin`, `mock-loop`, `recall` | `plan`, which reads them |
 | The denylist | `onboard` | every other skill |
 | Calendar, a whole week | `plan` | every other skill except `checkin` |
 | Calendar, one reschedule | `checkin` | `mock`, `mock-loop`, `story` |
@@ -87,9 +89,9 @@ bug, not a judgement call.
 | Nothing at all | `prep` | — |
 
 **An inventory has two owners, split by column.** `onboard` owns the entries —
-identifiers, titles, links, everything that describes the source. `checkin` and
-`mock-loop` own `Last worked`, `Last asked` and `Grade`, and touch nothing else
-in the row. The columns record what this install did with an entry, which is not
+identifiers, titles, links, everything that describes the source. `checkin`,
+`mock-loop` and `recall` own `Last worked`, `Last asked` and `Grade`, and touch
+nothing else in the row. The columns record what this install did with an entry, which is not
 something a fetcher can know and not something a session may invent. See
 [`mock-sourcing.md`](mock-sourcing.md#what-the-inventory-records).
 

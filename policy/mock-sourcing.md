@@ -60,13 +60,17 @@ exactly the calibration failure that rule exists to prevent.
 
 ### The retention pick
 
-In order. Stop at the first that yields an eligible entry.
+In order. A **priority, not a filter** — what a reader does with the order
+depends on how much of a session it has.
 
 1. **Graded below `solid`, past the lower edge.** A regression outranks an
    uncovered topic — [`readiness.md`](readiness.md#regression).
 2. **`Last worked` filled, `Last asked` empty.** Studied and never tested.
-   Nothing else in the system surfaces it.
-3. **Graded `solid`, past the upper edge.** The decay test.
+   Oldest first.
+3. **Graded `solid`, past the upper edge.** The decay test, and the only row
+   that can carry a round type to the top of the ladder — the last rung is
+   defined on material not recently studied, per
+   [`readiness.md`](readiness.md#the-ladder).
 
 **Difficulty does not rank.** The entries that go untested are the ones that
 looked too small to spend a question on, so ranking by difficulty rebuilds the
@@ -74,22 +78,52 @@ bias the second row exists to correct.
 
 ### Who draws from it
 
-The **review** is the reader. It picks a round type first, per
-[below](#choosing-the-round-type), and the pool picks the entry inside that
-type.
+The **recall session** reads the whole list and works down it, across every
+track at once, for as long as the day lasts. It is the only reader that does not
+stop at the first eligible entry, which is what makes the order a priority
+rather than a filter — [`recall.md`](recall.md).
+
+It draws against a wider lower edge of its own —
+[`recall.md`](recall.md#its-lower-edge-is-its-own) — and it is the only thing
+that reaches an entry belonging to no tracked round type **at retention
+distance**. Two other instruments reach such an entry sooner: the check-in on
+the day its block ran, and [the loop's week round](mocks.md#the-week-round) over
+the week just worked. Neither reads this order — one is scoped to a day and the
+other to a week — and both write the columns, which is how material outside the
+tracked types becomes eligible here at all.
+
+The **review** picks a round type first, per
+[below](#choosing-the-round-type), and then takes **one entry** from this list
+inside that type. A loop is a handful of deep rounds; it goes down the order
+until something is eligible and stops there.
 
 The **planner** reads the first and third rows when filling a block, so that a
-week is not built entirely out of new material.
+week is not built entirely out of new material. It deliberately does not read
+the middle one: an entry studied and never tested does not need studying again,
+it needs a question put to it, and scheduling it into a block re-reads a topic
+from the start — [`readiness.md`](readiness.md#regression).
 
 The **check-in** writes the columns and never reads them. It closes a day it is
 still inside, at a distance well within the lower edge, which makes it the wrong
 instrument for a retention question —
 [`checkin-protocol.md`](checkin-protocol.md#the-quiz).
 
-The second row belongs to the review alone. An entry that was studied and never
-tested needs an ask, not another block: scheduling it again re-reads a topic
-from the start, which [`readiness.md`](readiness.md#regression) names as the
-wrong response to a gap.
+### Why one list and not two
+
+The second row was once split off into a pool of its own, on the reasoning that
+a queue with an arrival rate is a different kind of thing from a round type
+falling due.
+
+It is, and the ordering was never what went wrong. **The failure was a reader
+without a window** — one round at the end of a loop, taking a single entry, in
+whatever time was left. Under that reader the order behaved as a filter: the
+first row was rarely empty, so the second was rarely reached.
+
+Giving the list a reader that works down it for a whole day fixes that without
+splitting anything. Splitting it made a second problem instead: a graded entry
+outside every tracked round type had nowhere left to be asked, because the only
+session wide enough to reach it had been restricted to entries never asked at
+all.
 
 ## Do not repeat inside the window
 

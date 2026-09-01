@@ -69,11 +69,13 @@ carries the same thing in one place.
 `/checkin` closes the day. It gathers evidence first, then quizzes what the
 day covered rather than asking how it went, records any miss in the user's own
 words, and reschedules what slipped. It also backfills earlier days that have no
-log, from commit timestamps, marked as evidence-only because recall cannot be
-measured late.
+log — but only if you ask. It names the days with no record and waits, because a
+reconstructed day is a file that looks like a record and cannot be undone.
 
-Nothing runs on a timer. Every session checks for missing work at its start and
-recovers what it can, so a skipped day costs a quiz rather than a hole.
+Nothing runs on a timer, nothing scans for gaps ahead of what you asked for, and
+nothing reconstructs a day you did not ask it to. Waiting costs nothing: commit
+timestamps do not decay, and the half that cannot be reconstructed was gone by
+the following morning either way.
 
 Coming back after time away, open with `/prep`. It says what is missing and
 names one thing, rather than leaving you to work out where you stopped.
@@ -90,11 +92,36 @@ ahead of the day; `/mock-loop run` conducts the rounds and scores them. A brief
 written minutes before the first round has been shaped by the person about to be
 interviewed, which is the one influence it exists to exclude.
 
+The last round of the loop covers the week just worked — many short questions
+instead of one deep one, over whatever the other rounds do not reach. It is
+sized to what the window has left, so a short review takes fewer of them or
+none.
+
 `/mock` runs a single deep-dive round on its own, opening on whichever claim has
 the least evidence behind it.
 
 `/story` turns one experience into a usable story with the follow-ups an
 interviewer would actually ask, and indexes it.
+
+## A recall day
+
+Every block puts more material in front of you than the check-in closing that
+day can ask about, so the studied-but-never-tested pile grows on its own. On a
+cycle, whole working days go to draining it.
+
+This is the third of three distances, and the only one far enough out for
+forgetting to mean anything. The check-in asks about a block hours after it ran;
+the loop's last round asks about the week days later; a recall day asks weeks
+later.
+
+`/recall` asks many short questions instead of a few deep ones, drawn oldest
+first from everything past its edge, and it never runs two from the same track
+in a row. Grouping them would let the second question of a kind answer itself,
+and an interview never tells you what is coming next. Expect it to score lower
+than a day spent on one subject — that is the measurement working.
+
+A recall day writes its own scored record and no daily log. How often it comes
+round, and which days it takes, are in your profile like everything else.
 
 ## Where things live
 
