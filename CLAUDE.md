@@ -17,9 +17,16 @@ mechanism; profile supplies the parameters.**
 
 ```
 bun run check        # links, leaks and tests — needs no install
+bun run check:profile   # the same link check, pointed at instance/
 bun install          # only to edit: type definitions and the compiler
 bun run typecheck
 ```
+
+**`check` covers the tracked repo only.** `instance/` is a different question
+with a different answer, so it has its own command — run it after renaming a
+policy heading, which is what rots a profile link. It is never part of `check`,
+because a check that blocks a commit has to mean the same thing in CI and in
+every clone, and no two installs have the same `instance/`.
 
 **No runtime dependencies, ever.** `tools/` uses Bun's built-ins alone, so the
 checks run straight from a clone. A check that fails to start is a check that

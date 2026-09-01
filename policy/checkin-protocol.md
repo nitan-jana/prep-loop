@@ -122,6 +122,21 @@ Before anything else, check whether earlier working days are missing a record.
 For each one, reconstruct what can still be recovered from commit timestamps and
 file history, write it, and mark it `status: evidence-only`.
 
+**A week plan's own day headings are the list of working days**, not the days
+`instance/profile/schedule.md` says are workable. The profile states which days
+can carry blocks; the plan states which ones were actually given any, and a week
+planned after it began deliberately carries fewer — see
+[`cadence.md`](cadence.md#carrying-work-forward) for what a plan is and
+[`artifact-voice.md`](artifact-voice.md#instructions-never-completion-state) for
+why it holds no record of what it skipped.
+
+Reading the profile instead would report a gap for a day that was never given
+instructions, and a backfill would then invent a working day that never existed.
+
+**With no plan covering those days there is nothing to compare against**, and
+the missing plan is the finding. Say so and stop; do not fall back to the
+profile.
+
 **A recall day has no log and is not missing one.** Its record is the file the
 recall session writes, per [`recall.md`](recall.md#it-writes-its-own-record). A
 working day is missing a record when it has neither.

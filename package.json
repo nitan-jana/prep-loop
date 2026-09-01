@@ -7,6 +7,7 @@
     "hooks": "git config core.hooksPath .githooks",
     "check": "bun run check:links && bun run check:leaks && bun test",
     "check:links": "bun tools/check-links.ts",
+    "check:profile": "bun tools/check-links.ts instance",
     "check:leaks": "bun tools/leak-check.ts",
     "test": "bun test",
     "typecheck": "tsc --noEmit"
