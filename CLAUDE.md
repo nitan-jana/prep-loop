@@ -17,9 +17,16 @@ mechanism; profile supplies the parameters.**
 
 ```
 bun run check        # links, leaks and tests — needs no install
+bun run check:profile   # the same link check, pointed at instance/
 bun install          # only to edit: type definitions and the compiler
 bun run typecheck
 ```
+
+**`check` covers the tracked repo only.** `instance/` is a different question
+with a different answer, so it has its own command — run it after renaming a
+policy heading, which is what rots a profile link. It is never part of `check`,
+because a check that blocks a commit has to mean the same thing in CI and in
+every clone, and no two installs have the same `instance/`.
 
 **No runtime dependencies, ever.** `tools/` uses Bun's built-ins alone, so the
 checks run straight from a clone. A check that fails to start is a check that
@@ -71,22 +78,6 @@ The test is not "does this contain a name or a date" — that is only what
 leak-check can mechanically catch. The test is **would this be true for a user
 who isn't this one.** A six-block day, a weekend loop, a named framework and an
 early-morning session all pass the first test and fail the second.
-
-## At the start of every session
-
-Run the catch-up in [`policy/catch-up.md`](policy/catch-up.md) before doing what
-was asked. One listing of `instance/plans/`, `instance/logs/` and
-`instance/mocks/`, opening none of them: does this week have a plan, does every
-day up to yesterday have a log, is there a brief for the next review.
-
-Backfill a missing log and say so in one line. Report anything else and stop.
-**Say nothing at all when nothing is missing**, which is most sessions.
-**Then get on with the actual request** — catch-up is not what the session is
-for, and a catch-up that takes over is one the user learns to dread.
-
-It lives here rather than in each skill's required reading because the first
-session of a day is often not the check-in, and a check that only fires for one
-skill is a check that gets skipped.
 
 ## Forbidden
 

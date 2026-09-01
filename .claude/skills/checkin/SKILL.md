@@ -12,17 +12,14 @@ owns the daily log, per
 [`policy/repo-map.md`](../../../policy/repo-map.md#who-writes-what), and nothing
 else writes one.
 
-One principle. The rest follows from it.
-
 **It tests; it does not ask how the day went.** A self-report is the least
 reliable input available, and this system exists partly to replace it.
 
 ## Required reading
 
-Source of truth. Nothing below restates them. If this file appears to
-contradict one, the linked file wins and this file is the bug.
+The linked file wins; nothing here restates one.
 
-- [`policy/checkin-protocol.md`](../../../policy/checkin-protocol.md) — the three parts, in order, and what each one may contain
+- [`policy/checkin-protocol.md`](../../../policy/checkin-protocol.md) — the three parts in order, the quiz, misses, the reschedule, backfilling
 - [`policy/grading.md`](../../../policy/grading.md) — the three grades and the rule that a grade carries its answer
 - [`policy/interviewing.md`](../../../policy/interviewing.md) — the quiz is a short round and runs by the same rules
 - [`policy/artifact-voice.md`](../../../policy/artifact-voice.md) — how the log is written
@@ -31,117 +28,49 @@ contradict one, the linked file wins and this file is the bug.
 
 ## Order of operations
 
-1. **Backfill first.** Check whether earlier working days are missing a log,
-   before touching today. See below.
-2. **Gather evidence**, before asking anything.
-3. **Quiz**, from what the evidence shows the day covered.
+1. **Report any gap**, before touching today — an earlier working day with
+   neither a log nor a recall record. Name the days and wait;
+   [backfill only what the user asks
+   for](../../../policy/checkin-protocol.md#backfilling-a-missed-day).
+2. **Gather evidence**, before asking anything. Timestamps against the block
+   windows in `instance/profile/schedule.md`.
+3. **Quiz**, from what the evidence shows the day covered, grading against the
+   anchors in `instance/profile/grading-anchors.md`.
 4. **Ask for miss reasons**, and record them verbatim.
 5. **Reschedule** what slipped — and actually call the calendar.
 6. **Write the log** from [`templates/daily-log.md`](../../../templates/daily-log.md).
 7. **Record coverage** on the entries the day touched, under
-   `instance/curriculum/`. See below.
+   `instance/curriculum/` — `Last worked` on everything the blocks named,
+   `Last asked` and `Grade` only on what the quiz reached.
 8. **Stop.** No commit.
 
-## Evidence before questions
-
-Gather first. Opening with a question the evidence could have answered teaches
-the user that the answers are not checked.
-
-Where to look: commits in whatever repositories the day's practice lands in,
-files that appeared under `instance/stories/` or `instance/deep-dives/`, and the
-timestamps on all of it against the block windows in
-`instance/profile/schedule.md`.
-
-**Silence is not a miss.** A reading block leaves no commits. Inferring a miss
-from an absence of evidence is how a log becomes a record of failure that is
-also wrong.
-
-## The quiz is a round
-
-Short, but a round — so
-[`policy/interviewing.md`](../../../policy/interviewing.md) applies in full. One
-question then wait. Push at least once. Never supply the term being groped for.
-Never mention a grade or what a stronger answer would have contained.
-
-**Keep it to a few items.** A check-in that becomes a full round eats the
-evening and then gets skipped, and a skipped check-in costs more than a shallow
-one.
-
-Grade against the anchors in `instance/profile/grading-anchors.md`. That file is
-empty until there are real graded answers to put in it, and an empty anchor file
-is not a reason to skip grading — it is a reason to be careful, and the quoted
-answers written now are what fills it later.
-
-## Recording coverage
-
-Every entry the day's blocks named gets `Last worked`. Every entry the quiz
-actually asked also gets `Last asked` and `Grade`, where the grade names this
-day's log as the file holding the quoted answer. Nothing else in the row is
-touched — the entries themselves belong to `onboard`, per
-[`policy/repo-map.md`](../../../policy/repo-map.md#who-writes-what).
-
-The gap between those two columns is the point. A block names more entries than
-a short quiz can reach, and the ones it did not reach are what the review's
-retention round draws from —
-[`policy/mock-sourcing.md`](../../../policy/mock-sourcing.md#the-retention-pick).
-
-On a backfilled log, `Last worked` only. Nothing was asked, so nothing is
-graded.
-
-## Backfilling
-
-**Check for missing logs before doing anything else**, and reconstruct what can
-still be recovered from commit timestamps and file history.
-
-The bound is in [`policy/catch-up.md`](../../../policy/catch-up.md): a day or
-two silently, then stop and ask. A session that spends its first minutes
-reconstructing a week nobody asked about is one the user learns to dread.
-
-**Leave the quiz section present and explicitly empty** on a backfilled log. Do
-not quiz on a day that has passed, and do not ask for a miss reason nobody
-remembers accurately.
-
-## The reschedule is a calendar call
-
-Find a free window with `suggest_time`, then **call `create_event` or
-`update_event`**, then confirm in one line.
-
-**Naming a slot is not a reschedule** —
-[`checkin-protocol.md`](../../../policy/checkin-protocol.md#the-reschedule-is-a-calendar-call)
-has the failure this prevents.
-
-**One block, at most.** A check-in that rebuilds the week is a planning session
-wearing the wrong name — that is
-[`plan`](../plan/SKILL.md)'s job, and rescheduling everything guarantees an
-overloaded tomorrow. Anything else goes to the week plan's `## Deferred` list or
-is dropped, and both are fine.
-
 ## Forbidden
-
-Named here so they are in reach while the log is being written. The reason for
-each is in the linked file.
 
 - **Never write outside `instance/`.**
 - **Never ask how the day went** —
   [`checkin-protocol.md`](../../../policy/checkin-protocol.md#it-quizzes-it-does-not-collect-a-report).
+- **Never infer a miss from silence.** A reading block leaves no commits —
+  [`checkin-protocol.md`](../../../policy/checkin-protocol.md#evidence-first-before-any-question).
 - **Never editorialise a miss reason**, summarise it into a category, or compare
   it to a previous one —
   [`checkin-protocol.md`](../../../policy/checkin-protocol.md#misses).
 - **Never record a grade without its quoted answer** —
   [`grading.md`](../../../policy/grading.md#a-grade-without-the-answer-is-not-a-grade).
-- **Never fabricate the missing half of a backfilled log** —
+- **Never backfill a day unasked**, and never fabricate the missing half of one —
   [`checkin-protocol.md`](../../../policy/checkin-protocol.md#backfilling-a-missed-day).
-- **Never infer a miss from silence** —
-  [`checkin-protocol.md`](../../../policy/checkin-protocol.md#evidence-first-before-any-question).
-- **Never source a quiz item from the retention pool.** The check-in tests
-  today, hours after the block ran —
+- **Never source a quiz item from the retention order.** This closes a day it is
+  still inside —
   [`checkin-protocol.md`](../../../policy/checkin-protocol.md#today-only).
+- **Never reschedule more than one block.** Rebuilding the week is
+  [`plan`](../plan/SKILL.md)'s job —
+  [`checkin-protocol.md`](../../../policy/checkin-protocol.md#reschedule).
 - **Never write an inventory row beyond its three coverage columns** —
   [`repo-map.md`](../../../policy/repo-map.md#who-writes-what).
 
 ## Done when
 
 - `instance/logs/<date>.md` exists, with a status that matches what is actually known
+- Every earlier working day has a log or a recall record, or the gap was named and left alone
 - Every grade in it carries the answer that produced it, quoted
 - Every miss reason is in the user's own words
 - Anything rescheduled is on the calendar, not just named

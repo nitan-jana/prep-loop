@@ -72,12 +72,12 @@ using it. See [`CLAUDE.md`](CLAUDE.md) for the rules that keep the boundary.
 - [x] **Guardrails** — two checkers, thirty-five tests, CI on every push
 - [x] **The generic system** — seventeen policy files, no personal data by
       construction
-- [x] **Templates and all seven sessions**
+- [x] **Templates and all eight sessions**
 - [x] **A full week run untouched**, plan through review
 - [ ] **Voice rounds**, over speech in a separate project, with only the round
       brief leaving your machine and the grading staying on it
 - [ ] **Optional local scheduling**, for the plan waiting before you sit down
-- [ ] **One command instead of seven**, if a full week says the shape is right
+- [ ] **One command instead of eight**, if a full week says the shape is right
 - [ ] **A hosted tier** for the things a laptop cannot do:
     - works without Claude Code, or any coding CLI at all
     - setup is a signup, with resume, code host and calendar connected once

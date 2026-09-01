@@ -7,7 +7,14 @@
 //   - any occurrence of the section symbol, which this repo does not use
 //     (a file link is machine-checkable; a section number is not)
 //
-//   bun tools/check-links.ts [path ...]      default: the whole repo
+// leak-check: allow-path — it names the local folder it is pointed at on request
+//
+// The default run covers the tracked repo and nothing else, so it means the
+// same thing in CI, in a fresh clone and on every machine. Naming a path
+// overrides that — which is how the local folder gets checked, on request:
+//
+//   bun tools/check-links.ts [path ...]      default: the tracked repo
+//   bun run check:profile                    the local folder, when asked
 
 import { Glob } from "bun";
 import { existsSync, statSync } from "node:fs";

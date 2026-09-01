@@ -67,8 +67,8 @@ survived the day.
 An older entry in the same table would put two different measurements under one
 grade scale in one artifact, and a grade is of one answer to one question at one
 moment per [`grading.md`](grading.md#what-a-grade-is-not). The retention question
-belongs to the review, which asks it at a distance where the answer means
-something.
+belongs to the recall session, which asks it at a distance where the answer
+means something — [`recall.md`](recall.md).
 
 ### Record what was asked
 
@@ -118,9 +118,46 @@ guarantees an overloaded tomorrow.
 
 ## Backfilling a missed day
 
-Before anything else, check whether earlier working days are missing a log. For
-each one, reconstruct what can still be recovered from commit timestamps and
+Before anything else, check whether earlier working days are missing a record.
+For each one, reconstruct what can still be recovered from commit timestamps and
 file history, write it, and mark it `status: evidence-only`.
+
+**A week plan's own day headings are the list of working days**, not the days
+`instance/profile/schedule.md` says are workable. The profile states which days
+can carry blocks; the plan states which ones were actually given any, and a week
+planned after it began deliberately carries fewer — see
+[`cadence.md`](cadence.md#carrying-work-forward) for what a plan is and
+[`artifact-voice.md`](artifact-voice.md#instructions-never-completion-state) for
+why it holds no record of what it skipped.
+
+Reading the profile instead would report a gap for a day that was never given
+instructions, and a backfill would then invent a working day that never existed.
+
+**With no plan covering those days there is nothing to compare against**, and
+the missing plan is the finding. Say so and stop; do not fall back to the
+profile.
+
+**A recall day has no log and is not missing one.** Its record is the file the
+recall session writes, per [`recall.md`](recall.md#it-writes-its-own-record). A
+working day is missing a record when it has neither.
+
+**Nothing else looks for a gap, and nothing needs to.** The check-in is the only
+place a backfill happens, because there is no hurry for it to happen anywhere
+else: evidence is retroactive, commit timestamps do not decay, and a day
+reconstructed late is exactly as complete as one reconstructed the next morning.
+What cannot be recovered was already gone by the following day. A scan running
+ahead of every session would buy nothing and would open a plan on each one to
+find out which days were working days.
+
+**It never writes a backfill unasked.** Name the days that have no record, in
+one line, and wait — one missing day and a week of them are both reported rather
+than reconstructed.
+
+A backfill is cheap to run and impossible to undo. It writes a file that looks
+like a record of a day, into a folder with no version control behind it, on
+evidence that may be a commit made for something else entirely. The user is the
+only one who knows whether a day with two commits on it was a working day at
+all, and asking costs one line of a session they are already in.
 
 **Leave the quiz section present and explicitly empty.** Do not quiz on a day
 that has passed — recall measured late measures something else — and do not ask

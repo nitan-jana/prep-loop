@@ -30,9 +30,11 @@ When a rule turns out to belong to two files, it gets its own:
 - **Outbound** came out of caps. A limit answers how often; nothing in a limit
   says what a good action looks like. `caps.md` keeps the ceiling and hands off
   the mechanism.
-- **Catch-up** came out of the check-in and the planner, for the same reason it
-  ended up in `CLAUDE.md`: a check that lives in two skills fires in neither when
-  the day opens with a third.
+- **Recall** came out of the mock loop. It was one round inside a file about
+  running a loop, which is why every rule it needed had to be justified against
+  the loop's window. Given its own file it is a session with its own pool, its
+  own edge and its own record, and `mocks.md` keeps only the sentence saying it
+  is not the loop's job.
 
 ## The related failure it names
 

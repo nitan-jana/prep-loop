@@ -40,9 +40,42 @@ restated](07-point-never-paraphrase.md), so a rule is only reachable through the
 link that names it. A broken link is not a cosmetic defect in that design — it
 is a rule that has silently stopped applying.
 
+## The local folder is a second question, not a second tier
+
+Links from a profile into `policy/` rot when a heading is renamed, and nothing
+caught it. Two had: one at a renamed heading, one at an anchor naming a block
+its subject had moved out of. Renaming a policy heading is what breaks them, so
+the damage is caused in the tracked half and lands in the untracked one.
+
+The obvious fix — scan `instance/` as part of the run — was tried and reverted
+twice over, first blocking and then reporting. Both were wrong, for the same
+reason stated two different ways.
+
+**A blocking check has to mean the same thing everywhere.** `bun run check` is
+what the pre-commit hook runs and what CI runs. CI has no `instance/`, and no
+two installs have the same one, so a commit that failed locally would pass on
+the runner and pass for everybody else. A gate whose verdict depends on
+untracked personal files is not a gate. It would also put a typo in a curriculum
+row between the user and a commit to the repo, which inverts what is public and
+what is private.
+
+**A non-blocking report inside a blocking run gets ignored.** That was the
+second attempt: print the rot, stay green. It is the tiering
+[the leak checker uses](02-the-leak-checker-tiers.md) and it works there, where
+the reported tiers describe the tracked files the run is already about. Here it
+would have added a line about a different subject to a command asking a
+different question — noise attached to the one output that has to stay worth
+reading.
+
+So the scan lives behind its own name. `check:profile` points the same checker
+at `instance/`, exits non-zero like any check, and is run when the question is
+actually being asked — after a session that renamed a heading. The default run
+went back to the tracked repo, which is the only thing it can honestly speak
+for.
+
 ## Where it lives
 
-- [`tools/check-links.ts`](../../tools/check-links.ts) — the three failures, in its header
+- [`tools/check-links.ts`](../../tools/check-links.ts) — the three failures, and the two ways it is run, in its header
 - [`policy/README.md`](../../policy/README.md) — the house style for writing a policy file
 - [`CLAUDE.md`](../../CLAUDE.md) — the rule, stated where every session reads it
 
