@@ -48,6 +48,14 @@ worked**, not the untested backlog — the one round in the system scoped by
 calendar rather than by what has fallen due. It is the middle of three
 distances, and each measures something the others cannot: hours, days, weeks.
 
+It draws the whole week, including what the check-in already asked. Excluding
+those was tried first, on the reasoning that the repeat edge had already put
+them out of reach — but that edge protects a retention grade from the round that
+last asked the question, and this round measures no retention. Re-asking on the
+fourth day what was asked on the first is what an expanding interval is; the
+exclusion would have refused the second repetition for having done the first.
+The unasked entries go first, which is an ordering and not a filter.
+
 Its yield rule survived the move and is defensible now in a way it was not
 before. A round that yields its window is fatal when it is the only drain for an
 unbounded backlog, which is what killed the last one. It is affordable when it
