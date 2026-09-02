@@ -42,6 +42,17 @@ Pull from what the day's blocks actually covered, per the evidence. Then:
 question, a named mechanism, a named decision. A vague prompt gets a vague
 answer that cannot be graded.
 
+**Stay inside the entry.** A question named from an entry under
+`instance/curriculum/` may not ask past what that entry covers. Where a plan
+line asks for more than its link carries — accessibility, or a keyboard model,
+on a question that has neither — the quiz follows the entry, and the block's
+evidence row records what the link does not cover. None of the gap is graded.
+
+An answer that says the material was not in the question is a correct answer.
+Grading it as a miss records a sourcing defect as a failure of recall, and the
+entry is then left carrying a grade that every later session reads as retention
+data.
+
 **Ask for reconstruction, not recognition.** "Walk through the approach" beats
 "do you remember the approach". Recognition survives a day and fails an
 interview, so testing for it measures nothing worth knowing.
