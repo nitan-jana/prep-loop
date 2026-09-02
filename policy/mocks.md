@@ -66,11 +66,29 @@ remove long enough for forgetting to mean something. Between them sat nothing,
 and a week's material with no pass over it goes to a recall day never having
 been tested at all.
 
-**The repeat edge does the selecting.** An entry the check-in already asked is
-inside the edge by the time the loop runs, so it is not eligible — per
-[`mock-sourcing.md`](mock-sourcing.md#do-not-repeat-inside-the-window). What is
-left is exactly the part of the week nothing has questioned yet, which a block
-produces far more of than an evening's check-in can reach.
+**The whole week is the pool, including what the check-in already asked.** This
+round is a deliberate exception to
+[the repeat edge](mock-sourcing.md#do-not-repeat-inside-the-window), which
+otherwise puts a recently-asked entry out of reach.
+
+The edge exists to stop a *retention* grade being contaminated by the round that
+last asked the question. This round does not measure retention — it is the
+second repetition at an expanding interval, and re-asking on the fourth day what
+was asked on the first is what an expanding interval *is*. Excluding those
+entries would refuse to do the repetition on the grounds that it had been done
+once already.
+
+**Unasked first, as a priority rather than a filter.** The round yields its
+window, so it rarely reaches the whole week. A block produces far more entries
+than an evening's check-in can question, and asking those before re-asking the
+handful already covered is the better use of a short window. It is an ordering;
+nothing in the week is excluded from it.
+
+One consequence for reading the grades: an entry the check-in asked three days
+ago will score higher here than one seen for the first time, because part of
+what is being recalled is the earlier answer. That is what a consolidation pass
+does, and it is why this round moves no rung. The measurement that is not
+contaminated happens on a recall day, past both edges.
 
 **Sequential, like any other round.** One question, then silence, per
 [`interviewing.md`](interviewing.md#one-question-then-wait). Handing over a list

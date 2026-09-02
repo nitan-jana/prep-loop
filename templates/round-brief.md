@@ -50,10 +50,21 @@ the cost of the sample.
 Many short questions over the week just worked, asked one at a time. Take as
 many as the window has left after the rounds above; none is a valid number.
 
-| | Question | Where it came from |
-|---|---|---|
-| 1 | <the question, written out in full> | <source name and entry identifier> |
-| 2 | <as above> | <as above> |
+Each one is written out the same way as the rounds above — the framing, the
+concrete case, and every part the answer should cover. A short question here is
+a question that will be answered short.
+
+### 1
+
+**Question.** <the question, written out in full>
+
+**Where it came from.** <source name and the entry identifier>
+
+### 2
+
+**Question.** <as above>
+
+**Where it came from.** <as above>
 
 ## For the interviewer
 

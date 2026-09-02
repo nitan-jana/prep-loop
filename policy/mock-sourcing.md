@@ -136,6 +136,11 @@ recent answer is still in short-term memory, so a re-ask grades the round. An
 answer that could not be reconstructed left nothing in memory to contaminate,
 and an early re-ask still tests the material.
 
+**[The week round](mocks.md#the-week-round) is exempt entirely.** This edge
+protects a retention measurement, and that round is not one — it is a second
+repetition at a short interval, over the week just worked. Everything else that
+draws a question honours the edge.
+
 ## Choosing the round type
 
 **Weakest first.** Read `instance/performance/` and pick the round type with the worst

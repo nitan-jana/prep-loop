@@ -32,12 +32,17 @@ Rows sit in the order they were asked, which is the interleaved order — see
 are not grouped by track, and why this session scores lower than a grouped one
 would on the same material.
 
+**The question goes in as it was asked**, whole, per
+[`policy/interviewing.md`](../policy/interviewing.md#ask-the-whole-question).
+Not the entry identifier standing in for it: this file is read months later with
+none of the session around it, and a slug does not say what was asked.
+
 `Due` is which row of the order the entry came from, and nothing more — it is
 not a comparison to how the entry graded last time.
 
-| Entry | From | Track | Due | Grade | Answer |
+| Question | From | Track | Due | Grade | Answer |
 |---|---|---|---|---|---|
-| <entry identifier> | <source slug> | <track> | <below solid / never asked / decay> | <solid / shaky / not retained> | "<the user's words>" |
+| <the question, as asked> | <source slug> · <entry identifier> | <track> | <below solid / never asked / decay> | <solid / shaky / not retained> | "<the user's words>" |
 
 ## What a stronger answer would have contained
 

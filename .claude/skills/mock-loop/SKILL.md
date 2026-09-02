@@ -62,10 +62,11 @@ Written on a different day from the loop, using
 2. **Pick one entry inside each type**, going down
    [the retention order](../../../policy/mock-sourcing.md#the-retention-pick)
    until something is eligible.
-3. **Build the week round last**, from `Last worked` inside this week, dropping
-   anything the check-in already asked — it is inside the repeat edge. Size it
-   to what the window has left after the review;
-   [`mocks.md`](../../../policy/mocks.md#the-week-round) has the yield rule.
+3. **Build the week round last**, from `Last worked` inside this week — the
+   whole week, including what the check-in already asked, which is a deliberate
+   exception to the repeat edge. Take the unasked ones first; that is an
+   ordering, not a filter. Size it to what the window has left after the review;
+   [`mocks.md`](../../../policy/mocks.md#the-week-round) has both rules.
 4. **Copy every question in full**, with its source and entry identifier. The
    brief carries no links out and must read without this repo.
 
@@ -111,6 +112,8 @@ Written on a different day from the loop, using
   [`mocks.md`](../../../policy/mocks.md#the-week-round).
 - **Never shorten the review to fit the week round.** Drop entries instead —
   [`mocks.md`](../../../policy/mocks.md#the-week-round).
+- **Never narrow the week round's pool to what the check-in missed.** The whole
+  week is eligible — [`mocks.md`](../../../policy/mocks.md#the-week-round).
 - **Never write an inventory row beyond its three coverage columns** —
   [`repo-map.md`](../../../policy/repo-map.md#who-writes-what).
 
