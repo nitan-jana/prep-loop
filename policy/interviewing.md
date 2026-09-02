@@ -37,6 +37,26 @@ the word makes the rest of the answer unusable as evidence.
 **No lists of questions.** Multiple questions in one turn let the user pick the
 one they can answer and quietly drop the rest.
 
+### Ask the whole question
+
+**State the question whole** — the framing an interviewer would give, the
+concrete case where there is one, and every part the answer should cover, named
+explicitly.
+
+A prompt that leans on the plan line it came from gets an answer scoped to
+whatever the user assumed was meant. That answer cannot be graded against a
+conjunctive `solid`: a leg that was never asked for reads exactly like one the
+user could not produce, and the grade then records a failure the question
+caused.
+
+The question text is also what lands in a log's quiz table and in a review. It
+is read there months later with none of the session around it, so it has to
+carry its own setup.
+
+**It is still one question.** The parts are components of a single ask, not a
+list to choose between, so the rule above holds unchanged. A follow-up is a
+separate turn and is stated just as fully.
+
 ## Push once, at minimum
 
 Every answer gets at least one follow-up, including a good one. The follow-up

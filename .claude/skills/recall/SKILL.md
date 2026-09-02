@@ -95,6 +95,7 @@ easily done.
 
 - `instance/performance/<date>-recall.md` exists, and no log was written for the day
 - Every entry asked was copied from an inventory, with its link
+- Every row carries the question as it was asked, not the entry identifier
 - No two consecutive entries in the record share a track
 - Every grade carries the answer that produced it, quoted
 - Every entry asked carries `Last asked` and a `Grade` naming this record
