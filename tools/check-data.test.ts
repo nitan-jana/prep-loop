@@ -4,7 +4,7 @@ import { describe, expect, test } from "bun:test";
 import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { Checker, checkData, conceptFor, validateGrade, validateHabits, validateWeekPlan } from "./check-data.ts";
+import { Checker, checkData, conceptFor, validateGrade, validateHabits, validateObservations, validateWeekPlan } from "./check-data.ts";
 
 const run = (fn: (c: Checker) => void) => {
   const c = new Checker("f.yaml");
@@ -55,6 +55,27 @@ describe("validateHabits", () => {
   });
 });
 
+describe("validateObservations", () => {
+  const good = { subject: "a-source", noted: "2026-09-08", note: "block A may not be running", status: "open" };
+  test("a well-formed open observation passes", () => {
+    expect(run((c) => validateObservations(c, { observations: [good] }))).toEqual([]);
+  });
+  test("noted must be an ISO date", () => {
+    expect(run((c) => validateObservations(c, { observations: [{ ...good, noted: "yesterday" }] }))).toContain(
+      "observations[0].noted: date as YYYY-MM-DD",
+    );
+  });
+  test("an unknown status fails", () => {
+    const p = run((c) => validateObservations(c, { observations: [{ ...good, status: "pending" }] }));
+    expect(p.some((s) => s.startsWith("observations[0].status:"))).toBe(true);
+  });
+  test("a resolved observation must name what settled it", () => {
+    expect(run((c) => validateObservations(c, { observations: [{ ...good, status: "resolved" }] }))).toContain(
+      "observations[0].resolved_by: a resolved observation names what settled it",
+    );
+  });
+});
+
 describe("validateWeekPlan", () => {
   const good = {
     week: "2026-W10",
@@ -84,6 +105,7 @@ describe("validateWeekPlan", () => {
 describe("conceptFor", () => {
   test("routes the YAML concepts that are left", () => {
     expect(conceptFor("profile/habits.yaml")).toBe("habits");
+    expect(conceptFor("profile/observations.yaml")).toBe("observations");
     expect(conceptFor("plans/2026-W10.yaml")).toBe("week-plan");
   });
   test("curriculum moved to the database — not a YAML concept", () => {

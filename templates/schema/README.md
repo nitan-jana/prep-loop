@@ -63,6 +63,14 @@ does not fill it — it needs rounds to watch. A markdown view, `habits.md`, is
 generated from it (`bun tools/render-views.ts`) and carries a
 `generated: do not edit` header; the YAML is the source.
 
+### observations
+
+`instance/profile/observations.yaml`: an `observations` list of curation
+findings carried until settled — `subject` (a `prep.db` source slug, or
+`install`), `noted` (ISO date), `note`, `status` (`open` / `resolved`), and
+`resolved_by`, required once `resolved`. Low-volume and hand-written; it stays
+YAML rather than a `prep.db` table for the same reason `habits` does.
+
 ### week plan
 
 `instance/plans/<iso-week>.yaml`: `week`, optional `focus`, `days` (each `date`

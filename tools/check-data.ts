@@ -4,7 +4,8 @@
 // Curriculum, claims, readiness and stories moved to instance/prep.db — their
 // shape, enums and referential integrity are CHECK/FOREIGN KEY constraints in
 // tools/schema.sql, and tools/check-db.ts covers what a constraint cannot.
-// What stays here: `habits.yaml`, and the week plans once they are structured.
+// What stays here: `habits.yaml`, `observations.yaml`, and the week plans once
+// they are structured — low-volume, hand-authored, never on a query path.
 //
 // leak-check: allow-path — it names the local folder it is pointed at on request
 //
@@ -103,6 +104,27 @@ export function validateGrade(c: Checker, v: unknown, path: string) {
   if (v.value === "solid" && legs.length > 0) c.at(`${path}.legs`, "'solid' fails no test");
 }
 
+/** observations — curation findings carried until settled, per subject. */
+export function validateObservations(c: Checker, v: unknown) {
+  if (!isObject(v)) return c.at("", "a mapping with 'observations'");
+  c.onlyKeys(v, ["observations"]);
+  for (const [i, o] of c.list(v, "observations", "", true).entries()) {
+    const p = `observations[${i}]`;
+    if (!isObject(o)) {
+      c.at(p, "a mapping");
+      continue;
+    }
+    c.onlyKeys(o, ["subject", "noted", "note", "status", "resolved_by"], p);
+    c.reqString(o, "subject", p); // a prep.db source slug, or 'install'
+    c.isoDate(o, "noted", p);
+    c.reqString(o, "note", p);
+    c.enum(o, "status", ["open", "resolved"] as const, p);
+    c.optString(o, "resolved_by", p);
+    if (o.status === "resolved" && (typeof o.resolved_by !== "string" || o.resolved_by.trim() === ""))
+      c.at(`${p}.resolved_by`, "a resolved observation names what settled it");
+  }
+}
+
 /** habits — observed grow, retired are kept. */
 export function validateHabits(c: Checker, v: unknown) {
   if (!isObject(v)) return c.at("", "a mapping with 'observed' and 'retired'");
@@ -180,6 +202,7 @@ export function validateWeekPlan(c: Checker, v: unknown) {
  *  still kept as YAML. */
 export function conceptFor(rel: string): string | null {
   if (rel === "profile/habits.yaml") return "habits";
+  if (rel === "profile/observations.yaml") return "observations";
   if (rel.startsWith("plans/")) return "week-plan";
   return null;
 }
@@ -214,6 +237,8 @@ export async function checkData(root: string) {
 
     if (concept === "habits") {
       validateHabits(c, value);
+    } else if (concept === "observations") {
+      validateObservations(c, value);
     } else if (concept === "week-plan") {
       validateWeekPlan(c, value);
     }

@@ -59,7 +59,7 @@ machine-checkable; a section number is a string only a human can check.
 
 | This repo, public | `instance/`, ignored by git |
 |---|---|
-| `policy/` `.claude/` `templates/` `tools/` `docs/` | `profile/` `curriculum/` `plans/` `logs/` `performance/` `mocks/` `stories/` `deep-dives/` `private/` `intake/` |
+| `policy/` `.claude/` `templates/` `tools/` `docs/` | `profile/` `prep.db` `plans/` `logs/` `performance/` `mocks/` `stories/` `deep-dives/` `private/` `intake/` |
 
 **One line in `.gitignore` is the privacy model.** There is no state of this
 repo in which a personal file is tracked, and no remote for `instance/` to be
