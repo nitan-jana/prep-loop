@@ -75,12 +75,10 @@ Written on a different day from the loop, using
    `instance/performance/<week>.md` from
    [`templates/review.md`](../templates/review.md). Read
    `instance/profile/grading-anchors.md` first.
-4. **Append observed habits** to the `observed` list in
-   `instance/profile/habits.yaml`, in the shape
-   [`templates/schema/README.md`](../templates/schema/README.md#habits)
-   gives, then run `bun tools/render-views.ts` to rebuild the readable view —
-   found by watching rounds, never by asking the user to name their own
-   weaknesses.
+4. **Append observed habits** as a row under `## Observed` in
+   `instance/profile/habits.md` — the columns are in
+   [`templates/profile/habits.md`](../templates/profile/habits.md). Found by
+   watching rounds, never by asking the user to name their own weaknesses.
 5. **Once a month, run the re-grade audit** per
    [`grading.md`](../policy/grading.md#the-re-grade-audit), under a
    `## Calibration` heading. It grades the grader.

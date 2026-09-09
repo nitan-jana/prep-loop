@@ -132,7 +132,7 @@ Separate phase, after all rounds. Everything withheld until now:
   failed](grading.md#a-grade-below-solid-names-the-test-it-failed)
 - What a stronger answer would have contained
 - The follow-up that was not survived
-- Observed habits, appended to `instance/profile/habits.yaml`
+- Observed habits, appended to `instance/profile/habits.md`
 - What to drill, ordered, specific enough to schedule
 - Coverage written back to `instance/prep.db` — `asked_on` and `grade` on every
   entry a round used, per

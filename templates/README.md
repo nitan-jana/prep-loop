@@ -24,8 +24,9 @@ Two of the profile templates are deliberately unfillable at onboarding:
 answers. Each says so in place of a shape.
 
 The resource inventory is not here: it is structured data, not a markdown
-artifact, so its shape is [`tools/schema.sql`](../tools/schema.sql) and it lives
-at `instance/prep.db`.
+artifact. It lives at `instance/prep.db`; its shape is
+[`tools/schema.sql`](../tools/schema.sql), mapped in
+[`docs/schema.md`](../docs/schema.md).
 
 ## The scaffold
 

@@ -112,7 +112,7 @@ around is harder, and it would have forced the personal half onto a remote.
 | `policy/` | How the system works. No dates, no proper nouns, no second person. |
 | `commands/` | How a session is invoked. One file per feature. |
 | `templates/` | The blank shape of everything the system produces. |
-| `tools/` | The checkers, and the local database's schema and helpers. |
+| `tools/` | The checkers, and the local database's schema and helper. |
 | `docs/` | How to use it, and anything the policy files assume rather than explain. |
 
 | In `instance/`, ignored | |
