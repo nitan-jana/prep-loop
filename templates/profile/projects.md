@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the deep-dive files it indexes -->
-
 # Projects
 
 What the user is prepared to be asked about, ranked by how well it holds up.

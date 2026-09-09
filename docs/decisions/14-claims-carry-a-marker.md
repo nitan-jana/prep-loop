@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the profile every claim is written into -->
-
 # Every claim carries a marker
 
 `verified` with the command that proved it, `stated` with the obstacle that

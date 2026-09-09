@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the plan file and the deferred list it carries -->
-
 # A plan is instructions for sessions that have not happened
 
 Not a record, not a summary, not an account of what slipped. A planner that

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal file it is a template for -->
-
 # Recall record
 
 One recall day's scored entries, at

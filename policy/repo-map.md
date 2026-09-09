@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — this file is the directory map -->
-
 # Repo map
 
 Where everything lives, who writes it, and what is versioned.

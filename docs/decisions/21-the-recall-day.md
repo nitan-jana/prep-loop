@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the inventories the queue is built from -->
-
 # The drain is a day, not a round
 
 Everything falling due for a retention question is drained by working days given

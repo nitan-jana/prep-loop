@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal data files it describes -->
-
 # The database
 
 `instance/prep.db` (bun:sqlite, gitignored) holds the resource inventory —

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal file it is a template for -->
-
 # Week plan
 
 A week plan, at `instance/plans/<week identifier>.md`. Written by the planning

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the curriculum tables and score history it reads -->
-
 # Where a question comes from
 
 ## Never invent a question name

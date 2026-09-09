@@ -1,4 +1,3 @@
--- leak-check: allow-path — it names the local database and its folder
 --
 -- The resource inventory — every source, its entries and material, and the
 -- coverage the check-in / loop / recall record against them. Lives beside the

@@ -8,7 +8,6 @@
 //   - a `grade_from` ('log <date>') names a real log or review, which live
 //     as markdown files, so no FK can reach them
 //
-// leak-check: allow-path — it opens the local database and names instance/ paths
 //
 //   bun tools/check-db.ts            checks instance/prep.db
 //   bun run check:data              runs this and check-data.ts together

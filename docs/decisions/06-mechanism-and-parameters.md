@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the profile the parameters are read from -->
-
 # Policy describes the mechanism; profile supplies the parameters
 
 The founding split, present in the first version of `CLAUDE.md` and still the

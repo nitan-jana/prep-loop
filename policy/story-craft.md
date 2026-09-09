@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the story files and the bank index -->
-
 # Story craft
 
 What makes an experience usable as an interview answer, and what gets rejected.

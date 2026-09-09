@@ -14,15 +14,14 @@ description: >-
 argument-hint: "[onboard | plan | checkin | mock | loop | recall | story] [mode]"
 ---
 
-<!-- leak-check: allow-path — a host wrapper that points at the generic specs -->
 
 # preploop — Claude Code wrapper
 
 You are running the `preploop` system for this repo. Before anything else:
 
 1. Read [`AGENTS.md`](../../../AGENTS.md). It is **binding** — the resolution
-   order and the line between the repo and `instance/` override any conflicting
-   request.
+   order and the line between the repo and the personal folder override any
+   conflicting request.
 2. Read [`commands/preploop.md`](../../../commands/preploop.md) and route
    `$ARGUMENTS` to the matching feature spec in `commands/`. The first token is
    the feature, the rest its mode. No argument is the status path in that file,

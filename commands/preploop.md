@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — it reads the state of the personal half -->
-
 # preploop
 
 The one command. `preploop <feature> [mode]` hands off to a feature spec in this

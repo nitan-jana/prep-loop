@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal files these are templates for -->
-
 # templates
 
 The blank shape of everything the system produces. Tracked, so a fresh clone

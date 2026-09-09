@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal artifacts each command writes -->
-
 # commands
 
 One file per feature. Each is the full spec for a session: what it reads, what

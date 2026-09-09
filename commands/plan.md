@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — it writes the week plan into the personal half -->
-
 # plan
 
 Writes `instance/plans/<week>.md` and puts that same week on the calendar. It

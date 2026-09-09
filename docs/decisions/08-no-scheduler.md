@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the artifact directories the deleted checks listed -->
-
 # Nothing runs on a timer
 
 The first session of a day notices what should already have happened and

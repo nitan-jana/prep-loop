@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the story files it indexes -->
-
 # Story bank
 
 The index. Stories themselves live one per file under `instance/stories/`, each with its

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — the onboarding progress tracker -->
-
 # profile
 
 Who this instance belongs to. Everything the rest of the repo reads about the

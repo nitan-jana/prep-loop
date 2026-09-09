@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — detection and verification both touch the personal half -->
-
 # Detecting sources and verifying claims
 
 What [`policy/claims.md`](../../../policy/claims.md) means in commands. The

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the record it writes and the inventories it drains -->
-
 # The recall session
 
 Working days given over entirely to retrieval. No new material, no block

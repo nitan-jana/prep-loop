@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — it writes deep dives into the personal half -->
-
 # mock
 
 Runs one project deep-dive round and writes

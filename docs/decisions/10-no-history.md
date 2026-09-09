@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the folder the rule was later extended across -->
-
 # Never say what was there before
 
 Not "moved from an earlier day". Not "deferred from last week". Not "(which did

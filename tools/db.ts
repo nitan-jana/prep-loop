@@ -9,7 +9,6 @@
 //   bun tools/db.ts --schema         print the DDL that would be applied
 //   bun tools/db.ts --reset          drop every row (keep the schema)
 //
-// leak-check: allow-path — it names the local database file
 
 import { Database } from "bun:sqlite";
 import { readFileSync } from "node:fs";

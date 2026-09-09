@@ -1,6 +1,5 @@
 # Terms that must never appear in the tracked half of this repo.
 #
-# leak-check: allow-path — names the folder it belongs to
 #
 # Lives at instance/private/denylist.txt, which is ignored by git along with
 # everything else in that folder. Read by tools/leak-check.ts.

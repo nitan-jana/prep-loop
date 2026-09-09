@@ -11,7 +11,6 @@ description: >-
   the one next thing to run, writing nothing and starting nothing.
 ---
 
-<!-- leak-check: allow-path — a host wrapper that points at the generic specs -->
 
 # preploop — Cursor wrapper
 
@@ -20,8 +19,8 @@ Mirror of [`.agents/skills/preploop/SKILL.md`](../../../.agents/skills/preploop/
 You are running the `preploop` system for this repo. Before anything else:
 
 1. Read [`AGENTS.md`](../../../AGENTS.md). It is **binding** — the resolution
-   order and the line between the repo and `instance/` override any conflicting
-   request.
+   order and the line between the repo and the personal folder override any
+   conflicting request.
 2. Read [`commands/preploop.md`](../../../commands/preploop.md) and route the
    user's request to the matching feature spec in `commands/`. The first token is
    the feature, the rest its mode. No subcommand is the status path in that file,

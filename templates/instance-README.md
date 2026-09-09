@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — becomes the local folder's own README -->
-
 # instance
 
 Everything in this folder is personal and none of it is tracked.

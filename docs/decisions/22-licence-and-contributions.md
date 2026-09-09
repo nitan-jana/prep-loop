@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the folder no licence reaches -->
-
 # AGPL, with a contributor licence agreement
 
 The project is licensed under AGPL-3.0. A first-time contributor is asked to

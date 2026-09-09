@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the ignored folder to explain what the licence does not reach -->
-
 # Contributing
 
 Issues, bug reports and discussion are welcome. So are pull requests, with one

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the claim source a round pushes against -->
-
 # Conducting a round
 
 The single source of truth for interviewing voice. Every command that runs a

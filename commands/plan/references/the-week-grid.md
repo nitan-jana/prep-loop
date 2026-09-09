@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal files the grid is filled from -->
-
 # Filling the grid
 
 What goes in each block, once the shape has been read out of

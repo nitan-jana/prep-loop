@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — it writes the recall record into the personal half -->
-
 # recall
 
 Writes `instance/performance/<date>-recall.md` and nothing else. It owns that

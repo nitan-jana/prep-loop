@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal file it is a template for -->
-
 # Deep dive
 
 One project's deep-dive answers, at `instance/deep-dives/<project-slug>.md`.

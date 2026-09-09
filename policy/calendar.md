@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the calendar and the profile files it reads -->
-
 # The calendar contract
 
 The user works off the calendar, not off the repo. A plan change that is not on

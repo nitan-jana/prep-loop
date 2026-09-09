@@ -7,7 +7,6 @@
 //   - any occurrence of the section symbol, which this repo does not use
 //     (a file link is machine-checkable; a section number is not)
 //
-// leak-check: allow-path — it names the local folder it is pointed at on request
 //
 // The default run covers the tracked repo and nothing else, so it means the
 // same thing in CI, in a fresh clone and on every machine. Naming a path

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names where the cap values and the overflow live -->
-
 # Caps
 
 Two ceilings on what a single day may be asked to carry. The numeric values are

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the inventories the columns live on -->
-
 # Worked is not asked
 
 Every inventory entry carries three columns written by the system rather than by

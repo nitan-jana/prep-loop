@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — points at the policy files these facts parameterise -->
-
 # State
 
 Every live fact with a date attached, in one place. Anything a session needs to

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — it writes stories into the personal half -->
-
 # story
 
 Writes `instance/stories/<slug>.md` and updates `instance/profile/story-bank.md`

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the inventories a question is drawn from -->
-
 # Never name a question that does not exist
 
 A round names a question the user can go and look at afterwards. That means it

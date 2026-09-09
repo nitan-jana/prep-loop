@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the score history readiness is read from -->
-
 # Readiness
 
 Whether the preparation is working, and when to stop preparing and start

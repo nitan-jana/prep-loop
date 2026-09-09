@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the ignored folder to explain what may not be linked -->
-
 # Every reference is machine-checkable
 
 A file link or a heading anchor, never a section number. The link checker fails

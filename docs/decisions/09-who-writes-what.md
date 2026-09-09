@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the artifacts each session owns -->
-
 # Who writes what, and nobody commits
 
 Every artifact has exactly one owner, listed in a table with a column naming who

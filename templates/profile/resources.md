@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names where the inventories it indexes live -->
-
 # Resources
 
 What the user works from, and why each one is on the list. The inventory itself

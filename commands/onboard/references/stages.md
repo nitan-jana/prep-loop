@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — every stage writes into the personal half -->
-
 # The stages
 
 Four, in order. Each is a sitting of its own — resumable, and better split than

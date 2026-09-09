@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — points at the policy this file parameterises -->
-
 # Schedule
 
 The parameters behind [`policy/cadence.md`](../../policy/cadence.md) and

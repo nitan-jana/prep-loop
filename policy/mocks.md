@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the brief, transcript and score paths -->
-
 # The mock loop
 
 Several rounds back to back from a brief prepared in advance, then one review

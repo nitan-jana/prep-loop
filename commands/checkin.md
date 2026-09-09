@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — it writes the day's log into the personal half -->
-
 # checkin
 
 Writes `instance/logs/<date>.md` and moves at most one block on the calendar. It

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — it writes briefs and scores into the personal half -->
-
 # loop
 
 Two sittings, never one. **Prepare** writes

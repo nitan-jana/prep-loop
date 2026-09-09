@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the artifacts each session writes -->
-
 # The cheap input is always refused
 
 Every session in this system has a fast, comfortable version of its input

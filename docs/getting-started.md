@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the folder every session writes into -->
-
 # Using it
 
 What a clone looks like from empty to running.

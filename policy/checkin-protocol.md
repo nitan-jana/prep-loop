@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the log it writes and the profile it reads -->
-
 # The check-in
 
 Closes out a working day. Three parts, in this order: evidence, quiz,

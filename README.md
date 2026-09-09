@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — this file maps the repo and names every directory by design -->
-
 # prep-loop
 
 An interview prep system that runs inside an agent CLI —

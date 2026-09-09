@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the profile file the record lives in -->
-
 # Outbound
 
 What a job-search action is, what it leaves behind, and what has to be true

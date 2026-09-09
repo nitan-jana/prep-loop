@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the folder the brief is the one exception to -->
-
 # One file leaves the machine, and only when it is sent
 
 The round brief is self-contained: no links out, into the profile, into policy,

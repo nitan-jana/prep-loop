@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the artifact directories the week produces -->
-
 # Cadence
 
 The week is the unit of planning. The day is the unit of record. The block is

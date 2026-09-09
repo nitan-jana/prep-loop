@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the database it builds -->
-
 # Building the inventories
 
 The resource stage produces `instance/profile/resources.md` — the readable index

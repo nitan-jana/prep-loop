@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — this command's entire output is the personal half -->
-
 # onboard
 
 Produces `instance/profile/`. It is the entry point — the first thing anyone touches,

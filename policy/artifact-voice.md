@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the artifacts the rules govern -->
-
 # Artifact voice
 
 Three rules for anything the user reads as part of the routine: week plans,

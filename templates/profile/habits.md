@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — explains which sessions append to it -->
-
 # Habits
 
 Patterns in how this user answers, found by watching rounds.

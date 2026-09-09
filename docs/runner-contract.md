@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the folders a runtime is scoped to -->
-
 # Runner contract
 
 What a runtime other than Claude Code has to provide for

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — the decision is about which paths git can see -->
-
 # One line in `.gitignore` is the privacy model
 
 Everything personal lives in `instance/`, a plain folder inside the clone that

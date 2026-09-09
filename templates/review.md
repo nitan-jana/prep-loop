@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal file it is a template for -->
-
 # Review
 
 One week's scored rounds, at `instance/performance/<week identifier>.md`.
