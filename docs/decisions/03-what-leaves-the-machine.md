@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the folder the brief is the one exception to -->
-
 # One file leaves the machine, and only when it is sent
 
 The round brief is self-contained: no links out, into the profile, into policy,
@@ -47,6 +45,6 @@ contract specifies a format rather than a verdict.
 
 - [`policy/mocks.md`](../../policy/mocks.md) — the brief, and the transcript contract
 - [`templates/round-brief.md`](../../templates/round-brief.md) — the shape, with the boundary stated in its preamble
-- [`templates/catalog.md`](../../templates/catalog.md) — what an inventory of a paid source may hold
+- [`commands/onboard/references/catalogs.md`](../../commands/onboard/references/catalogs.md) — what an inventory of a paid source may hold
 
 *In the history:* `6f7a57c` `e72e519` `2fb38d6` `7a1933e` `1904e9c`

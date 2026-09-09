@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal file it is a template for -->
-
 # Daily log
 
 A day's log, at `instance/logs/<date>.md`. Written by the check-in and by

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the artifacts each session writes -->
-
 # The cheap input is always refused
 
 Every session in this system has a fast, comfortable version of its input
@@ -99,6 +97,6 @@ narrative is rehearsed once, the follow-ups are where it holds or does not.
 - [`policy/checkin-protocol.md`](../../policy/checkin-protocol.md) — the three parts, in order, and today only
 - [`policy/interviewing.md`](../../policy/interviewing.md) — the single source of truth for interviewing voice
 - [`policy/story-craft.md`](../../policy/story-craft.md) — what makes a story usable, and what gets rejected
-- [`.claude/skills/onboard/SKILL.md`](../../.claude/skills/onboard/SKILL.md) — the two principles, and what happens inside every stage
+- [`commands/onboard.md`](../../commands/onboard.md) — the two principles, and what happens inside every stage
 
 *In the history:* `8eb8b76` `cda5a38` `6f7a57c` `db9c5c8` `5b19a0c` `2a5a373` `927c339` `bab4cf9` `d34f967` `e72e519` `7dcfd31` `2fb38d6` `525f106` `1904e9c` `416cc2e` `7d2efe9` `80b5ff8` `afd70f2`

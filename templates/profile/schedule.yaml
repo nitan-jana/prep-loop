@@ -1,0 +1,72 @@
+# Every value a session reads. The reasoning for each belongs in schedule.md
+# beside this file, which repeats none of them. Windows are HH:MM-HH:MM in
+# `timezone`. Parameters of policy/cadence.md, policy/caps.md, policy/recall.md.
+#
+# Angle brackets are placeholders — replaced wholesale, brackets included.
+
+timezone: <timezone identifier>
+
+# A day absent from this list is not a working day, and nothing is scheduled on it.
+working_days:
+  - { day: <day>, blocks: [<label>, <label>] }
+
+# The label is stable across the week; the subject inside it moves.
+blocks:
+  - label: <label>
+    window: "<start>-<end>"
+    subject: <subject>
+    # questions_per_block: <count>   # only where a block works a fixed number
+
+# A day on which a label runs a different window or subject. Omit if none does.
+block_overrides:
+  - { day: <day>, label: <label>, window: "<start>-<end>", subject: <subject> }
+
+# The gap between blocks, if the day has one.
+break_window: "<start>-<end>"
+
+recurring_sessions:
+  - session: checkin
+    days: every working day
+    window: "<start>-<end>"
+    # overrides:                      # only where one day runs longer or later
+    #   - { day: <day>, window: "<start>-<end>" }
+  - session: review_and_loop
+    days: [<day>]
+    window: "<start>-<end>"
+  - session: planning
+    days: [<day>]
+    inside: checkin                   # or give it a window of its own
+
+# How many short lines fit an event without scrolling, on the device this
+# calendar actually gets read on.
+calendar_description_lines: <count>
+
+caps:
+  new_content_per_day: <count>
+  outbound_actions_per_day: <count>
+
+# A ceiling counted in flat items treats a chapter and a short article the same.
+content_weights:
+  large: <what counts as a whole allowance in one sitting>
+  medium: <what counts as half — two make one large>
+  not_counted: [problems, drills, redoing covered material, writing, rounds]
+
+# Present, this overrides weakest-first in policy/mock-sourcing.md. Omit the key
+# entirely to leave weakest-first in force.
+# loop_focus_set:
+#   round_types: [<round type>, <round type>]
+#   holds_until: <the condition that releases it>
+
+# Omit this block until recall days are actually scheduled — see policy/recall.md.
+recall_days:
+  every_nth_iso_week: <count>
+  days: [<day>]
+  blocks: [<label>]
+  carries_subject: false
+
+# The values belong here rather than in policy because they depend on how much
+# material is in rotation and how long the run is.
+retention_window_days:
+  lower: <count>
+  upper: <count>
+  recall: <count>

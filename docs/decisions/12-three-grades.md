@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the anchor file the grades are calibrated against -->
-
 # Three grades, and the failed test named beside them
 
 `solid`, `shaky`, `not retained`. Defined by what the answer did rather than by

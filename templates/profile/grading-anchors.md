@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — explains what populates it -->
-
 # Grading anchors
 
 Three real answers, one per grade, frozen. Every grader reads them before

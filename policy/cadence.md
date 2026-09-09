@@ -1,12 +1,10 @@
-<!-- leak-check: allow-path — names the artifact directories the week produces -->
-
 # Cadence
 
 The week is the unit of planning. The day is the unit of record. The block is
 the unit of work.
 
 Which days, how many blocks, how long each runs, and which subjects sit in
-which block are all read from `instance/profile/schedule.md`. This file says
+which block are all read from `instance/profile/schedule.yaml`. This file says
 what those things are for.
 
 ## The block
@@ -33,7 +31,7 @@ The ones that run on a cycle. Other sessions exist and are invoked as needed;
 these are the three the week is built around.
 
 Named by role, not by day. Which day each falls on is a profile fact, and each
-is a skill the user invokes rather than something that happens to them.
+is a command the user invokes rather than something that happens to them.
 
 **Planning** opens the week. It writes the week plan and mirrors it to the
 calendar in the same turn. It schedules carried-forward items before anything

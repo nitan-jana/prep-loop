@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal files these are templates for -->
-
 # templates
 
 The blank shape of everything the system produces. Tracked, so a fresh clone
@@ -9,7 +7,6 @@ shows what a filled install looks like before anything has been filled.
 |---|---|
 | [`instance-README.md`](instance-README.md) | `instance/README.md` |
 | [`profile/`](profile/README.md) | `instance/profile/`, written by onboarding |
-| [`catalog.md`](catalog.md) | `instance/curriculum/<source-slug>.md`, one per resource |
 | [`week-plan.md`](week-plan.md) | `instance/plans/<week>.md`, one per week |
 | [`daily-log.md`](daily-log.md) | `instance/logs/<date>.md`, one per working day |
 | [`round-brief.md`](round-brief.md) | `instance/mocks/<date>-brief.md`, one per loop |
@@ -23,6 +20,11 @@ Two of the profile templates are deliberately unfillable at onboarding:
 [`profile/habits.md`](profile/habits.md) needs rounds to observe, and
 [`profile/grading-anchors.md`](profile/grading-anchors.md) needs real graded
 answers. Each says so in place of a shape.
+
+The resource inventory is not here: it is structured data, not a markdown
+artifact. It lives at `instance/prep.db`; its shape is
+[`tools/schema.sql`](../tools/schema.sql), mapped in
+[`docs/schema.md`](../docs/schema.md).
 
 ## The scaffold
 
@@ -46,3 +48,10 @@ is a template for something that is not a claim.
 **Templates carry no examples.** An example weekday, an example vendor or an
 example number is one user's setup shipped to everyone, and it gets left in
 place more often than it gets replaced.
+
+**A `.yaml` beside a `.md` is one file in two halves.** The yaml holds every
+value a session reads. The markdown holds why each is what it is, and repeats
+none of them — a number written in both is a number that will be right in one.
+Reference a yaml key in backticks, never as a link anchor: a `#fragment` on a
+non-markdown target is silently skipped by
+[`tools/check-links.ts`](../tools/check-links.ts) and verifies nothing.

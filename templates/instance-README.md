@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — becomes the local folder's own README -->
-
 # instance
 
 Everything in this folder is personal and none of it is tracked.
@@ -13,7 +11,7 @@ be recoverable from a public repo, so none of it is in one.
 | Directory | Holds |
 |---|---|
 | `profile/` | Who this install belongs to. Facts, claims, habits, cadence. |
-| `curriculum/` | One inventory per resource in use. |
+| `prep.db` | The resource inventory: each source, its entries, their coverage. |
 | `plans/` | What is planned, one file per week. |
 | `logs/` | What happened, one file per working day. |
 | `performance/` | Scored rounds, one file per review. |

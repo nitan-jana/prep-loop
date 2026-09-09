@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names where the chosen frameworks are recorded -->
-
 # Frameworks
 
 A framework is scaffolding for producing an answer under pressure. It is not

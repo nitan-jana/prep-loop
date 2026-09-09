@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal file it is a template for -->
-
 # Story
 
 One story, at `instance/stories/<slug>.md`, indexed in

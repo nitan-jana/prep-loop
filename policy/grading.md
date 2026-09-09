@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the anchor file and where scores land -->
-
 # Grading
 
 Three grades, defined by what the answer did rather than by how it felt.

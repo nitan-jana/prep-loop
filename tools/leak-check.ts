@@ -7,7 +7,9 @@
 // the half a gitignore cannot do.
 //
 //   FAIL     a term from the denylist, including the canary
-//   FAIL     a reference into the local folder
+//   FAIL     a reference into the local folder, in a file with no business naming
+//            it. Policy, commands, templates, docs and tools describe the folder
+//            for a living; config and entry points do not — see PATH_ALLOWED.
 //   FAIL     a 2020s year — the sneakiest identifier. A line stating when a rule
 //            was decided reads as a personal decision log even with every name
 //            stripped, so policy states rules without saying when they were set.
@@ -24,7 +26,6 @@
 //
 //   bun tools/leak-check.ts [path ...]     default: everything tracked
 //
-// leak-check: allow-path — this file names the personal paths by design
 
 import { Glob } from "bun";
 import { existsSync, statSync } from "node:fs";
@@ -32,10 +33,17 @@ import { join, normalize, relative, resolve } from "node:path";
 
 // `LICENSE` is deliberately absent: a copyright line is a name and a year by
 // definition, which is the thing this checker rejects everywhere else.
-const DEFAULT_ROOTS = ["policy", ".claude", ".github", ".githooks", "templates", "tools", "docs", "CLAUDE.md", "README.md", "CONTRIBUTING.md"];
+const DEFAULT_ROOTS = ["policy", "commands", ".claude", ".agents", ".cursor", ".gemini", ".github", ".githooks", "templates", "tools", "docs", "AGENTS.md", "GEMINI.md", "README.md", "CONTRIBUTING.md"];
 // `instance` is the local folder itself. The rest catch a stale reference that
 // dropped the prefix, which resolves to nothing and would otherwise pass.
 const PERSONAL_DIRS = ["instance", "profile", "logs", "performance", "stories", "deep-dives", "plans", "mocks", "curriculum", "intake", "private"];
+// Where naming a personal directory is the job rather than a slip. Documentation
+// and the session specs describe the folder for a living; config and entry points
+// have no business naming it, and those are what the path rule is left guarding.
+// A directory list, rather than a marker in every file: 82 of 98 files carried the
+// marker, which made it a tax rather than a guard, and a whole-file suppression
+// hid a real artifact name in the 82.
+const PATH_ALLOWED = [/^policy[/\\]/, /^commands[/\\]/, /^templates[/\\]/, /^docs[/\\]/, /^tools[/\\]/, /^AGENTS\.md$/, /^README\.md$/, /^CONTRIBUTING\.md$/];
 const SKIP = ["node_modules", ".git", ".venv"];
 const DENYLIST = "instance/private/denylist.txt";
 // A fresh clone has no denylist and nothing to leak, so term matching being off
@@ -54,7 +62,6 @@ const SECOND_PERSON = /\byour\b/i;
 // readme, all of them correct, which is a warning nobody reads by the third one.
 const SECOND_PERSON_SCOPE = /^policy[/\\]/;
 const PERSONAL_PATH = new RegExp(`(?<![\\w/])(${PERSONAL_DIRS.join("|")})/`, "i");
-const ALLOW_PATH = /leak-check:\s*allow-path/;
 const ALLOW_CADENCE = /leak-check:\s*allow-cadence/;
 // A test for these rules has to contain the thing each rule detects. This
 // silences the heuristics for such a file — but never denylist terms, which are
@@ -85,7 +92,7 @@ export function parseDenylist(source: string): Denylist {
 export function scanText(path: string, source: string, deny: Denylist): Finding[] {
   const findings: Finding[] = [];
   const fixtures = ALLOW_FIXTURES.test(source);
-  const pathAllowed = fixtures || ALLOW_PATH.test(source);
+  const pathAllowed = fixtures || PATH_ALLOWED.some((rx) => rx.test(path));
   const cadenceAllowed = fixtures || ALLOW_CADENCE.test(source);
 
   source.split("\n").forEach((line, i) => {

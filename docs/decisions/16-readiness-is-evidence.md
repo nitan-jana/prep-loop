@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the score history readiness is read from -->
-
 # Readiness is evidence, not a feeling
 
 Read from actual grades on actual rounds, and never from asking the user whether

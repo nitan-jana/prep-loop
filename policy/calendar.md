@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names where the per-install calendar settings live -->
-
 # The calendar contract
 
 The user works off the calendar, not off the repo. A plan change that is not on
@@ -26,7 +24,7 @@ One block, one event, for the whole window. Never several events inside a
 block, never one event covering two blocks.
 
 The title is the block label and the subject, separated by a middle dot:
-`<label> · <subject>`. Both come from `instance/profile/schedule.md`, the label
+`<label> · <subject>`. Both come from `blocks` in `instance/profile/schedule.yaml`, the label
 stable across the week and the subject moving inside it. Stable label first, so
 the week reads as a rotation at a glance rather than as unrelated sessions.
 
@@ -69,7 +67,7 @@ Two things follow from it being HTML:
   and asterisks in an inventory title are markdown and are dropped, not carried
   across.
 
-The label is the entry's own title, copied from `instance/curriculum/` alongside
+The label is the entry's own title, copied from `instance/prep.db` alongside
 the address it sits beside. Shortening it into something more readable renames
 an entry the inventory has already named, which is
 [`mock-sourcing.md`](mock-sourcing.md#never-invent-a-question-name) broken by a
@@ -78,7 +76,15 @@ link either and the description is plain text.
 
 ## Tool per operation
 
-| Operation | Tool |
+**These are operations, not tool identifiers.** The names below are the common
+convention and the runner contract uses them, but a calendar reaches a session
+differently on every runtime — a different server, a different binding, and on
+some hosts a different name between one session and the next. A runtime whose
+calendar names them otherwise maps them; nothing here should be read as a
+promise that a tool by this name exists. What may not vary is which operation
+answers which situation, which is what the rules under this table are about.
+
+| Operation | Conventionally |
 |---|---|
 | Find what is already scheduled | `list_events` |
 | Find one event by name | `search_events` |
@@ -101,18 +107,19 @@ prompt should not be routine.
 
 Set out in full in [`repo-map.md`](repo-map.md#who-writes-what). The short form:
 the planning routine writes the week; the check-in moves exactly one block when
-it reschedules a miss. No other skill touches the calendar.
+it reschedules a miss. No other command touches the calendar.
 
 The reschedule is the operation most often left half-done — a session names a
 free slot, tells the user it has been moved, and never calls anything. Naming
 the slot is not the work. **Call `create_event` or `update_event`, then confirm
 in one line.**
 
-## Per-install settings
+## Per-install setup
 
-The calendar server identifier differs for every install, so it is not
-committed. It lives in the local settings file, from the example that ships
-with the repo, and onboarding fills it in.
+The calendar connection belongs to the runtime, not the repo — its server name
+differs by host and can change between sessions, so nothing here pins it.
 
-Reads are auto-approved, writes are allowed, deletion prompts. That ordering is
-deliberate and should not be flattened for convenience.
+Set the runtime's approvals to match how the operations divide: reads and the
+two writes the system needs are safe to auto-approve; **deletion should always
+prompt.** A planner that writes a week of blocks must not be able to remove one
+without being asked.

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the profile files claims are written into -->
-
 # Claims
 
 What makes a statement about the user safe to write down, and what every

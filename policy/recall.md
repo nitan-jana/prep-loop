@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the record it writes and the inventories it drains -->
-
 # The recall session
 
 Working days given over entirely to retrieval. No new material, no block
@@ -7,7 +5,7 @@ subjects, no progress through a source — only questions about material already
 worked, whether or not anything has asked about it before.
 
 How often it comes round and which days it takes are read from
-`instance/profile/schedule.md`. This file says what those days are for.
+`recall_days` in `instance/profile/schedule.yaml`. This file says what those days are for.
 
 ## Why it is a day and not a round
 
@@ -26,7 +24,7 @@ right trade — coverage is the thing this system has least trouble producing.
 
 ## It reads the whole list, and works down it
 
-The pool is every entry under `instance/curriculum/` that has been worked and is
+The pool is every entry in `instance/prep.db` that has been worked and is
 now past the recall edge, ordered by
 [`mock-sourcing.md`](mock-sourcing.md#the-retention-pick) — a known gap first,
 then what was never asked, then a decay test on what held.

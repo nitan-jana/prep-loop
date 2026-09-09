@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the artifact directories the deleted checks listed -->
-
 # Nothing runs on a timer
 
 The first session of a day notices what should already have happened and
@@ -83,7 +81,7 @@ runs ahead of what was asked, either.
 ## Where it lives
 
 - [`policy/checkin-protocol.md`](../../policy/checkin-protocol.md#backfilling-a-missed-day) — the only place a gap is acted on, and the bound on how much
-- [`.claude/skills/prep/SKILL.md`](../../.claude/skills/prep/SKILL.md) — the same state, printed when asked
+- [`commands/preploop.md`](../../commands/preploop.md) — the same state, printed when asked
 - [`README.md`](../../README.md) — optional local scheduling, kept on the roadmap and kept last
 
 *In the history:* `0d81003` `e72e519` `203e757` `9cc18cb` `f2dbdce` `152a49b`

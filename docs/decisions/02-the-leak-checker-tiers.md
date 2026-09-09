@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the folder the checker guards the boundary against -->
-
 # The leak checker has three tiers and only one blocks
 
 `FAIL` exits non-zero. `WARN` and `CADENCE` are printed for a human to read and

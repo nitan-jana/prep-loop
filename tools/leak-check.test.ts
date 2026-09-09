@@ -44,9 +44,16 @@ describe("FAIL — the tier that blocks", () => {
     expect(msgs(scan("read profile/state.md first"), "FAIL")).toContain("personal path 'profile/'");
   });
 
-  test("unless the file marks itself as naming paths by design", () => {
-    const f = scan("leak-check: allow-path\n\nread instance/profile/state.md first");
-    expect(msgs(f, "FAIL")).toHaveLength(0);
+  test("unless the file sits where naming the folder is the job", () => {
+    for (const p of ["policy/repo-map.md", "commands/checkin.md", "templates/README.md", "docs/schema.md", "tools/db.ts", "AGENTS.md"]) {
+      expect(msgs(scanText(p, "read instance/profile/state.md first", EMPTY), "FAIL")).toHaveLength(0);
+    }
+  });
+
+  test("but a config file or a host wrapper still fails", () => {
+    for (const p of [".github/workflows/check.yml", ".githooks/pre-commit", ".claude/skills/preploop/SKILL.md", "GEMINI.md"]) {
+      expect(msgs(scanText(p, "read instance/profile/state.md first", EMPTY), "FAIL")).toContain("personal path 'instance/'");
+    }
   });
 
   test("a bare directory word is not a path", () => {

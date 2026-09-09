@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the inventories a question is drawn from -->
-
 # Never name a question that does not exist
 
 A round names a question the user can go and look at afterwards. That means it
@@ -53,7 +51,7 @@ checked" look identical a month on.
 ## Where it lives
 
 - [`policy/mock-sourcing.md`](../../policy/mock-sourcing.md) — the rule, and where a question may come from
-- [`.claude/skills/onboard/references/catalogs.md`](../../.claude/skills/onboard/references/catalogs.md) — the acquisition ladder
-- [`templates/catalog.md`](../../templates/catalog.md) — completeness, freshness, quirks, links
+- [`commands/onboard/references/catalogs.md`](../../commands/onboard/references/catalogs.md) — the acquisition ladder, completeness, freshness, quirks, links
+- [`tools/schema.sql`](../../tools/schema.sql) — the shape those fields take in `prep.db`
 
 *In the history:* `6f7a57c` `7a1933e` `927c339` `a281ab5` `2210af9` `31ec445` `9d58d1b`

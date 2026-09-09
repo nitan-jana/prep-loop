@@ -8,6 +8,7 @@
     "check": "bun run check:links && bun run check:leaks && bun test",
     "check:links": "bun tools/check-links.ts",
     "check:profile": "bun tools/check-links.ts instance",
+    "check:db": "bun tools/check-db.ts",
     "check:leaks": "bun tools/leak-check.ts",
     "test": "bun test",
     "typecheck": "tsc --noEmit"

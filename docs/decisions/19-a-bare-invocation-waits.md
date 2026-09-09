@@ -39,8 +39,8 @@ nothing" stops being true.
 
 ## Where it lives
 
-- [`.claude/skills/onboard/SKILL.md`](../../.claude/skills/onboard/SKILL.md) — the four stages, with status
-- [`.claude/skills/mock-loop/SKILL.md`](../../.claude/skills/mock-loop/SKILL.md) — prepare and run, and why a bare call never starts a round
+- [`commands/onboard.md`](../../commands/onboard.md) — the four stages, with status
+- [`commands/loop.md`](../../commands/loop.md) — prepare and run, and why a bare call never starts a round
 - [`docs/getting-started.md`](../getting-started.md) — the ergonomics, stated once for the reader
 
 *In the history:* `d109177` `6f8dfb2` `3f590b3` `259e4c6` `98942b4`

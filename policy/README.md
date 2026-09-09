@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — policy's job is to say where things live -->
-
 # policy
 
 How the system works, in the abstract. One question per file.
@@ -31,7 +29,7 @@ those parameters feed.
 
 ## Writing a policy file
 
-**One question per file.** A file is the unit of reference — a skill points at
+**One question per file.** A file is the unit of reference — a command points at
 `policy/grading.md` and gets everything about grading. A rule that seems to
 belong in two files belongs in one, and the other links it.
 
@@ -65,10 +63,14 @@ clock time, not a timezone, not a named vendor or framework. Which of those a
 particular user runs on is a profile fact.
 [`tools/leak-check.ts`](../tools/leak-check.ts) reports all of it.
 
-## About the allow-path marker
+## About naming the personal directories
 
-Every file here carries `leak-check: allow-path`, because naming the personal
-directories is the point of the directory. The marker suppresses the
-directory-name rule and nothing else — a denylist term still fails, and so does
-a year, which is what a real artifact filename contains. Naming `instance/logs/` is
+Naming them is the point of this directory, so the path rule in
+[`tools/leak-check.ts`](../tools/leak-check.ts) does not apply here — nor under
+`commands/`, `templates/`, `docs/` or `tools/`, which all describe the folder for
+a living. It is left guarding config and entry points, which have no business
+naming it. The list is `PATH_ALLOWED`, in one place rather than asserted per file.
+
+**Nothing else is suppressed.** A denylist term still fails, and so does a year,
+which is what a real artifact filename contains. Naming `instance/logs/` is
 policy; naming one log file is a leak, and it stays caught.

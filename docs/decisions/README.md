@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — the decisions are largely about where the line between the repo and the folder sits -->
-
 # Decisions
 
 Why this repo is shaped the way it is. One decision per file: what was chosen,

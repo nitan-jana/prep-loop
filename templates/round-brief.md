@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the personal file it is a template for -->
-
 # Round brief — <date>
 
 A brief for one loop, at `instance/mocks/<date>-brief.md`. Written ahead of the

@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the artifacts each session owns -->
-
 # Who writes what, and nobody commits
 
 Every artifact has exactly one owner, listed in a table with a column naming who
@@ -72,7 +70,7 @@ possible — invisibly, since the file looks correct afterwards.
 ## Where it lives
 
 - [`policy/repo-map.md`](../../policy/repo-map.md) — the table, and the two rules that fall out of it
-- [`.claude/skills/prep/SKILL.md`](../../.claude/skills/prep/SKILL.md) — the session that starts nothing
+- [`commands/preploop.md`](../../commands/preploop.md) — the session that starts nothing
 - [`CLAUDE.md`](../../CLAUDE.md) — the prohibition, in the forbidden list
 
 *In the history:* `c615b2f` `e72e519` `3f590b3` `259e4c6` `5c0f354` `afd70f2` `0aa6508` `71c4754`

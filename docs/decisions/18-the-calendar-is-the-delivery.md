@@ -62,6 +62,6 @@ rather than by invention.
 
 - [`policy/calendar.md`](../../policy/calendar.md) — the contract, tool per operation, and link form
 - [`policy/artifact-voice.md`](../../policy/artifact-voice.md) — the description ceiling
-- [`.claude/skills/plan/references/the-week-grid.md`](../../.claude/skills/plan/references/the-week-grid.md) — confirming the mirror rather than describing it
+- [`commands/plan/references/the-week-grid.md`](../../commands/plan/references/the-week-grid.md) — confirming the mirror rather than describing it
 
 *In the history:* `68c25ed` `cc91701` `9d58d1b` `282ce58` `32a1252`

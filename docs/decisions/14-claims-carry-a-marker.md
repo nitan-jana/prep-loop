@@ -1,5 +1,3 @@
-<!-- leak-check: allow-path — names the profile every claim is written into -->
-
 # Every claim carries a marker
 
 `verified` with the command that proved it, `stated` with the obstacle that
@@ -76,6 +74,6 @@ nearly always more impressive than the vague version it replaces.
 ## Where it lives
 
 - [`policy/claims.md`](../../policy/claims.md) — the markers, the two kinds of `stated`, the boundary
-- [`.claude/skills/onboard/references/verifying.md`](../../.claude/skills/onboard/references/verifying.md) — how a marker is earned, in commands
+- [`commands/onboard/references/verifying.md`](../../commands/onboard/references/verifying.md) — how a marker is earned, in commands
 
 *In the history:* `9e1c038` `db9c5c8` `927c339` `80b5ff8` `282ce58`
