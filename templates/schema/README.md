@@ -35,9 +35,10 @@ through; this is the map, not a second copy.
 | `entry` | one thing a mock round may name — a question | the source's own `section` and `identifier`, `title`, `url`, free-text `difficulty`, `locked` when it sits behind the source's paywall; the three coverage fields the check-in, loop and recall own — `worked_on`, `asked_on`, `grade` (with `grade_from`) |
 | `entry_tag` | one label on one entry | `kind = 'topic'` is a subject; `kind = 'list'` is membership of a curated set |
 | `material` | one thing a plan points you to read — a course or playbook, never named in a round | same shape as `entry`, plus `kind` (`course` / `playbook`), `lessons`, `access` (`free` / `pro`). Keeping these out of `entry` is what makes "a round only names a question" a fact of the schema rather than a `WHERE` clause |
-| `claim` | one claim in the identity stack, attribution, a deep-dive or a story | `subject_kind` + `subject_ref`, ordered `seq`, `statement`, `marker` (`verified` / `stated` / `contested`), `checked_against`, and `evidence_command` — required when `marker = 'verified'`, enforced by a `CHECK`. Per [`policy/claims.md`](../../policy/claims.md) |
-| `readiness` | one round type | `rung` from the four-rung ladder in [`policy/readiness.md`](../../policy/readiness.md), `provisional` (a single review is provisional), `note` |
-| `story` / `story_shape` | a story and the question shapes it answers | `slug` with a `status`; every `slug` has a real `instance/stories/<slug>` |
+
+The database holds the resource inventory and nothing else. Claims, readiness,
+the story index and observations are low-volume and hand-written, so they stay
+as prose or small YAML under `instance/profile/` — same reason `habits` does.
 
 ## In YAML
 

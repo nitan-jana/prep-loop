@@ -1,11 +1,13 @@
 #!/usr/bin/env bun
 // Structural check for the YAML data files still kept under `instance/`.
 //
-// Curriculum, claims, readiness and stories moved to instance/prep.db — their
-// shape, enums and referential integrity are CHECK/FOREIGN KEY constraints in
-// tools/schema.sql, and tools/check-db.ts covers what a constraint cannot.
-// What stays here: `habits.yaml`, `observations.yaml`, and the week plans once
-// they are structured — low-volume, hand-authored, never on a query path.
+// The curriculum inventory moved to instance/prep.db — its shape, enums and
+// referential integrity are CHECK/FOREIGN KEY constraints in tools/schema.sql,
+// and tools/check-db.ts covers what a constraint cannot. Everything else stayed
+// as files: this checks the YAML among them — `habits.yaml`, `observations.yaml`,
+// and the week plans once they are structured. Low-volume, hand-authored, never
+// on a query path; claims, readiness and the story index are the same and stay
+// as prose.
 //
 // leak-check: allow-path — it names the local folder it is pointed at on request
 //
@@ -196,10 +198,9 @@ export function validateWeekPlan(c: Checker, v: unknown) {
 // --- CLI --------------------------------------------------------------
 
 
-/** Route a file to its concept by where it sits under `instance/`. Curriculum,
- *  claims, readiness and stories moved to instance/prep.db — those checks are in
- *  tools/check-db.ts and tools/schema.sql. What is left here is the concepts
- *  still kept as YAML. */
+/** Route a file to its concept by where it sits under `instance/`. The curriculum
+ *  inventory moved to instance/prep.db — that check is in tools/check-db.ts and
+ *  tools/schema.sql. What is left here is the concepts still kept as YAML. */
 export function conceptFor(rel: string): string | null {
   if (rel === "profile/habits.yaml") return "habits";
   if (rel === "profile/observations.yaml") return "observations";

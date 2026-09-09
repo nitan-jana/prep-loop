@@ -1,8 +1,10 @@
 -- leak-check: allow-path — it names the local database and its folder
 --
--- The structured half of the local folder. Lives beside it as prep.db
--- (bun:sqlite, gitignored). The narrative half — plans, logs, briefs,
--- deep-dive and story prose — stays as markdown files.
+-- The resource inventory — every source, its entries and material, and the
+-- coverage the check-in / loop / recall record against them. Lives beside the
+-- local folder as prep.db (bun:sqlite, gitignored). Everything else stays as
+-- files: plans, logs and briefs as markdown; claims, readiness, the story index
+-- and observations as prose or small YAML under instance/profile/.
 --
 -- Conventions, not customisation: dates are TEXT in ISO 8601 (YYYY-MM-DD),
 -- booleans are INTEGER 0/1, enums are CHECK constraints. STRICT tables so a
@@ -68,34 +70,3 @@ CREATE TABLE material (
   UNIQUE (source_slug, section, identifier)
 ) STRICT;
 
--- One shape reused across the identity stack, attribution, deep-dives, stories.
-CREATE TABLE claim (
-  id               INTEGER PRIMARY KEY,
-  subject_kind     TEXT NOT NULL CHECK (subject_kind IN ('stack','project','deep-dive','story')),
-  subject_ref      TEXT NOT NULL,             -- tech name / project slug / story slug
-  seq              INTEGER,
-  statement        TEXT NOT NULL,
-  marker           TEXT NOT NULL CHECK (marker IN ('verified','stated','contested')),
-  checked_against  TEXT NOT NULL,
-  evidence_command TEXT,
-  CHECK (marker != 'verified' OR evidence_command IS NOT NULL)
-) STRICT;
-
-CREATE TABLE readiness (
-  round       TEXT PRIMARY KEY,
-  rung        TEXT NOT NULL CHECK (rung IN (
-                'can reconstruct','can reconstruct under time','can defend','can do it cold')),
-  provisional INTEGER NOT NULL CHECK (provisional IN (0,1)),
-  note        TEXT
-) STRICT;
-
-CREATE TABLE story (
-  slug   TEXT PRIMARY KEY,
-  status TEXT
-) STRICT;
-
-CREATE TABLE story_shape (
-  story_slug TEXT NOT NULL REFERENCES story(slug) ON DELETE CASCADE,
-  shape      TEXT NOT NULL,
-  PRIMARY KEY (story_slug, shape)
-) STRICT;

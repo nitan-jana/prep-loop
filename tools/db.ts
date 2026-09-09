@@ -24,16 +24,7 @@ export function schemaSql(): string {
 }
 
 /** The tables the schema defines, in an order safe to delete front-to-back. */
-export const TABLES = [
-  "entry_tag",
-  "story_shape",
-  "entry",
-  "material",
-  "claim",
-  "readiness",
-  "story",
-  "source",
-] as const;
+export const TABLES = ["entry_tag", "entry", "material", "source"] as const;
 
 export function open(path = DB_PATH): Database {
   const db = new Database(path, { create: true });

@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 // The checks the schema cannot express. Everything else — shape, enums,
-// within-database referential integrity, "a verified claim carries its command"
-// — is a CHECK or FOREIGN KEY in tools/schema.sql, enforced on every write.
+// within-database referential integrity — is a CHECK or FOREIGN KEY in
+// tools/schema.sql, enforced on every write.
 //
 // What is left for code:
 //   - SQLite's own integrity_check / foreign_key_check (cheap paranoia)
