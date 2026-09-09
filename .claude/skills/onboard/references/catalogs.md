@@ -1,9 +1,10 @@
-<!-- leak-check: allow-path — names the inventory directory it builds -->
+<!-- leak-check: allow-path — names the database it builds -->
 
 # Building the inventories
 
-The resource stage produces `instance/profile/resources.md` and one file under
-`instance/curriculum/` per source, from [`templates/catalog.md`](../../../../templates/catalog.md).
+The resource stage produces `instance/profile/resources.md` — the readable index
+— and the rows behind it in `instance/prep.db`: one `source` per resource and
+its `entry` rows. Shape in [`tools/schema.sql`](../../../../tools/schema.sql).
 
 An inventory exists for one reason: so a round can **name** a question the user
 can go and look at afterwards. See
@@ -86,7 +87,7 @@ calls a JSON endpoint directly once one is found. It cannot run scripts, so it
 is no help for rendering, but rendering is the last resort and this is most of
 the path to it.
 
-## Cross-check against the sitemap, whatever built the file
+## Cross-check against the sitemap, whatever built the inventory
 
 The rungs are ordered by what they carry, not by which one to stop at. A page
 payload or a parsed index usually beats a sitemap, because it has titles,
@@ -175,7 +176,7 @@ something else. Trading a minute of pasting for a few hundred megabytes and a
 detour is a bad deal at that moment, and it is not this skill's business to put
 software on a machine.
 
-Instead, record it. Note in the inventory's quirks table that the source needed
+Instead, record it. Add a line to the source's `quirks` that it needed
 rendering, so the next refresh knows before it starts. A user who hits that note
 on several sources over a few months has a real reason to attach a browser, and
 by then it is their decision made with evidence rather than a prompt interrupting
@@ -241,11 +242,11 @@ same way an invented question name does, and it is harder to notice.
 Every inventory states whether it is complete, partial or a stub, and that
 field is read by anything sourcing from it.
 
-**A stub tightens the rule rather than relaxing it.** With a thin catalog, only
-a name confirmed to be in the file may be spoken in a round. A small vocabulary
-is not a licence to guess — naming a question that does not exist is the worst
-failure the system has, because the user goes looking, finds nothing, and stops
-trusting every named reference afterwards.
+**A stub tightens the rule rather than relaxing it.** With a stub, only a name
+confirmed to be in it may be spoken in a round. A small vocabulary is not a
+licence to guess — naming a question that does not exist is the worst failure
+the system has, because the user goes looking, finds nothing, and stops trusting
+every named reference afterwards.
 
 ## Paid sources
 
@@ -260,30 +261,30 @@ behind it; a paid one has a subscription behind it, and redistributing what is
 on the other side of that is both a terms problem and an unfriendly act toward
 a vendor the user is paying.
 
-## Structure
+## Grouping
 
-Headings carry no numbers, so renumbering is impossible and anchors keep
-working. Where the source groups its entries into sections, tracks or patterns,
-mirror that structure with plain headings — a round often wants to draw from
-one group rather than the whole list.
+Where the source groups its entries into sections, tracks or patterns, carry
+that grouping onto each `entry` as its `section` — a round often wants to draw
+from one group rather than the whole list. An ungrouped source leaves `section`
+at its default.
 
-Leave the three coverage columns — `Last worked`, `Last asked`, `Grade` — empty
-on a first build. Those are written by the check-in and the loop as work and
-rounds happen, and they are what makes retention sourcing possible later.
+Leave `worked_on`, `asked_on` and `grade` unset on a first build. Those are
+written by the check-in and the loop as work and rounds happen, and they are
+what makes retention sourcing possible later.
 
 ## A refresh merges, it never replaces
 
-Re-pulling a source rebuilds the entries. **It must carry the three coverage
-columns forward** for every identifier that still exists, and only then write
-the new list.
+Re-pulling a source rebuilds its entries. **It must carry `worked_on`,
+`asked_on` and `grade` forward** for every identifier that still exists, and
+only then write the new list.
 
-Overwriting the file wholesale is the obvious way to do a refresh and it silently
+Replacing every row wholesale is the obvious way to do a refresh and it silently
 destroys the entire history of what this install has worked and been asked. The
 damage is invisible: the inventory looks correct afterwards, every name resolves,
 and the only symptom is that retention sourcing quietly starts treating long-
 covered material as untouched.
 
-So: read the existing file first, key its coverage by identifier, and reattach
+So: read the existing rows first, key their coverage by identifier, and reattach
 after the pull. An identifier the source has dropped takes its coverage with it.
 A new identifier arrives empty, which is true.
 

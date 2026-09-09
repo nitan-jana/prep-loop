@@ -29,7 +29,7 @@ repository, has no remote, and nothing in it is ever pushed anywhere.
 | | Holds |
 |---|---|
 | `instance/profile/` | Facts, claims, habits, cadence. Written by onboarding. |
-| `instance/curriculum/` | One inventory per resource in use. |
+| `instance/prep.db` | The resource inventory: each source, its entries, and the coverage the system records against them. Shape in [`tools/schema.sql`](../tools/schema.sql). |
 | `instance/plans/` | What is planned, one file per week. |
 | `instance/logs/` | What happened, one file per working day. |
 | `instance/performance/` | Scored rounds, one file per review. |
@@ -62,7 +62,10 @@ week-numbered.
 | Round transcript | `instance/mocks/YYYY-MM-DD-transcript.md` |
 | Story | `instance/stories/<slug>.md`, indexed in `instance/profile/story-bank.md` |
 | Deep dive | `instance/deep-dives/<project-slug>.md` |
-| Resource inventory | `instance/curriculum/<source-slug>.md` |
+
+The resource inventory is not a file artifact. It lives in `instance/prep.db` —
+each source, its entries, and their coverage — shape in
+[`tools/schema.sql`](../tools/schema.sql).
 
 ## Who writes what
 
@@ -88,17 +91,17 @@ bug, not a judgement call.
 | `policy/`, `templates/`, skills | the user, deliberately | every skill |
 | Nothing at all | `prep` | — |
 
-**An inventory has two owners, split by column.** `onboard` owns the entries —
-identifiers, titles, links, everything that describes the source. `checkin`,
-`mock-loop` and `recall` own `Last worked`, `Last asked` and `Grade`, and touch
-nothing else in the row. The columns record what this install did with an entry, which is not
-something a fetcher can know and not something a session may invent. See
+**A row has two owners, split by column.** `onboard` owns the description —
+identifier, title, link, difficulty. `checkin`, `mock-loop` and `recall` own
+`worked_on`, `asked_on` and `grade`, and touch nothing else. Those columns
+record what this install did with an entry, which a fetcher cannot know and a
+session may not invent. See
 [`mock-sourcing.md`](mock-sourcing.md#what-the-inventory-records).
 
 The split has one consequence worth stating: **a refresh merges, it never
-replaces.** An inventory re-pulled from its source carries the coverage columns
-forward for every identifier that still exists, or the pull silently erases the
-history that makes retention sourcing possible.
+replaces.** Re-pulling a source carries the coverage columns forward for every
+identifier that still exists, or the pull silently erases the history that makes
+retention sourcing possible.
 
 **`prep` writes nothing, and that is its whole contract.** It reports where the
 install stands and names one thing to run. A place to look when the thread has

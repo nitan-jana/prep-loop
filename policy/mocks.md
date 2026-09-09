@@ -57,7 +57,7 @@ do not reach — a subject with a daily block and no readiness rung is the case
 this exists for.
 
 It does not read [the retention order](mock-sourcing.md#the-retention-pick). Its
-pool is `Last worked` inside this week, which makes it the one round in the
+pool is `worked_on` inside this week, which makes it the one round in the
 system scoped by calendar rather than by what has fallen due.
 
 **It is the middle of three distances, and that is its whole justification.**
@@ -132,9 +132,9 @@ Separate phase, after all rounds. Everything withheld until now:
   failed](grading.md#a-grade-below-solid-names-the-test-it-failed)
 - What a stronger answer would have contained
 - The follow-up that was not survived
-- Observed habits, appended to `instance/profile/habits.md`
+- Observed habits, appended to `instance/profile/habits.yaml`
 - What to drill, ordered, specific enough to schedule
-- Coverage written back to the inventories — `Last asked` and `Grade` on every
+- Coverage written back to `instance/prep.db` — `asked_on` and `grade` on every
   entry a round used, per
   [`mock-sourcing.md`](mock-sourcing.md#what-the-inventory-records)
 

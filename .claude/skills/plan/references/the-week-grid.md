@@ -39,8 +39,8 @@ gives way and the plan does not explain itself for doing so.
 
 A question already worked beats a new one, per
 [`policy/mock-sourcing.md`](../../../../policy/mock-sourcing.md#retention-before-novelty).
-The `Last worked`, `Last asked` and `Grade` columns in each inventory are what
-make this possible, and they are why those columns exist.
+The `worked_on`, `asked_on` and `grade` columns on every entry are what make
+this possible, and they are why those columns exist.
 
 Both edges of the window are profile facts. Too recent tests nothing; too old
 tests nothing either.

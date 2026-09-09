@@ -1,11 +1,11 @@
-<!-- leak-check: allow-path — names the inventories and the score history it reads -->
+<!-- leak-check: allow-path — names the curriculum tables and score history it reads -->
 
 # Where a question comes from
 
 ## Never invent a question name
 
 A round names a question the user can go and look at afterwards. That means it
-comes from an inventory under `instance/curriculum/`, and nowhere else.
+comes from the `entry` rows in `instance/prep.db`, and nowhere else.
 
 **Naming a question that does not exist is the worst failure in the system.**
 The user goes looking for it, cannot find it, and from then on cannot trust any
@@ -16,9 +16,9 @@ Where no inventory covers the topic, the round asks the question in full
 instead of naming it, and says so. A question stated in the round is honest. A
 plausible-looking name is not.
 
-Where an inventory is a stub because the source could not be enumerated, the
-rule tightens rather than relaxes: **only name a question already confirmed to
-be in it.** A thin catalog is a smaller vocabulary, not a licence to guess.
+Where a source's `completeness` is `stub` because it could not be enumerated,
+the rule tightens rather than relaxes: **only name a question already confirmed
+to be in it.** A thin inventory is a smaller vocabulary, not a licence to guess.
 
 ## Retention before novelty
 
@@ -38,24 +38,25 @@ cold round. It is the exception and the round says which it is.
 
 ### What the inventory records
 
-Three columns on every entry, written by the system rather than by whatever
-built the file. Together they are the pool a retention question is drawn from.
+Three columns on every `entry` and `material` row, written by the system rather
+than by whatever built the row. Together they are the pool a retention question
+is drawn from.
 
 | Column | What it means |
 |---|---|
-| `Last worked` | The material was in front of the user — a plan named it, or a day's evidence shows the block ran |
-| `Last asked` | It was quizzed or asked in a round, and graded |
-| `Grade` | The result, and the dated file holding the quoted answer |
+| `worked_on` | The material was in front of the user — a plan named it, or a day's evidence shows the block ran |
+| `asked_on` | It was quizzed or asked in a round, and graded |
+| `grade` / `grade_from` | The result, and the dated file holding the quoted answer |
 
 **Worked is not asked.** A block names more entries than any one session can
 test, so an entry can sit in front of the user for a full window and never be
-questioned. With only the first column, that entry is indistinguishable from one
-that was asked and answered well, and silence reads as a pass.
+questioned. With only `worked_on`, that entry is indistinguishable from one that
+was asked and answered well, and silence reads as a pass.
 
-The `Grade` cell is an index, not the record. It carries the grade and names the
-log or review file holding the quoted answer, which stays authoritative.
-[`grading.md`](grading.md#a-grade-without-the-answer-is-not-a-grade) requires
-the answer to sit with the grade, and an inventory of grades without answers is
+`grade` is an index, not the record: `grade_from` names the log or review file
+holding the quoted answer, which stays authoritative.
+[`grading.md`](grading.md#a-grade-without-the-answer-is-not-a-grade) requires the
+answer to sit with the grade, and an inventory of grades without answers is
 exactly the calibration failure that rule exists to prevent.
 
 ### The retention pick
@@ -65,7 +66,7 @@ depends on how much of a session it has.
 
 1. **Graded below `solid`, past the lower edge.** A regression outranks an
    uncovered topic — [`readiness.md`](readiness.md#regression).
-2. **`Last worked` filled, `Last asked` empty.** Studied and never tested.
+2. **`worked_on` filled, `asked_on` empty.** Studied and never tested.
    Oldest first.
 3. **Graded `solid`, past the upper edge.** The decay test, and the only row
    that can carry a round type to the top of the ladder — the last rung is
@@ -107,23 +108,6 @@ The **check-in** writes the columns and never reads them. It closes a day it is
 still inside, at a distance well within the lower edge, which makes it the wrong
 instrument for a retention question —
 [`checkin-protocol.md`](checkin-protocol.md#the-quiz).
-
-### Why one list and not two
-
-The second row was once split off into a pool of its own, on the reasoning that
-a queue with an arrival rate is a different kind of thing from a round type
-falling due.
-
-It is, and the ordering was never what went wrong. **The failure was a reader
-without a window** — one round at the end of a loop, taking a single entry, in
-whatever time was left. Under that reader the order behaved as a filter: the
-first row was rarely empty, so the second was rarely reached.
-
-Giving the list a reader that works down it for a whole day fixes that without
-splitting anything. Splitting it made a second problem instead: a graded entry
-outside every tracked round type had nowhere left to be asked, because the only
-session wide enough to reach it had been restricted to entries never asked at
-all.
 
 ## Do not repeat inside the window
 

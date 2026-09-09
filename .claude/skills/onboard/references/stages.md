@@ -60,7 +60,7 @@ and see whether the answers come from memory.
 
 ## Resources
 
-*About thirty minutes. Writes `resources`, plus one inventory per source.*
+*About thirty minutes. Writes `resources`, plus the `source` and `entry` rows in `prep.db`.*
 
 Fully covered in [`catalogs.md`](catalogs.md). The short version: ask what is
 already in use before recommending anything, record what was rejected and why,

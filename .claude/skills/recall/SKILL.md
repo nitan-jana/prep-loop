@@ -57,12 +57,12 @@ The linked file wins; nothing here restates one.
    first eligible entry. Grade against the anchors in
    `instance/profile/grading-anchors.md`.
 5. **Write the record** from [`templates/recall.md`](../../../templates/recall.md).
-6. **Record coverage** — `Last asked` and `Grade` on every entry asked, naming
+6. **Record coverage** — `asked_on` and `grade` on every entry asked, naming
    this record as the file holding the answer.
 7. **Stop.** No commit, and no daily log.
 
-**Every entry is copied out of a file under `instance/curriculum/`**, with its
-identifier and its link. A session asking dozens of small questions is where
+**Every entry is read out of `instance/prep.db`**, with its identifier and its
+link. A session asking dozens of small questions is where
 [naming one that does not
 exist](../../../policy/mock-sourcing.md#never-invent-a-question-name) is most
 easily done.
@@ -98,7 +98,7 @@ easily done.
 - Every row carries the question as it was asked, not the entry identifier
 - No two consecutive entries in the record share a track
 - Every grade carries the answer that produced it, quoted
-- Every entry asked carries `Last asked` and a `Grade` naming this record
+- Every entry asked carries `asked_on` and a `grade` naming this record
 - `bun run check` is clean
 
 **Write the file and stop** — the user reads the folder.

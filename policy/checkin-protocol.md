@@ -42,8 +42,8 @@ Pull from what the day's blocks actually covered, per the evidence. Then:
 question, a named mechanism, a named decision. A vague prompt gets a vague
 answer that cannot be graded.
 
-**Stay inside the entry.** A question named from an entry under
-`instance/curriculum/` may not ask past what that entry covers. Where a plan
+**Stay inside the entry.** A question named from an entry in
+`instance/prep.db` may not ask past what that entry covers. Where a plan
 line asks for more than its link carries — accessibility, or a keyboard model,
 on a question that has neither — the quiz follows the entry, and the block's
 evidence row records what the link does not cover. None of the gap is graded.
@@ -83,10 +83,10 @@ means something — [`recall.md`](recall.md).
 
 ### Record what was asked
 
-At grading time, write the day's coverage into the inventory entries under
-`instance/curriculum/` — `Last worked` for what the evidence shows ran,
-`Last asked` and `Grade` for what was actually questioned. Nothing else in the
-entry is touched.
+At grading time, write the day's coverage into the `entry` rows in
+`instance/prep.db` — `worked_on` for what the evidence shows ran, `asked_on`
+and `grade` for what was actually questioned. Nothing else in the row is
+touched.
 
 **This is the whole reason the columns exist.** A few items are asked out of the
 many an evening's blocks named, and without the write there is no record of
@@ -184,8 +184,8 @@ worse than no log, because it looks like a record.
 Today's log, complete. Any earlier day's log, evidence-only. The coverage
 columns on the entries the day touched. Nothing else.
 
-A backfilled log records `Last worked` from the evidence and leaves `Last asked`
-and `Grade` empty, for the same reason its quiz section is empty: nothing was
+A backfilled log records `worked_on` from the evidence and leaves `asked_on`
+and `grade` empty, for the same reason its quiz section is empty: nothing was
 asked, and a column that says otherwise is the fabrication that status exists to
 prevent.
 

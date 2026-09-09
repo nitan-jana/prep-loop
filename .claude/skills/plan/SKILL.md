@@ -35,7 +35,7 @@ Nothing personal is decided here. All of it is read.
 |---|---|
 | `instance/profile/schedule.md` | Working days, block labels and windows, the rotation, the recurring sessions, the recall cycle, the timezone, both cap values |
 | `instance/profile/state.md` | Readiness rungs, the sourcing phase, what is paused and what unpauses it |
-| `instance/curriculum/` | The entries a block may name |
+| `instance/prep.db` | The entries a block may name |
 | The previous week's plan | Its `## Deferred` list, which is scheduled before anything new |
 | `instance/logs/` | What actually ran, which is how a block that keeps losing gets moved rather than repeated |
 | `instance/performance/` | Grades, when there are any. Weakest round type first |
@@ -93,7 +93,7 @@ check-in handles those on request. See
 - **Never name a question that is not in an inventory.** This skill is where it
   is most easily broken — a block description wants a task and a link, and
   inventing a plausible one is a keystroke away. Every named entry is *copied*
-  out of `instance/curriculum/` with its link; where no inventory covers what a
+  out of `instance/prep.db` with its link; where no inventory covers what a
   block needs, the block says what to do in plain words and names nothing —
   [`mock-sourcing.md`](../../../policy/mock-sourcing.md#never-invent-a-question-name).
 - **Never write completion state**, into the plan or onto an event —
@@ -113,7 +113,7 @@ check-in handles those on request. See
 
 - `instance/plans/<week>.md` exists and every line of it is an instruction
 - Every block in it is on the calendar, one event per block, for the same week
-- Every named entry resolves to a row in a file under `instance/curriculum/`
+- Every named entry resolves to a row in `instance/prep.db`
 - Neither cap is exceeded on any day, and what did not fit is in `## Deferred`
 - `bun run check` is clean
 

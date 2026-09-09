@@ -69,7 +69,7 @@ Two things follow from it being HTML:
   and asterisks in an inventory title are markdown and are dropped, not carried
   across.
 
-The label is the entry's own title, copied from `instance/curriculum/` alongside
+The label is the entry's own title, copied from `instance/prep.db` alongside
 the address it sits beside. Shortening it into something more readable renames
 an entry the inventory has already named, which is
 [`mock-sourcing.md`](mock-sourcing.md#never-invent-a-question-name) broken by a

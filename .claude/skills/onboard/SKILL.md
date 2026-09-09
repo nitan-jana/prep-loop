@@ -54,7 +54,7 @@ stop. Do not start a stage until the user picks one.
 onboard — build the profile this system runs on.
 
   /onboard spine      identity, attribution, state, schedule   <status>
-  /onboard resources  what to study from, one inventory each   <status>
+  /onboard resources  what to study from, listed in prep.db    <status>
   /onboard material   story bank, tenure script, questions     <status>
   /onboard search     projects and outbound                    <status>
 
@@ -123,7 +123,7 @@ Resumable. Each writes its files and updates the progress table in
 | Stage | Writes | After it, the system can |
 |---|---|---|
 | **spine** | `identity` `attribution` `state` `schedule` | run a day |
-| **resources** | `resources`, one inventory per source | name a real question |
+| **resources** | `resources`, and the `source`/`entry` rows in `prep.db` | name a real question |
 | **material** | `story-bank` `tenure-script` `showcase-questions` | run a behavioral or deep-dive round |
 | **search** | `projects` `outbound` | run the job-search half |
 

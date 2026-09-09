@@ -26,7 +26,7 @@ right trade — coverage is the thing this system has least trouble producing.
 
 ## It reads the whole list, and works down it
 
-The pool is every entry under `instance/curriculum/` that has been worked and is
+The pool is every entry in `instance/prep.db` that has been worked and is
 now past the recall edge, ordered by
 [`mock-sourcing.md`](mock-sourcing.md#the-retention-pick) — a known gap first,
 then what was never asked, then a decay test on what held.

@@ -39,9 +39,9 @@ The linked file wins; nothing here restates one.
 4. **Ask for miss reasons**, and record them verbatim.
 5. **Reschedule** what slipped — and actually call the calendar.
 6. **Write the log** from [`templates/daily-log.md`](../../../templates/daily-log.md).
-7. **Record coverage** on the entries the day touched, under
-   `instance/curriculum/` — `Last worked` on everything the blocks named,
-   `Last asked` and `Grade` only on what the quiz reached.
+7. **Record coverage** on the entries the day touched, in
+   `instance/prep.db` — `worked_on` on everything the blocks named,
+   `asked_on` and `grade` only on what the quiz reached.
 8. **Stop.** No commit.
 
 ## Forbidden
@@ -74,8 +74,8 @@ The linked file wins; nothing here restates one.
 - Every grade in it carries the answer that produced it, quoted
 - Every miss reason is in the user's own words
 - Anything rescheduled is on the calendar, not just named
-- Every entry the day named carries `Last worked`, and only the asked ones carry
-  `Last asked` and `Grade`
+- Every entry the day named carries `worked_on`, and only the asked ones carry
+  `asked_on` and `grade`
 - `bun run check` is clean
 
 **Write the files and stop** — the user reads the folder.

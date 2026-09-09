@@ -62,7 +62,7 @@ Written on a different day from the loop, using
 2. **Pick one entry inside each type**, going down
    [the retention order](../../../policy/mock-sourcing.md#the-retention-pick)
    until something is eligible.
-3. **Build the week round last**, from `Last worked` inside this week — the
+3. **Build the week round last**, from `worked_on` inside this week — the
    whole week, including what the check-in already asked, which is a deliberate
    exception to the repeat edge. Take the unasked ones first; that is an
    ordering, not a filter. Size it to what the window has left after the review;
@@ -80,12 +80,16 @@ Written on a different day from the loop, using
    `instance/performance/<week>.md` from
    [`templates/review.md`](../../../templates/review.md). Read
    `instance/profile/grading-anchors.md` first.
-4. **Append observed habits** to `instance/profile/habits.md` — found by
-   watching rounds, never by asking the user to name their own weaknesses.
+4. **Append observed habits** to the `observed` list in
+   `instance/profile/habits.yaml`, in the shape
+   [`templates/schema/README.md`](../../../templates/schema/README.md#habits)
+   gives, then run `bun tools/render-views.ts` to rebuild the readable view —
+   found by watching rounds, never by asking the user to name their own
+   weaknesses.
 5. **Once a month, run the re-grade audit** per
    [`grading.md`](../../../policy/grading.md#the-re-grade-audit), under a
    `## Calibration` heading. It grades the grader.
-6. **Record coverage** — `Last asked` and `Grade` on every entry a round used.
+6. **Record coverage** — `asked_on` and `grade` on every entry a round used.
 7. **Hand off to [`checkin`](../checkin/SKILL.md)**, which writes the day's log.
    A review day is still a working day.
 
@@ -122,7 +126,7 @@ Written on a different day from the loop, using
 - Every round in the brief ran, in order, and was graded
 - Every grade carries its quoted answer, and every rung change is justified by two consecutive reviews
 - Habits observed are appended rather than asked for
-- Every entry a round used carries `Last asked` and a `Grade` naming this review
+- Every entry a round used carries `asked_on` and a `grade` naming this review
 - The day's log exists, via the check-in
 - `bun run check` is clean
 

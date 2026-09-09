@@ -42,8 +42,8 @@ reconsider the design rather than to install it.
 1. [`policy/`](policy/README.md) — how the system works. Generic. The same for
    every user.
 2. `instance/profile/` — who this install belongs to. Facts, dates, claims, habits.
-3. `instance/curriculum/` — inventories of outside material, so a question can
-   be named rather than remembered.
+3. `instance/prep.db` — the inventory of outside material, so a question can
+   be named rather than remembered. Shape in [`tools/schema.sql`](tools/schema.sql).
 4. Skills — how a session is invoked. Nothing else.
 
 **Point, never paraphrase.** A skill may link a policy file, or override it with
