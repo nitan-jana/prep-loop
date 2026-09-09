@@ -25,7 +25,7 @@ it. The reasoning is in this repo and the user can ask for it in a session.
 ### A description has a ceiling
 
 Short enough to take in without scrolling, on whatever the user actually reads a
-calendar on. The figure is in `instance/profile/schedule.md`, since it depends
+calendar on. The figure is `calendar_description_lines` in `instance/profile/schedule.yaml`, since it depends
 on the device and on the reader.
 
 A wall of text in a calendar entry does not get read, which makes a thorough

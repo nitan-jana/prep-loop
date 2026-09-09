@@ -26,7 +26,8 @@ Nothing personal is decided here. All of it is read.
 
 | Source | Supplies |
 |---|---|
-| `instance/profile/schedule.md` | Working days, block labels and windows, the rotation, the recurring sessions, the recall cycle, the timezone, both cap values |
+| `instance/profile/schedule.yaml` | Working days, block labels and windows, the rotation, the recurring sessions, the recall cycle, the timezone, both cap values, the content weights, the retention edges |
+| `instance/profile/schedule.md` | Why any of those is what it is, and what a block is currently parked behind. Not a planning input |
 | `instance/profile/state.md` | Readiness rungs, the sourcing phase, what is paused and what unpauses it |
 | `instance/prep.db` | The entries a block may name |
 | The previous week's plan | Its `## Deferred` list, which is scheduled before anything new |
@@ -48,7 +49,7 @@ of those is a profile fact and none of them is the same for two installs.
 2. **Resolve the week identifier.** ISO week-numbered, per
    [`repo-map.md`](../policy/repo-map.md#artifact-names):
    `date -d <a date in the week> +%G-W%V`. Derive it; do not count weeks by hand.
-3. **Read the schedule** into a grid of working days by block labels.
+3. **Read `schedule.yaml`** into a grid of working days by block labels.
 4. **Drop windows that have already passed.** See below.
 5. **Place the deferred list first**, from the previous week's plan.
 6. **Fill what is left** from the rotation. Details in

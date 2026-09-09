@@ -24,7 +24,7 @@ One block, one event, for the whole window. Never several events inside a
 block, never one event covering two blocks.
 
 The title is the block label and the subject, separated by a middle dot:
-`<label> · <subject>`. Both come from `instance/profile/schedule.md`, the label
+`<label> · <subject>`. Both come from `blocks` in `instance/profile/schedule.yaml`, the label
 stable across the week and the subject moving inside it. Stable label first, so
 the week reads as a rotation at a glance rather than as unrelated sessions.
 

@@ -5,7 +5,7 @@ subjects, no progress through a source — only questions about material already
 worked, whether or not anything has asked about it before.
 
 How often it comes round and which days it takes are read from
-`instance/profile/schedule.md`. This file says what those days are for.
+`recall_days` in `instance/profile/schedule.yaml`. This file says what those days are for.
 
 ## Why it is a day and not a round
 

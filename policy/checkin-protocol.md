@@ -132,7 +132,7 @@ For each one, reconstruct what can still be recovered from commit timestamps and
 file history, write it, and mark it `status: evidence-only`.
 
 **A week plan's own day headings are the list of working days**, not the days
-`instance/profile/schedule.md` says are workable. The profile states which days
+`instance/profile/schedule.yaml` says are workable. The profile states which days
 can carry blocks; the plan states which ones were actually given any, and a week
 planned after it began deliberately carries fewer — see
 [`cadence.md`](cadence.md#carrying-work-forward) for what a plan is and

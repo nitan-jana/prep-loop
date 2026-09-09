@@ -31,7 +31,11 @@ map, not a second copy.
 Claims, readiness, the story index, habits and observations are low-volume and
 hand-written, so they stay as prose or small files under `instance/profile/` —
 not worth a table, not worth a validator. `habits.md` is plain markdown the
-review appends to; `observations.yaml` is a short list kept by hand.
+review appends to; `observations.yaml`, `schedule.yaml` and `outbound.yaml` are
+short structured files kept by hand. They are YAML rather than `prep.db` tables
+because nothing generates or refreshes them — a table earns its place when a
+fetcher writes it, and a hand-edited row in a database is a row nobody can read
+in a diff.
 
 A grade written into a log or review, per
 [`policy/grading.md`](../policy/grading.md), carries `value` (`solid` / `shaky`

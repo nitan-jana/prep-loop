@@ -12,7 +12,8 @@ at the end of the last one.
 ## Spine
 
 *About forty-five minutes. Writes `identity`, `attribution`, `state`,
-`schedule`. After this the system can run a day.*
+`schedule` — the last as both `schedule.yaml` and `schedule.md`. After this
+the system can run a day.*
 
 **Enumerate first.** Repository list, resume, public profile text. Read all of
 it before the first question.
@@ -42,10 +43,15 @@ the next one, what is deliberately paused and what unpauses it. A fact that
 lives here once is a fact that cannot be right in two commands and stale in a
 third.
 
-**`schedule.md` captures cadence rather than assuming it.** Which days are
+**The schedule stage captures cadence rather than assuming it.** Which days are
 working days, how many blocks, how long, what usually sits in each, when the
-three recurring sessions happen, the timezone, and both cap values. Ask; do not
-propose a default and have it accepted out of politeness.
+three recurring sessions happen, the timezone, both cap values, the recall cycle
+and the retention edges. Every one of those is a key in `schedule.yaml`. Ask; do
+not propose a default and have it accepted out of politeness.
+
+**The answer goes in `schedule.yaml`; the reason it was that answer goes in
+`schedule.md`.** A value with no reason beside it is the one quietly changed back
+next month, and a reason that repeats the value is the copy that goes stale.
 
 Ask what has actually been sustained before, not what would be ideal. A
 schedule built from the ideal answer produces a week that is abandoned by the
@@ -109,7 +115,8 @@ ask one drill-sheet follow-up from a story cold.
 
 ## Search
 
-*About thirty minutes. Writes `projects`, `outbound`.*
+*About thirty minutes. Writes `projects`, and `outbound` as both
+`outbound.yaml` and `outbound.md`.*
 
 `projects.md` ranks what the user is prepared to be asked about. Attribution is
 already settled, so this stage answers a different question: what to lead with,
@@ -124,19 +131,21 @@ Then push once more, on the part that matters: **what happens if it comes up
 anyway.** Everything on that list eventually does, and the difference between a
 bad moment and a fine one is whether the answer was decided in advance.
 
-`outbound.md` records targets, routes and the artifact to lead with for each,
-per [`policy/outbound.md`](../../../policy/outbound.md). The artifact column
-is the one that pays: a cap makes each daily action scarce, which is only worth
-it if the thing attached was chosen for the recipient rather than reused from
-the last one.
+`outbound.yaml` records targets, routes and the artifact to lead with for each,
+per [`policy/outbound.md`](../../../policy/outbound.md), which is also where the
+reason the artifact field pays is written. `outbound.md` holds only what is true
+about a particular target — why a route is credible here, what has to happen
+before an ask goes out — and restates none of the policy.
 
-**Fill the claim column as the targets go in.** Each artifact leads with a
-claim, and it goes out `verified` or `stated` with its obstacle named. Doing it
+**Fill `claim`, `claim_marker` and `claim_obstacle` as the targets go in.**
+Each artifact leads with a claim, and it goes out `verified` or `stated` with its obstacle named. Doing it
 later means doing it under time pressure, on the one artifact nobody reads back
 before an audience does.
 
-Confirm the outbound cap value here, in the light of what the targets actually
-look like — it was set in the spine stage before any of them were named.
+Confirm `caps.outbound_actions_per_day` in `schedule.yaml` here, in the light of
+what the targets actually look like — it was set in the spine stage before any of
+them were named. If the actions land in one block a week rather than daily, the
+reconciliation goes in `schedule.md` under `## Caps`, not into a second cap key.
 
 **Close by testing it.** Ask which project they would lead with for the first
 target on the list, and why that one.

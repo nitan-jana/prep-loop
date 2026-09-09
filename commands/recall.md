@@ -38,7 +38,7 @@ The linked file wins; nothing here restates one.
 ## Order of operations
 
 1. **Build the queue** — every worked entry past the recall edge in
-   `instance/profile/schedule.md`, in the order at
+   `retention_window_days.recall` in `instance/profile/schedule.yaml`, in the order at
    [`policy/mock-sourcing.md`](../policy/mock-sourcing.md#the-retention-pick).
    Anything already asked must clear the repeat edge too. No round type is off
    limits.

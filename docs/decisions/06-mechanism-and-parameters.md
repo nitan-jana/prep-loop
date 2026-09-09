@@ -58,7 +58,8 @@ rather than as a prohibition on names.
 
 - [`CLAUDE.md`](../../CLAUDE.md) — the principle and the test
 - [`policy/README.md`](../../policy/README.md) — no dates, no proper nouns, no cadence
-- [`templates/profile/schedule.md`](../../templates/profile/schedule.md) — where the parameters landed
+- [`templates/profile/schedule.yaml`](../../templates/profile/schedule.yaml) — where the parameters landed
+- [`templates/profile/schedule.md`](../../templates/profile/schedule.md) — where the reasons for them did
 - [`templates/README.md`](../../templates/README.md) — the conventions, and the two files left blank
 
 *In the history:* `0aa6508` `c615b2f` `de76e63` `282ce58` `f7e136f` `7a1933e` `2fb38d6` `ff55d76` `dbf928c`

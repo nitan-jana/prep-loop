@@ -26,7 +26,7 @@ The linked file wins; nothing here restates one.
    [backfill only what the user asks
    for](../policy/checkin-protocol.md#backfilling-a-missed-day).
 2. **Gather evidence**, before asking anything. Timestamps against the block
-   windows in `instance/profile/schedule.md`.
+   windows in `instance/profile/schedule.yaml`.
 3. **Quiz**, from what the evidence shows the day covered, grading against the
    anchors in `instance/profile/grading-anchors.md`.
 4. **Ask for miss reasons**, and record them verbatim.

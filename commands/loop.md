@@ -51,7 +51,9 @@ Written on a different day from the loop, using
 
 1. **Pick the round types** — weakest grades first, per
    [`mock-sourcing.md`](../policy/mock-sourcing.md#choosing-the-round-type),
-   unless `instance/profile/schedule.md` states a focus set, which overrides it.
+   unless `instance/profile/schedule.yaml` carries a `loop_focus_set`, which
+   overrides it until its `holds_until` condition is met. Why it exists is in
+   `instance/profile/schedule.md`.
 2. **Pick one entry inside each type**, going down
    [the retention order](../policy/mock-sourcing.md#the-retention-pick)
    until something is eligible.

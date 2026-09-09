@@ -4,7 +4,7 @@ The week is the unit of planning. The day is the unit of record. The block is
 the unit of work.
 
 Which days, how many blocks, how long each runs, and which subjects sit in
-which block are all read from `instance/profile/schedule.md`. This file says
+which block are all read from `instance/profile/schedule.yaml`. This file says
 what those things are for.
 
 ## The block

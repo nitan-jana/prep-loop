@@ -33,8 +33,8 @@ run at any moment, because it cannot change anything.
 
 ### What it reads
 
-Three directory listings, plus onboarding progress, which is the one file it
-opens. No git, nothing else read.
+Three directory listings, plus two files it opens — onboarding progress and the
+schedule. No git, nothing else read.
 
 | Question | Where |
 |---|---|
@@ -42,7 +42,7 @@ opens. No git, nothing else read.
 | Does this week have a plan | `instance/plans/` |
 | Does every working day up to yesterday have a log | `instance/logs/` |
 | Is there a brief for the next review | `instance/mocks/` |
-| Is a recall day due this cycle | `instance/profile/schedule.md`, against the week |
+| Is a recall day due this cycle | `recall_days` in `instance/profile/schedule.yaml`, against the week |
 
 **Nothing runs this on its own.** No session scans for gaps before doing what it
 was opened to do. Evidence is retroactive: a missing log costs nothing by

@@ -48,3 +48,10 @@ is a template for something that is not a claim.
 **Templates carry no examples.** An example weekday, an example vendor or an
 example number is one user's setup shipped to everyone, and it gets left in
 place more often than it gets replaced.
+
+**A `.yaml` beside a `.md` is one file in two halves.** The yaml holds every
+value a session reads. The markdown holds why each is what it is, and repeats
+none of them — a number written in both is a number that will be right in one.
+Reference a yaml key in backticks, never as a link anchor: a `#fragment` on a
+non-markdown target is silently skipped by
+[`tools/check-links.ts`](../tools/check-links.ts) and verifies nothing.

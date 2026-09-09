@@ -1,0 +1,45 @@
+# The record behind policy/outbound.md, which owns what an action is, how an ask
+# differs from an application, what the four stages mean, and what the channel
+# tally may never be used to conclude. Reasoning about any one row belongs in
+# outbound.md beside this file.
+#
+# Angle brackets are placeholders. The enums are the schema, not one user's data,
+# so they are filled.
+
+enums:
+  route: [referral, cold, board, recruiter]
+  stage: [sent, replied, in process, closed]
+  ask_type: [referral, intro, outreach]
+
+# Not yet acted on. The artifact is what makes a scarce action worth its scarcity;
+# the claim is the gate — `verified`, or `stated` with its obstacle named.
+targets:
+  - company: <name>
+    role: <role, or "not specified">
+    route: <one of enums.route>
+    referrer: <person, where the route is a referral>
+    artifact: <the project, story or deep dive that fits this one>
+    claim: <the claim it leads with>
+    claim_marker: <verified | stated>
+    claim_obstacle: <why it is only stated, where it is>
+    acted_on: null
+
+# A request aimed at a person. No stage, because nothing was submitted. One that
+# carried a resume is also an application, and gets a row below too.
+asks: []
+
+# A submission aimed at a role. This one has a stage, and a close keeps the stage
+# it reached — nothing moves backward, nothing is deleted.
+applications: []
+
+# The only thing the stages exist to answer: anything at `in process` with a date.
+rounds_coming: []
+
+# Every route, plus `inbound` — a channel something can arrive through, never a
+# route an action takes, because nothing was sent.
+channels:
+  - { route: referral, asks_sent: 0, applications_sent: 0, replies: 0 }
+  - { route: cold, asks_sent: 0, applications_sent: 0, replies: 0 }
+  - { route: board, asks_sent: 0, applications_sent: 0, replies: 0 }
+  - { route: recruiter, asks_sent: 0, applications_sent: 0, replies: 0 }
+  - { route: inbound, asks_sent: 0, applications_sent: 0, replies: 0 }

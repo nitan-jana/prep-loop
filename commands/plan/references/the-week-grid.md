@@ -1,7 +1,7 @@
 # Filling the grid
 
 What goes in each block, once the shape has been read out of
-`instance/profile/schedule.md`. The rules in the command file apply throughout and
+`instance/profile/schedule.yaml`. The rules in the command file apply throughout and
 are not repeated here.
 
 ## Deferred first, always
@@ -59,7 +59,8 @@ week. It produces recognition, and recognition does not survive a round.
 
 ## The caps, arithmetically
 
-Both values are in `instance/profile/schedule.md`. The mechanism is
+Both values are under `caps` in `instance/profile/schedule.yaml`, and the
+`content_weights` that make the first countable are there too. The mechanism is
 [`policy/caps.md`](../../../policy/caps.md).
 
 **Content is counted across the whole day, not per block.** Walk each planned
@@ -93,7 +94,7 @@ not write `instance/profile/`.
 ## The three recurring sessions
 
 Planning, the check-in and the review are on the calendar like any block, at the
-windows `instance/profile/schedule.md` gives them. They are part of the week the
+windows `instance/profile/schedule.yaml` gives them. They are part of the week the
 planner writes, not something outside it.
 
 The review day is a working day and gets a log like any other, per
