@@ -76,7 +76,15 @@ link either and the description is plain text.
 
 ## Tool per operation
 
-| Operation | Tool |
+**These are operations, not tool identifiers.** The names below are the common
+convention and the runner contract uses them, but a calendar reaches a session
+differently on every runtime — a different server, a different binding, and on
+some hosts a different name between one session and the next. A runtime whose
+calendar names them otherwise maps them; nothing here should be read as a
+promise that a tool by this name exists. What may not vary is which operation
+answers which situation, which is what the rules under this table are about.
+
+| Operation | Conventionally |
 |---|---|
 | Find what is already scheduled | `list_events` |
 | Find one event by name | `search_events` |

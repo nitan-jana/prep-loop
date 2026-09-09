@@ -27,18 +27,29 @@ runtime adds one the same way.
 `instance/`. Nothing reaches outside the clone. `instance/` is not
 version-controlled and the runtime must not make it so.
 
+**A way into SQLite.** `instance/prep.db` is the resource inventory, and it is
+not a file a session can read by opening it. Commands draw the entries a round
+may name out of it and write coverage back — `worked_on`, `asked_on`, `grade`,
+`grade_from`. Its shape is [`tools/schema.sql`](../tools/schema.sql), mapped in
+[`schema.md`](schema.md); the repo's own way in is `open()` from
+[`tools/db.ts`](../tools/db.ts), which applies the schema to a fresh file and
+turns foreign keys on for the connection. Any SQLite client will do. A runtime
+without one runs nothing that names a question, which is most of them —
+[`mock-sourcing.md`](../policy/mock-sourcing.md#never-invent-a-question-name)
+would rather a round ask a question in full than name one it cannot verify.
+
 **A shell.** `gh` for code-host history, `date` for the working week, and
 `bun run check` / `bun tools/*` for the checks. No network beyond `gh` and the
 fetches an onboarding pull makes.
 
-**A calendar capability.** The operations named generically in
-[`policy/calendar.md`](../policy/calendar.md#tool-per-operation) — reads
-(`list_events`, `search_events`, `get_event`, `list_calendars`, `suggest_time`)
-and writes (`create_event`, `update_event`, `delete_event`). How they bind to a
-real calendar, and how those tools are
-approved, is the runtime's own setup and stays out of the tracked tree. A
-runtime with no calendar runs every command except the mirror step in `plan` and
-the reschedule in `checkin`.
+**A calendar capability.** Eight operations, listed with their conventional
+names in [`policy/calendar.md`](../policy/calendar.md#tool-per-operation): five
+reads, and three writes that add, move and cancel a block. **The names are a
+convention, not an interface** — the runtime supplies the operations under
+whatever names its own calendar uses, and on some hosts that name changes
+between sessions, so nothing tracked may pin one. How they bind, and how each is
+approved, is the runtime's own setup. A runtime with no calendar runs every
+command except the mirror step in `plan` and the reschedule in `checkin`.
 
 ## What it must not do
 

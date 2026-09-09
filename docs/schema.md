@@ -14,6 +14,23 @@ verdict depends on an untracked per-install file would pass on a runner and for
 every other clone — see
 [`docs/decisions/05`](decisions/05-machine-checkable-references.md).
 
+## Opening it
+
+`open()` from [`tools/db.ts`](../tools/db.ts) is the way in — it resolves the
+path, applies the schema to a fresh file, and turns foreign keys on, which
+SQLite requires per connection and will otherwise leave off:
+
+```
+import { open } from "./db.ts";
+const db = open();
+const rows = db.query("SELECT identifier, title, url FROM entry WHERE source_slug = ?").all(slug);
+```
+
+A runtime other than Bun brings its own client and does the same three things —
+[`runner-contract.md`](runner-contract.md#what-it-must-supply). The constraints
+live in the file, not in the caller, so any client that can write at all writes
+safely.
+
 ## The tables
 
 [`tools/schema.sql`](../tools/schema.sql) reads straight through; this is the

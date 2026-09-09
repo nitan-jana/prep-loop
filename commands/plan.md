@@ -40,11 +40,12 @@ of those is a profile fact and none of them is the same for two installs.
 
 ## Order of operations
 
-1. **Reach the calendar first.** One call — `list_calendars`, or a read against
-   the window about to be planned. If it is not reachable, **write nothing at
-   all**, not even the file, say so in a line, and stop. This is first because
-   it is the only failure that has to abort the session, and finding it after
-   the file is written is finding it too late —
+1. **Reach the calendar first.** One read — the calendar list, or the window
+   about to be planned; whichever the runtime's calendar makes cheapest. If it
+   is not reachable, **write nothing at all**, not even the file, say so in a
+   line, and stop. This is first because it is the only failure that has to
+   abort the session, and finding it after the file is written is finding it
+   too late —
    [`calendar.md`](../policy/calendar.md#mirror-in-the-same-turn).
 2. **Resolve the week identifier.** ISO week-numbered, per
    [`repo-map.md`](../policy/repo-map.md#artifact-names):

@@ -112,9 +112,9 @@ possibly a schedule change, never a comment.
 
 For anything missed that is still worth doing:
 
-1. Find a free window with `suggest_time`.
-2. **Actually write the calendar** — `create_event` or `update_event`, per
-   [`calendar.md`](calendar.md).
+1. Find a free window.
+2. **Actually write the calendar** — create the event, or update the one that
+   moved, per [`calendar.md`](calendar.md#tool-per-operation).
 3. Confirm in one line.
 
 Naming the slot is not the reschedule. This is the step most often left
