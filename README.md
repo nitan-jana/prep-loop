@@ -107,13 +107,13 @@ around is harder, and it would have forced the personal half onto a remote.
 | `policy/` | How the system works. No dates, no proper nouns, no second person. |
 | `.claude/skills/` | How a session is invoked. Nothing else. |
 | `templates/` | The blank shape of everything the system produces. |
-| `tools/` | The two checkers. |
+| `tools/` | The checkers, and the local database's schema and helpers. |
 | `docs/` | How to use it, and anything the policy files assume rather than explain. |
 
 | In `instance/`, ignored | |
 |---|---|
 | `profile/` | Facts, claims, habits, cadence. Written by onboarding. |
-| `curriculum/` | One inventory per resource in use. |
+| `prep.db` | The resource inventory: each source, its entries, their coverage. |
 | `plans/` `logs/` `performance/` `mocks/` | What gets planned and what happened. |
 | `stories/` `deep-dives/` | Interview material. |
 | `private/` | The denylist. |

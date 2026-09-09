@@ -47,6 +47,6 @@ contract specifies a format rather than a verdict.
 
 - [`policy/mocks.md`](../../policy/mocks.md) — the brief, and the transcript contract
 - [`templates/round-brief.md`](../../templates/round-brief.md) — the shape, with the boundary stated in its preamble
-- [`templates/catalog.md`](../../templates/catalog.md) — what an inventory of a paid source may hold
+- [`.claude/skills/onboard/references/catalogs.md`](../../.claude/skills/onboard/references/catalogs.md) — what an inventory of a paid source may hold
 
 *In the history:* `6f7a57c` `e72e519` `2fb38d6` `7a1933e` `1904e9c`

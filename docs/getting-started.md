@@ -38,7 +38,7 @@ Run it bare to see the four with their status and which is next. `/onboard
 | Stage | Produces | After it, the system can |
 |---|---|---|
 | `spine` | Identity, attribution, state, schedule | Plan and run a day |
-| `resources` | The resource list, one inventory per source | Name a real question |
+| `resources` | The resource list, and each source's entries in `prep.db` | Name a real question |
 | `material` | Story bank, tenure script, showcase questions | Run a behavioural or deep-dive round |
 | `search` | Projects, outbound | Run the job-search half |
 

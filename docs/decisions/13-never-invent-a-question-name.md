@@ -53,7 +53,7 @@ checked" look identical a month on.
 ## Where it lives
 
 - [`policy/mock-sourcing.md`](../../policy/mock-sourcing.md) — the rule, and where a question may come from
-- [`.claude/skills/onboard/references/catalogs.md`](../../.claude/skills/onboard/references/catalogs.md) — the acquisition ladder
-- [`templates/catalog.md`](../../templates/catalog.md) — completeness, freshness, quirks, links
+- [`.claude/skills/onboard/references/catalogs.md`](../../.claude/skills/onboard/references/catalogs.md) — the acquisition ladder, completeness, freshness, quirks, links
+- [`tools/schema.sql`](../../tools/schema.sql) — the shape those fields take in `prep.db`
 
 *In the history:* `6f7a57c` `7a1933e` `927c339` `a281ab5` `2210af9` `31ec445` `9d58d1b`

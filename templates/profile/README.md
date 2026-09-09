@@ -18,7 +18,7 @@ Onboarding is resumable. This table is how it knows where it stopped.
 | Spine | [`state.md`](state.md) | not started |
 | Spine | [`schedule.md`](schedule.md) | not started |
 | Resources | [`resources.md`](resources.md) | not started |
-| Resources | one inventory per source | not started |
+| Resources | `source` / `entry` rows in `prep.db` | not started |
 | Material | [`story-bank.md`](story-bank.md) | not started |
 | Material | [`tenure-script.md`](tenure-script.md) | not started |
 | Material | [`showcase-questions.md`](showcase-questions.md) | not started |

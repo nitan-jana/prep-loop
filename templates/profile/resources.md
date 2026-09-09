@@ -2,16 +2,17 @@
 
 # Resources
 
-What the user works from, and why each one is on the list. One inventory per
-row lives under `instance/curriculum/`, built from [`templates/catalog.md`](../catalog.md).
+What the user works from, and why each one is on the list. The inventory itself
+— every source, its entries, their coverage — is `instance/prep.db`; this file
+is the readable index beside it.
 
 Nothing is prescribed. A different stack, a different target and a different
 budget produce a different table, and the system does not care which rows are
 in it — only that a round can name a real question from one of them.
 
-| Source | Covers | Access | Inventory | Why this one |
+| Source | Covers | Access | Slug | Why this one |
 |---|---|---|---|---|
-| <name> | <round types it feeds> | <free / paid / owned> | `instance/curriculum/<slug>.md` | <what it does that the others do not> |
+| <name> | <round types it feeds> | <free / paid / owned> | <its `source.slug` in `prep.db`> | <what it does that the others do not> |
 
 ## Not in use
 

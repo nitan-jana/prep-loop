@@ -58,6 +58,6 @@ one place where narrating is the job.
 
 - [`policy/artifact-voice.md`](../../policy/artifact-voice.md) — all three rules, with what each rules out
 - [`CLAUDE.md`](../../CLAUDE.md) — the three names, in reach of every session
-- [`templates/catalog.md`](../../templates/catalog.md) — quirks written as instructions to the next pull
+- [`.claude/skills/onboard/references/catalogs.md`](../../.claude/skills/onboard/references/catalogs.md) — a source's quirks written as instructions to the next pull
 
 *In the history:* `cc91701` `5b19a0c` `ec8b46f` `e52813e` `64bdc77`

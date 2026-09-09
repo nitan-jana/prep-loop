@@ -9,7 +9,6 @@ shows what a filled install looks like before anything has been filled.
 |---|---|
 | [`instance-README.md`](instance-README.md) | `instance/README.md` |
 | [`profile/`](profile/README.md) | `instance/profile/`, written by onboarding |
-| [`catalog.md`](catalog.md) | `instance/curriculum/<source-slug>.md`, one per resource |
 | [`week-plan.md`](week-plan.md) | `instance/plans/<week>.md`, one per week |
 | [`daily-log.md`](daily-log.md) | `instance/logs/<date>.md`, one per working day |
 | [`round-brief.md`](round-brief.md) | `instance/mocks/<date>-brief.md`, one per loop |
@@ -23,6 +22,10 @@ Two of the profile templates are deliberately unfillable at onboarding:
 [`profile/habits.md`](profile/habits.md) needs rounds to observe, and
 [`profile/grading-anchors.md`](profile/grading-anchors.md) needs real graded
 answers. Each says so in place of a shape.
+
+The resource inventory is not here: it is structured data, not a markdown
+artifact, so its shape is [`tools/schema.sql`](../tools/schema.sql) and it lives
+at `instance/prep.db`.
 
 ## The scaffold
 
