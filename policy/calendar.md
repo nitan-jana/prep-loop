@@ -1,4 +1,4 @@
-<!-- leak-check: allow-path — names where the per-install calendar settings live -->
+<!-- leak-check: allow-path — names the calendar and the profile files it reads -->
 
 # The calendar contract
 
@@ -101,7 +101,7 @@ prompt should not be routine.
 
 Set out in full in [`repo-map.md`](repo-map.md#who-writes-what). The short form:
 the planning routine writes the week; the check-in moves exactly one block when
-it reschedules a miss. No other skill touches the calendar.
+it reschedules a miss. No other command touches the calendar.
 
 The reschedule is the operation most often left half-done — a session names a
 free slot, tells the user it has been moved, and never calls anything. Naming

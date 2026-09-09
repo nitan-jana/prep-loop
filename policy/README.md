@@ -31,7 +31,7 @@ those parameters feed.
 
 ## Writing a policy file
 
-**One question per file.** A file is the unit of reference — a skill points at
+**One question per file.** A file is the unit of reference — a command points at
 `policy/grading.md` and gets everything about grading. A rule that seems to
 belong in two files belongs in one, and the other links it.
 

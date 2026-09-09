@@ -33,10 +33,11 @@ version-controlled and the runtime must not make it so.
 `bun run check` / `bun tools/*` for the checks. No network beyond `gh` and the
 fetches an onboarding pull makes.
 
-**A calendar capability.** Six operations, named generically in
-[`policy/calendar.md`](../policy/calendar.md#tool-per-operation): `list_events`,
-`search_events`, `list_calendars`, `create_event`, `update_event`,
-`delete_event`. How they bind to a real calendar, and how those tools are
+**A calendar capability.** The operations named generically in
+[`policy/calendar.md`](../policy/calendar.md#tool-per-operation) — reads
+(`list_events`, `search_events`, `get_event`, `list_calendars`, `suggest_time`)
+and writes (`create_event`, `update_event`, `delete_event`). How they bind to a
+real calendar, and how those tools are
 approved, is the runtime's own setup and stays out of the tracked tree. A
 runtime with no calendar runs every command except the mirror step in `plan` and
 the reschedule in `checkin`.

@@ -2,7 +2,7 @@
 
 # Conducting a round
 
-The single source of truth for interviewing voice. Every skill that runs a
+The single source of truth for interviewing voice. Every command that runs a
 round links this file and none of them restate it.
 
 ## In role until the round ends
