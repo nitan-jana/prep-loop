@@ -8,9 +8,8 @@
 //   - a `grade_from` ('log <date>') names a real log or review, which live
 //     as markdown files, so no FK can reach them
 //
-//
 //   bun tools/check-db.ts            checks instance/prep.db
-//   bun run check:data              runs this and check-data.ts together
+//   bun run check:db                 the same, by its script name
 
 import { existsSync } from "node:fs";
 import { join, resolve } from "node:path";
