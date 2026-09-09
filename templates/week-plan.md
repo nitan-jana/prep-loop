@@ -16,6 +16,13 @@ days of equally weighted blocks with no signal about which one matters.
 Pick it from what the rest of the week depends on. A framework the design blocks
 all sit on top of, a story the behavioural round cannot run without.
 
+**A recurring session is a line like any other, and it names the command that
+runs it.** Write `/preploop <feature>`, the invocation in
+[`commands/preploop.md`](../commands/preploop.md) — never a bare feature name.
+A planner reads last week's plan for the deferred list and will mirror whatever
+phrasing it finds there, so a name that has gone stale propagates itself into
+every week after it.
+
 **Everything below the line is the template. Delete this preamble, and
 keep the heading that follows it.** What follows the rule is the
 whole file.
@@ -32,6 +39,7 @@ whole file.
   `<link to the material>`
 - **<label> · <subject>** — <what to do>
   `<link to the material>`
+- **<recurring session>** — run `/preploop <feature>`.
 
 ## <date>
 
