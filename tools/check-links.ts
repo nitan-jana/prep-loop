@@ -74,6 +74,9 @@ async function markdownFiles(roots: string[]): Promise<string[]> {
     const glob = new Glob("**/*.md");
     for await (const hit of glob.scan({ cwd: root, onlyFiles: true })) {
       if (SKIP.some((s) => hit === s || hit.startsWith(`${s}/`) || hit.includes(`/${s}/`))) continue;
+      // scratch files: prose lifted out during a migration, links and all, for
+      // the owner to relocate and then delete — not held to link integrity
+      if (hit.endsWith(".unmigrated.md")) continue;
       out.add(normalize(join(root, hit)));
     }
   }
