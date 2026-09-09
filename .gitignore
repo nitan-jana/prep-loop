@@ -5,8 +5,8 @@
 # The line is the privacy model. Nothing else in here is load-bearing.
 instance/
 
-# Per-machine tool permissions. Everything else under .claude/ is committed
-# deliberately so a fresh clone works with no setup.
+# A Claude Code operator's own tool approvals, per machine. The repo ships no
+# permission defaults — what runs without a prompt is the operator's call.
 .claude/settings.local.json
 
 # Bun. There are no dependencies today; this is here so that adding one

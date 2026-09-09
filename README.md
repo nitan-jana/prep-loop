@@ -2,9 +2,11 @@
 
 # prep-loop
 
-An interview prep system that runs inside [Claude Code](https://claude.com/claude-code).
-It plans a week ahead, quizzes rather than collecting a self-report, scores mock
-rounds against a fixed rubric, and checks the claims on a resume against the
+An interview prep system that runs inside an agent CLI —
+[Claude Code](https://claude.com/claude-code), Codex, Cursor or Gemini CLI, each
+with a wrapper in the repo. It plans a week ahead, quizzes rather than collecting
+a self-report, scores mock rounds against a fixed rubric, and checks the claims
+on a resume against the
 commit history behind them.
 
 ## What it does
@@ -49,9 +51,11 @@ git clone <this repo>
 cd prep-loop
 ```
 
-Open Claude Code in the directory and run `/prep`. It reports where the install
-stands and names the one thing to run next, which on a fresh clone is
-`/onboard`. There is nothing to install.
+Open an agent CLI in the directory and run `/preploop` (Claude Code, Codex,
+Cursor and Gemini CLI all ship with a wrapper; any other agent reads
+[`AGENTS.md`](AGENTS.md)). It reports where the install stands and names the one
+thing to run next, which on a fresh clone is `/preploop onboard`. There is
+nothing to install.
 
 [**`docs/getting-started.md`**](docs/getting-started.md) is the walkthrough:
 onboarding, a week, a day, a review, and where everything lives.
@@ -72,12 +76,13 @@ using it. See [`AGENTS.md`](AGENTS.md) for the rules that keep the boundary.
 - [x] **Guardrails** — two checkers, thirty-five tests, CI on every push
 - [x] **The generic system** — seventeen policy files, no personal data by
       construction
-- [x] **Templates and all eight sessions**
+- [x] **Templates and every command**
 - [x] **A full week run untouched**, plan through review
+- [x] **One command instead of eight** — `/preploop <feature>`, with
+      [`docs/runner-contract.md`](docs/runner-contract.md) for other agents
 - [ ] **Voice rounds**, over speech in a separate project, with only the round
       brief leaving your machine and the grading staying on it
 - [ ] **Optional local scheduling**, for the plan waiting before you sit down
-- [ ] **One command instead of eight**, if a full week says the shape is right
 - [ ] **A hosted tier** for the things a laptop cannot do:
     - works without Claude Code, or any coding CLI at all
     - setup is a signup, with resume, code host and calendar connected once
@@ -105,7 +110,7 @@ around is harder, and it would have forced the personal half onto a remote.
 | In the repo | |
 |---|---|
 | `policy/` | How the system works. No dates, no proper nouns, no second person. |
-| `.claude/skills/` | How a session is invoked. Nothing else. |
+| `commands/` | How a session is invoked. One file per feature. |
 | `templates/` | The blank shape of everything the system produces. |
 | `tools/` | The checkers, and the local database's schema and helpers. |
 | `docs/` | How to use it, and anything the policy files assume rather than explain. |

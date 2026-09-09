@@ -2,7 +2,7 @@
 
 # Detecting sources and verifying claims
 
-What [`policy/claims.md`](../../../../policy/claims.md) means in commands. The
+What [`policy/claims.md`](../../../policy/claims.md) means in commands. The
 policy says what a marker means; this says how to earn one.
 
 ## Detection, once, at the start
@@ -17,9 +17,9 @@ ls instance/intake/               # a resume or exported profile dropped in
 
 Also check whether a calendar server is connected. **Configuration files are
 not the answer** — a connected server can be entirely invisible to them. Look
-at the tools actually available in the session. If the calendar is reachable,
-fill the server identifier into the local settings file from the committed
-example.
+at the tools actually available in the session and note whether the calendar is
+reachable. Wiring it up and approving its tools is the runtime's own setup, not
+something this repo records.
 
 Report every accepted source and its status, not only the ones that turned up.
 A user cannot offer something they do not know is wanted:
@@ -110,7 +110,7 @@ normal outcome, not a gap to apologise for.
 
 Cannot, though, not merely has not — the obstacle goes in the source column, and
 "cannot" is not the right word for a public changelog nobody opened. See
-[unverifiable is not unverified](../../../../policy/claims.md#unverifiable-is-not-unverified).
+[unverifiable is not unverified](../../../policy/claims.md#unverifiable-is-not-unverified).
 
 ## Contradictions
 
@@ -144,7 +144,7 @@ Then confirm the check is live: put a term into a shareable file, run
 
 ## Re-running later
 
-`/onboard verify` re-runs verification once a missing source arrives. It
+`/preploop onboard verify` re-runs verification once a missing source arrives. It
 rewrites `stated` to `verified` in place and attaches the command.
 
 It never upgrades a marker without recording the evidence, and it never

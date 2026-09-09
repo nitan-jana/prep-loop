@@ -62,8 +62,8 @@ itself for departing from it.
 
 ## Where it lives
 
-- [`.claude/skills/plan/SKILL.md`](../../.claude/skills/plan/SKILL.md) — the order of operations
-- [`.claude/skills/plan/references/the-week-grid.md`](../../.claude/skills/plan/references/the-week-grid.md) — what decides a subject, and the caps arithmetically
+- [`commands/plan.md`](../../commands/plan.md) — the order of operations
+- [`commands/plan/references/the-week-grid.md`](../../commands/plan/references/the-week-grid.md) — what decides a subject, and the caps arithmetically
 - [`policy/cadence.md`](../../policy/cadence.md) — the block, and carrying work forward
 - [`templates/week-plan.md`](../../templates/week-plan.md) — the shape, and the one thing
 

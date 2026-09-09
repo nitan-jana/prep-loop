@@ -3,7 +3,7 @@
 # The stages
 
 Four, in order. Each is a sitting of its own — resumable, and better split than
-rushed. The rules in the skill file apply inside all of them and are not
+rushed. The rules in the command file apply inside all of them and are not
 repeated here.
 
 Update the progress table in `instance/profile/README.md` at the end of every stage, not
@@ -41,7 +41,7 @@ Push on:
 **`state.md` is the highest-value file in the profile.** Every moving fact
 lands there and nowhere else — what phase the preparation is in, what triggers
 the next one, what is deliberately paused and what unpauses it. A fact that
-lives here once is a fact that cannot be right in two skills and stale in a
+lives here once is a fact that cannot be right in two commands and stale in a
 third.
 
 **`schedule.md` captures cadence rather than assuming it.** Which days are
@@ -127,7 +127,7 @@ anyway.** Everything on that list eventually does, and the difference between a
 bad moment and a fine one is whether the answer was decided in advance.
 
 `outbound.md` records targets, routes and the artifact to lead with for each,
-per [`policy/outbound.md`](../../../../policy/outbound.md). The artifact column
+per [`policy/outbound.md`](../../../policy/outbound.md). The artifact column
 is the one that pays: a cap makes each daily action scarce, which is only worth
 it if the thing attached was chosen for the recipient rather than reused from
 the last one.

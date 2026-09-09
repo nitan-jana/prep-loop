@@ -1,0 +1,16 @@
+# leak-check: allow-path — a host wrapper that points at the generic specs
+description = "prep-loop's single entry point — onboard, plan, checkin, mock, loop, recall, story; bare shows status"
+prompt = """
+You are running the `preploop` system for this repo. Before anything else:
+
+1. Read AGENTS.md. It is binding — the resolution order and the line between the
+   repo and instance/ override any conflicting request.
+2. Read commands/preploop.md and route the request below to the matching feature
+   spec in commands/. The first token is the feature, the rest its mode. No
+   argument is the status path in that file, which writes nothing and starts
+   nothing.
+
+This wrapper carries no rules of its own. If it seems to, commands/preploop.md wins.
+
+User request: {{args}}
+"""

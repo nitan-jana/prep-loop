@@ -4,11 +4,11 @@
 
 The resource stage produces `instance/profile/resources.md` — the readable index
 — and the rows behind it in `instance/prep.db`: one `source` per resource and
-its `entry` rows. Shape in [`tools/schema.sql`](../../../../tools/schema.sql).
+its `entry` rows. Shape in [`tools/schema.sql`](../../../tools/schema.sql).
 
 An inventory exists for one reason: so a round can **name** a question the user
 can go and look at afterwards. See
-[`policy/mock-sourcing.md`](../../../../policy/mock-sourcing.md#never-invent-a-question-name),
+[`policy/mock-sourcing.md`](../../../policy/mock-sourcing.md#never-invent-a-question-name),
 which is the rule this whole stage serves.
 
 ## Ask what they already use
@@ -173,7 +173,7 @@ If a browser is there, render the page and parse the result.
 twice, the paste ladder below settles it in about a minute, and browser
 automation is a large install to propose to someone in the middle of doing
 something else. Trading a minute of pasting for a few hundred megabytes and a
-detour is a bad deal at that moment, and it is not this skill's business to put
+detour is a bad deal at that moment, and it is not this command's business to put
 software on a machine.
 
 Instead, record it. Add a line to the source's `quirks` that it needed

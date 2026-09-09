@@ -15,7 +15,8 @@ definition. It is the only tracked file the leak checker does not read.
 | | Holds |
 |---|---|
 | `policy/` | This directory. The mechanism. |
-| `.claude/skills/` | How a session is invoked. Nothing else. |
+| `commands/` | How a session is invoked. One file per feature, generic. |
+| `.claude/` `.agents/` `.cursor/` `.gemini/` | Host wrappers — a thin one each, pointing at `commands/preploop.md`. No repo-shipped settings; a Claude Code operator's own approvals live in a gitignored `.claude/settings.local.json`. |
 | `templates/` | The blank shape of everything the system produces. |
 | `tools/` | The checkers. |
 | `docs/` | How to use it, and anything the policy files assume rather than explain. |
@@ -69,30 +70,30 @@ each source, its entries, and their coverage — shape in
 
 ## Who writes what
 
-The column that matters is the last one. A skill writing outside its row is a
+The column that matters is the last one. A command writing outside its row is a
 bug, not a judgement call.
 
 | Artifact | Written by | Never written by |
 |---|---|---|
-| Week plan | `plan` | any other skill |
-| Daily log | `checkin` | `mock-loop`, `recall` |
-| Round brief | `mock-loop`, at prep time | `checkin` |
+| Week plan | `plan` | any other command |
+| Daily log | `checkin` | `loop`, `recall` |
+| Round brief | `loop`, at prep time | `checkin` |
 | Round transcript | an external interviewer | everything here |
-| Review scores | `mock-loop` | `checkin` |
+| Review scores | `loop` | `checkin` |
 | Recall session record | `recall` | `checkin`, which reads it in a log's place |
 | Stories and the bank index | `story` | — |
 | Deep dives | `mock`, or by hand | — |
-| Everything under `instance/profile/` | `onboard` | every other skill |
-| Resource inventory entries | `onboard` | every other skill |
-| The coverage columns on an entry | `checkin`, `mock-loop`, `recall` | `plan`, which reads them |
-| The denylist | `onboard` | every other skill |
-| Calendar, a whole week | `plan` | every other skill except `checkin` |
-| Calendar, one reschedule | `checkin` | `mock`, `mock-loop`, `story` |
-| `policy/`, `templates/`, skills | the user, deliberately | every skill |
-| Nothing at all | `prep` | — |
+| Everything under `instance/profile/` | `onboard` | every other command |
+| Resource inventory entries | `onboard` | every other command |
+| The coverage columns on an entry | `checkin`, `loop`, `recall` | `plan`, which reads them |
+| The denylist | `onboard` | every other command |
+| Calendar, a whole week | `plan` | every other command except `checkin` |
+| Calendar, one reschedule | `checkin` | `mock`, `loop`, `story` |
+| `policy/`, `templates/`, `commands/` | the user, deliberately | every command |
+| Nothing at all | bare `preploop` | — |
 
 **A row has two owners, split by column.** `onboard` owns the description —
-identifier, title, link, difficulty. `checkin`, `mock-loop` and `recall` own
+identifier, title, link, difficulty. `checkin`, `loop` and `recall` own
 `worked_on`, `asked_on` and `grade`, and touch nothing else. Those columns
 record what this install did with an entry, which a fetcher cannot know and a
 session may not invent. See
@@ -103,13 +104,13 @@ replaces.** Re-pulling a source carries the coverage columns forward for every
 identifier that still exists, or the pull silently erases the history that makes
 retention sourcing possible.
 
-**`prep` writes nothing, and that is its whole contract.** It reports where the
+**Bare `preploop` writes nothing, and that is its whole contract.** It reports where the
 install stands and names one thing to run. A place to look when the thread has
 been lost has to be safe to open without thinking, which it stops being the
 moment it can also change something.
 
-**No skill writes its own instructions.** A session that can edit `policy/` or
-a skill file is a session whose behaviour cannot be reviewed against anything.
+**No command writes its own instructions.** A session that can edit `policy/` or
+a command file is a session whose behaviour cannot be reviewed against anything.
 Changes there are made deliberately, by the user, outside a run.
 
 ## Commits
@@ -121,7 +122,7 @@ reading the new file is the review, and there is nothing a diff would add.
 The cost is that a bad edit to `instance/profile/` has no undo. That is what a
 backup is for, and a backup is the user's own arrangement.
 
-**No skill commits.** Skills write files and stop. The user reads the working
+**No command commits.** Commands write files and stop. The user reads the working
 tree and commits what they want kept, which for `instance/` is nothing, because
 none of it is tracked.
 

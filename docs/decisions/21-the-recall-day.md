@@ -125,5 +125,5 @@ days](../../policy/checkin-protocol.md#backfilling-a-missed-day) accepts either.
 - [`policy/recall.md`](../../policy/recall.md) — the pool, the edge, the interleaving, and what the session writes
 - [`policy/mocks.md`](../../policy/mocks.md#the-week-round) — the round the loop kept, and the pool it swapped to
 - [`policy/mock-sourcing.md`](../../policy/mock-sourcing.md#who-draws-from-it) — the retention order and its four readers
-- [`.claude/skills/recall/SKILL.md`](../../.claude/skills/recall/SKILL.md) — how a recall day is run
+- [`commands/recall.md`](../../commands/recall.md) — how a recall day is run
 - [`docs/decisions/15-worked-is-not-asked.md`](15-worked-is-not-asked.md) — the columns that made the queue visible in the first place

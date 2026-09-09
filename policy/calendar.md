@@ -108,11 +108,12 @@ free slot, tells the user it has been moved, and never calls anything. Naming
 the slot is not the work. **Call `create_event` or `update_event`, then confirm
 in one line.**
 
-## Per-install settings
+## Per-install setup
 
-The calendar server identifier differs for every install, so it is not
-committed. It lives in the local settings file, from the example that ships
-with the repo, and onboarding fills it in.
+The calendar connection belongs to the runtime, not the repo — its server name
+differs by host and can change between sessions, so nothing here pins it.
 
-Reads are auto-approved, writes are allowed, deletion prompts. That ordering is
-deliberate and should not be flattened for convenience.
+Set the runtime's approvals to match how the operations divide: reads and the
+two writes the system needs are safe to auto-approve; **deletion should always
+prompt.** A planner that writes a week of blocks must not be able to remove one
+without being asked.

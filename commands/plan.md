@@ -1,14 +1,9 @@
----
-name: plan
-description: Write the week plan and mirror the same week to the calendar in one turn. Use when a week has no plan, when the planning session runs, or when a plan needs rebuilding after the schedule changes.
----
-
 <!-- leak-check: allow-path — it writes the week plan into the personal half -->
 
 # plan
 
 Writes `instance/plans/<week>.md` and puts that same week on the calendar. It
-owns both, per [`policy/repo-map.md`](../../../policy/repo-map.md#who-writes-what),
+owns both, per [`policy/repo-map.md`](../policy/repo-map.md#who-writes-what),
 and nothing else writes either.
 
 **A plan is a set of instructions for sessions that have not happened yet.** Not
@@ -19,13 +14,13 @@ describing the past has started writing the log's file.
 
 The linked file wins; nothing here restates one.
 
-- [`policy/cadence.md`](../../../policy/cadence.md) — what a week is, what a block is, how work carries forward
-- [`policy/caps.md`](../../../policy/caps.md) — the two ceilings a plan may not exceed
-- [`policy/calendar.md`](../../../policy/calendar.md) — the mirror rule, one event per block, which tool per operation
-- [`policy/artifact-voice.md`](../../../policy/artifact-voice.md) — how every line of the plan and every event description is written
-- [`policy/mock-sourcing.md`](../../../policy/mock-sourcing.md) — where a named question may come from, and what to do with no history yet
-- [`policy/readiness.md`](../../../policy/readiness.md) — what the grades mean when they decide priority
-- [`policy/repo-map.md`](../../../policy/repo-map.md) — the path to write, and that this skill writes and stops
+- [`policy/cadence.md`](../policy/cadence.md) — what a week is, what a block is, how work carries forward
+- [`policy/caps.md`](../policy/caps.md) — the two ceilings a plan may not exceed
+- [`policy/calendar.md`](../policy/calendar.md) — the mirror rule, one event per block, which tool per operation
+- [`policy/artifact-voice.md`](../policy/artifact-voice.md) — how every line of the plan and every event description is written
+- [`policy/mock-sourcing.md`](../policy/mock-sourcing.md) — where a named question may come from, and what to do with no history yet
+- [`policy/readiness.md`](../policy/readiness.md) — what the grades mean when they decide priority
+- [`policy/repo-map.md`](../policy/repo-map.md) — the path to write, and that this command writes and stops
 
 ## What it reads
 
@@ -51,22 +46,22 @@ of those is a profile fact and none of them is the same for two installs.
    all**, not even the file, say so in a line, and stop. This is first because
    it is the only failure that has to abort the session, and finding it after
    the file is written is finding it too late —
-   [`calendar.md`](../../../policy/calendar.md#mirror-in-the-same-turn).
+   [`calendar.md`](../policy/calendar.md#mirror-in-the-same-turn).
 2. **Resolve the week identifier.** ISO week-numbered, per
-   [`repo-map.md`](../../../policy/repo-map.md#artifact-names):
+   [`repo-map.md`](../policy/repo-map.md#artifact-names):
    `date -d <a date in the week> +%G-W%V`. Derive it; do not count weeks by hand.
 3. **Read the schedule** into a grid of working days by block labels.
 4. **Drop windows that have already passed.** See below.
 5. **Place the deferred list first**, from the previous week's plan.
 6. **Fill what is left** from the rotation. Details in
-   [`references/the-week-grid.md`](references/the-week-grid.md).
+   [`references/the-week-grid.md`](plan/references/the-week-grid.md).
 7. **Check both caps, per day**, and move the overflow to `## Deferred` rather
    than dropping it.
 8. **Name the week's one thing**, in one imperative line — the item that is
    still done if everything else slips. Without it a five-day plan is five
    equally weighted days with no signal about which one matters when the week
    goes badly.
-9. **Write the file** from [`templates/week-plan.md`](../../../templates/week-plan.md).
+9. **Write the file** from [`templates/week-plan.md`](../templates/week-plan.md).
 10. **Mirror the whole week to the calendar**, one event per block, in this same
     turn.
 11. **Stop.** No commit.
@@ -85,29 +80,29 @@ skipped is the history rule broken on line one.
 
 What happened in the passed part of the week belongs to the logs, and the
 check-in handles those on request. See
-[`policy/checkin-protocol.md`](../../../policy/checkin-protocol.md#backfilling-a-missed-day).
+[`policy/checkin-protocol.md`](../policy/checkin-protocol.md#backfilling-a-missed-day).
 
 ## Forbidden
 
 - **Never write outside `instance/`.** Not policy, not templates, not this file.
-- **Never name a question that is not in an inventory.** This skill is where it
+- **Never name a question that is not in an inventory.** This command is where it
   is most easily broken — a block description wants a task and a link, and
   inventing a plausible one is a keystroke away. Every named entry is *copied*
   out of `instance/prep.db` with its link; where no inventory covers what a
   block needs, the block says what to do in plain words and names nothing —
-  [`mock-sourcing.md`](../../../policy/mock-sourcing.md#never-invent-a-question-name).
+  [`mock-sourcing.md`](../policy/mock-sourcing.md#never-invent-a-question-name).
 - **Never write completion state**, into the plan or onto an event —
-  [`artifact-voice.md`](../../../policy/artifact-voice.md#instructions-never-completion-state).
+  [`artifact-voice.md`](../policy/artifact-voice.md#instructions-never-completion-state).
 - **Never write history**, including where a deferred item came from —
-  [`artifact-voice.md`](../../../policy/artifact-voice.md#no-history).
+  [`artifact-voice.md`](../policy/artifact-voice.md#no-history).
 - **Never schedule over a cap.** The overflow defers —
-  [`caps.md`](../../../policy/caps.md#a-cap-binds-the-plan-not-the-person).
+  [`caps.md`](../policy/caps.md#a-cap-binds-the-plan-not-the-person).
 - **Never put two subjects in one block** —
-  [`cadence.md`](../../../policy/cadence.md#the-block).
+  [`cadence.md`](../policy/cadence.md#the-block).
 - **Never delete and recreate a block that moved.** It is an update —
-  [`calendar.md`](../../../policy/calendar.md#tool-per-operation).
+  [`calendar.md`](../policy/calendar.md#tool-per-operation).
 - **Never ask the user to self-assess** to fill a gap in the grades. Readiness
-  is evidence — [`readiness.md`](../../../policy/readiness.md#readiness-is-evidence-not-a-feeling).
+  is evidence — [`readiness.md`](../policy/readiness.md#readiness-is-evidence-not-a-feeling).
 
 ## Done when
 

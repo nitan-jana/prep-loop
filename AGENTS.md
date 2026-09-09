@@ -11,6 +11,15 @@ blocks, how long, which days carry which work, when the loop runs, what timezone
 — every one of those is read from `instance/profile/`. **Policy describes the
 mechanism; profile supplies the parameters.**
 
+**If you are an agent working in this repo, this file is your entry point.**
+Codex CLI and Cursor read it natively; Gemini CLI reaches it through
+[`GEMINI.md`](GEMINI.md); Claude Code loads
+[`.claude/skills/preploop/SKILL.md`](.claude/skills/preploop/SKILL.md), which
+carries the same pointer. All of them then follow
+[`commands/preploop.md`](commands/preploop.md). Every wrapper is thin and ships
+with the repo — to add another CLI, give it one that reads this file then that
+one.
+
 ## Running the checks
 
 [Bun](https://bun.sh) is the only prerequisite.
@@ -44,9 +53,11 @@ reconsider the design rather than to install it.
 2. `instance/profile/` — who this install belongs to. Facts, dates, claims, habits.
 3. `instance/prep.db` — the inventory of outside material, so a question can
    be named rather than remembered. Shape in [`tools/schema.sql`](tools/schema.sql).
-4. Skills — how a session is invoked. Nothing else.
+4. [`commands/`](commands/README.md) — how a session is invoked, one file per
+   feature. Nothing else. A runtime other than Claude Code supplies these
+   through [`docs/runner-contract.md`](docs/runner-contract.md).
 
-**Point, never paraphrase.** A skill may link a policy file, or override it with
+**Point, never paraphrase.** A command may link a policy file, or override it with
 a stated reason. It may not restate it. Two copies of a rule is one rule and one
 future bug. If a file appears to contradict something it links, the linked file
 wins and the linking file is the defect.
@@ -59,7 +70,7 @@ machine-checkable; a section number is a string only a human can check.
 
 | This repo, public | `instance/`, ignored by git |
 |---|---|
-| `policy/` `.claude/` `templates/` `tools/` `docs/` | `profile/` `prep.db` `plans/` `logs/` `performance/` `mocks/` `stories/` `deep-dives/` `private/` `intake/` |
+| `policy/` `commands/` `templates/` `tools/` `docs/` `.claude/` `.agents/` `.cursor/` `.gemini/` | `profile/` `prep.db` `plans/` `logs/` `performance/` `mocks/` `stories/` `deep-dives/` `private/` `intake/` |
 
 **One line in `.gitignore` is the privacy model.** There is no state of this
 repo in which a personal file is tracked, and no remote for `instance/` to be
@@ -69,7 +80,7 @@ pushed to. Nothing has to be remembered at commit time.
 that stays put but quotes something out of the folder. The gitignore keeps files
 apart; the checker keeps contents apart.
 
-**Nothing personal is hand-written into this repo. It comes from `/onboard`.**
+**Nothing personal is hand-written into this repo. It comes from `/preploop onboard`.**
 A file that needs a fact about the user reads `instance/profile/`; it never
 embeds one. That includes the things that don't look personal: the denylist
 terms, the canary token, the calendar server id, session times and timezones.
@@ -81,7 +92,7 @@ early-morning session all pass the first test and fail the second.
 
 ## Forbidden
 
-- **Never write outside `instance/` during a session.** Skills produce
+- **Never write outside `instance/` during a session.** Commands produce
   artifacts, never policy, never templates, never their own instructions. A
   session that can edit the rules it runs under cannot be reviewed against
   anything.
@@ -107,4 +118,4 @@ Only this repo is versioned. `instance/` is a plain folder with no git in it.
 Subject line only, `type: summary`, matching the existing log. No body. No
 `Co-Authored-By` trailer.
 
-**Skills write files and stop. The user commits.**
+**Commands write files and stop. The user commits.**

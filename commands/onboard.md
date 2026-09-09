@@ -1,10 +1,4 @@
----
-name: onboard
-description: Interview a user into a complete profile for this repo, verifying every claim it can against the original source. Use when the repo has no profile yet, when one section needs re-running, or when new evidence has arrived that could upgrade stated claims to verified.
-argument-hint: "[spine | resources | material | search | verify]"
----
-
-<!-- leak-check: allow-path — this skill's entire output is the personal half -->
+<!-- leak-check: allow-path — this command's entire output is the personal half -->
 
 # onboard
 
@@ -24,19 +18,19 @@ So every answer gets pushed on, including the good ones.
 Source of truth. Nothing below restates them. If this file appears to
 contradict one, the linked file wins and this file is the bug.
 
-- [`policy/claims.md`](../../../policy/claims.md) — markers, verify before writing, the attribution boundary
-- [`policy/interviewing.md`](../../../policy/interviewing.md) — one question then wait, push once, never supply the word
-- [`policy/story-craft.md`](../../../policy/story-craft.md) — the rejection bar, applied here to every claim
-- [`policy/cadence.md`](../../../policy/cadence.md) and [`policy/caps.md`](../../../policy/caps.md) — what the schedule stage is capturing
-- [`policy/repo-map.md`](../../../policy/repo-map.md) — where files go, and that this skill writes and stops
+- [`policy/claims.md`](../policy/claims.md) — markers, verify before writing, the attribution boundary
+- [`policy/interviewing.md`](../policy/interviewing.md) — one question then wait, push once, never supply the word
+- [`policy/story-craft.md`](../policy/story-craft.md) — the rejection bar, applied here to every claim
+- [`policy/cadence.md`](../policy/cadence.md) and [`policy/caps.md`](../policy/caps.md) — what the schedule stage is capturing
+- [`policy/repo-map.md`](../policy/repo-map.md) — where files go, and that this command writes and stops
 
 ## First, the folder
 
 If `instance/` does not exist, create it before anything else, from
-[`templates/`](../../../templates/README.md):
+[`templates/`](../templates/README.md):
 
 - the directories listed in
-  [`templates/instance-README.md`](../../../templates/instance-README.md),
+  [`templates/instance-README.md`](../templates/instance-README.md),
   and that file as `instance/README.md`
 - `templates/profile/` copied to `instance/profile/`
 - `templates/denylist.txt` copied to `instance/private/denylist.txt`
@@ -51,17 +45,17 @@ Read the progress table in `instance/profile/README.md`, then print this and
 stop. Do not start a stage until the user picks one.
 
 ```
-onboard — build the profile this system runs on.
+preploop onboard — build the profile this system runs on.
 
-  /onboard spine      identity, attribution, state, schedule   <status>
-  /onboard resources  what to study from, listed in prep.db    <status>
-  /onboard material   story bank, tenure script, questions     <status>
-  /onboard search     projects and outbound                    <status>
+  spine      identity, attribution, state, schedule   <status>
+  resources  what to study from, listed in prep.db    <status>
+  material   story bank, tenure script, questions     <status>
+  search     projects and outbound                    <status>
 
-  /onboard verify     re-check stated claims against a source that has arrived
+  verify     re-check stated claims against a source that has arrived
 
-Each is a sitting of its own and can be run in any order, though spine first
-means the rest has something to attach to.
+Run as `/preploop onboard <stage>`. Each is a sitting of its own and can be run
+in any order, though spine first means the rest has something to attach to.
 ```
 
 `<status>` is that stage's word from the progress table: `not started`,
@@ -69,9 +63,9 @@ means the rest has something to attach to.
 
 Then one line, chosen by what the table says:
 
-- Nothing started: `Start with /onboard spine — after it the system can run a day.`
-- Something unfinished: `Next up: /onboard <stage>.`
-- All four done: `The profile is complete. /onboard verify upgrades stated claims when new evidence arrives.`
+- Nothing started: `Start with /preploop onboard spine — after it the system can run a day.`
+- Something unfinished: `Next up: /preploop onboard <stage>.`
+- All four done: `The profile is complete. /preploop onboard verify upgrades stated claims when new evidence arrives.`
 
 **Printing the menu is not doing the work.** Wait for the answer. A stage takes
 half an hour or more, and starting one because nothing said otherwise is a bad
@@ -83,7 +77,7 @@ recognised. Never guess at which stage was meant.
 ## Then, what is available
 
 Detect it, report it in one line, and never ask again in this session. Details
-and commands: [`references/verifying.md`](references/verifying.md).
+and commands: [`references/verifying.md`](onboard/references/verifying.md).
 
 | Source | Buys |
 |---|---|
@@ -107,18 +101,17 @@ user that saves them a download and a wait.
 
 **Never block on a missing source.** Say what is missing, say what it costs,
 offer the alternative, continue. Plenty of the strongest work is private,
-employer-owned, or was never in a repository. `/onboard verify` re-runs
+employer-owned, or was never in a repository. `/preploop onboard verify` re-runs
 verification later and upgrades claims in place.
 
-**Never write outside `instance/`.** Not policy, not templates, not this file.
-The one exception is the local settings file, which takes the calendar server
-identifier and nothing else.
+**Never write outside `instance/`.** Not policy, not templates, not this file,
+not runtime settings.
 
 ## Stages
 
 Resumable. Each writes its files and updates the progress table in
-`instance/profile/README.md`. `/onboard <stage>` re-runs one. Full question flow:
-[`references/stages.md`](references/stages.md).
+`instance/profile/README.md`. `/preploop onboard <stage>` re-runs one. Full question flow:
+[`references/stages.md`](onboard/references/stages.md).
 
 | Stage | Writes | After it, the system can |
 |---|---|---|
@@ -127,8 +120,8 @@ Resumable. Each writes its files and updates the progress table in
 | **material** | `story-bank` `tenure-script` `showcase-questions` | run a behavioral or deep-dive round |
 | **search** | `projects` `outbound` | run the job-search half |
 
-Start every file from its template in [`templates/profile/`](../../../templates/profile/README.md).
-Catalog acquisition has its own tiers: [`references/catalogs.md`](references/catalogs.md).
+Start every file from its template in [`templates/profile/`](../templates/profile/README.md).
+Catalog acquisition has its own tiers: [`references/catalogs.md`](onboard/references/catalogs.md).
 
 ## Inside every stage
 
