@@ -63,4 +63,6 @@ Two rules the checks enforce that are easy to trip:
   links to it, rather than restating it in a second place that will drift.
 
 [`policy/README.md`](policy/README.md) has the full house style for policy
-files, and [`CLAUDE.md`](CLAUDE.md) has the boundary rules.
+files, and [`AGENTS.md`](AGENTS.md) has the boundary rules. `CLAUDE.md` is a
+symlink to it, so Claude Code loads the same file every other agent does — a
+Windows checkout needs `git config core.symlinks true` for that link to resolve.

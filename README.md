@@ -65,7 +65,7 @@ onboarding, a week, a day, a review, and where everything lives.
 conducted. It contains no weekday, no clock time, no vendor and no framework
 name, because those belong to a user rather than to the system.
 `instance/profile/` supplies all of it, written by interviewing whoever is
-using it. See [`CLAUDE.md`](CLAUDE.md) for the rules that keep the boundary.
+using it. See [`AGENTS.md`](AGENTS.md) for the rules that keep the boundary.
 
 ## Roadmap
 
