@@ -31,6 +31,7 @@ export function gradeSourcePath(src: string): string | null {
 export function checkDb(instanceDir: string): Problem[] {
   const problems: Problem[] = [];
   const db = open(join(instanceDir, "prep.db"));
+  try {
 
   for (const r of db.query("PRAGMA integrity_check").all() as { integrity_check: string }[])
     if (r.integrity_check !== "ok") problems.push({ where: "integrity_check", message: r.integrity_check });
@@ -59,6 +60,10 @@ export function checkDb(instanceDir: string): Problem[] {
   }
 
   return problems;
+  } finally {
+    // Windows can't delete or replace a file that is still open
+    db.close();
+  }
 }
 
 if (import.meta.main) {

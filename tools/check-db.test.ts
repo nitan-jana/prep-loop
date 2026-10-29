@@ -20,21 +20,28 @@ describe("gradeSourcePath", () => {
 
 describe("checkDb", () => {
   let dir: string;
+  let db: ReturnType<typeof open> | undefined;
   const setup = () => {
     dir = mkdtempSync(join(tmpdir(), "check-db-"));
     mkdirSync(join(dir, "logs"), { recursive: true });
     mkdirSync(join(dir, "performance"), { recursive: true });
-    const db = open(join(dir, "prep.db"));
-    db.exec(
+    const d = open(join(dir, "prep.db"));
+    db = d;
+    d.exec(
       "INSERT INTO source (slug, name, completeness) VALUES ('s', 'S', 'complete')",
     );
-    db.exec(
+    d.exec(
       "INSERT INTO entry (source_slug, section, identifier, title, url, grade, grade_from) " +
         "VALUES ('s', '', 'e1', 'E1', 'https://x', 'shaky', 'log 2026-08-12')",
     );
-    return db;
+    return d;
   };
-  const teardown = () => rmSync(dir, { recursive: true, force: true });
+  const teardown = () => {
+    // close before deleting: Windows refuses to remove an open database file
+    db?.close();
+    db = undefined;
+    rmSync(dir, { recursive: true, force: true });
+  };
 
   test("a grade_from that names a real log passes", () => {
     setup();
